@@ -1,44 +1,65 @@
+// src/components/HeroSection.tsx
 import React from 'react';
 import { Utility, Typography, Button } from '@visa/nova-react';
-import { VisaAccountLow, VisaChevronDownHigh } from '@visa/nova-icons-react';
+import { VisaChevronDownHigh } from '@visa/nova-icons-react';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
-interface HeroProps {
-  onGetStarted: () => void;
-}
-
-const HeroSection: React.FC<HeroProps> = ({ onGetStarted }) => (
+const HeroSection: React.FC = () => (
   <Utility
     id="hero"
     tag="section"
     vFlex
-    vFlexCol
+    vFlexRow
+    vJustifyContent="between"
     vAlignItems="center"
     style={{
-      minHeight: 'auto',
-      padding: '4rem 1rem',
+        minHeight: '60vh',
+      padding: '2rem 1rem',
       background: 'var(--palette-default-surface-highlight)',
-      textAlign: 'center',
     }}
   >
-    <VisaAccountLow style={{ fontSize: '4rem', color: 'var(--palette-default-active)' }} />
-    <Typography variant="display-2" colorScheme="active" style={{ marginTop: '1rem' }}>
-      Instant Nova‑React Patterns
-    </Typography>
-    <Typography
-      variant="body-1"
-      style={{ maxWidth: '600px', marginTop: '1rem', color: 'var(--palette-default-text)' }}
+    {/* Left column: text & CTA */}
+    <Utility
+      vFlex
+      vFlexCol
+      vAlignItems="start"
+      style={{ flex: 1, maxWidth: '50%', paddingRight: '1rem',paddingLeft: '5rem' }}
     >
-      Describe a UI component in your own words, preview it live, and copy the React code—styled
-      with Visa’s Nova Design System.
-    </Typography>
-    <Button
-      buttonSize="large"
-      style={{ marginTop: '2rem' }}
-      onClick={onGetStarted}
-    >
-      Get Components 
-      <VisaChevronDownHigh/>
-    </Button>
+      <Typography variant="display-1" colorScheme="default">
+        Welcome to VPDS UI Generator
+      </Typography>
+      <Typography
+        variant="subtitle-1"
+        style={{ marginTop: '1rem', maxWidth: '600px' }}
+      >
+        Describe your UI pattern in plain English and instantly preview & copy
+        Visa Nova‑React code snippets.
+      </Typography>
+      <Button
+        buttonSize="large"
+        style={{ marginTop: '2.5rem' }}
+        onClick={() =>
+          document
+            .getElementById('generator')
+            ?.scrollIntoView({ behavior: 'smooth' })
+        }
+      >
+        Get Components
+        <VisaChevronDownHigh/>
+      </Button>
+    </Utility>
+
+    {/* Right column: Lottie animation */}
+    <Utility style={{ flex: 1, maxWidth: '50%' }}>
+      <div style={{ width: '100%', maxWidth: '400px', margin: '0 auto' }}>
+        <DotLottieReact
+          src="/UIUX.lottie"
+          loop
+          autoplay
+          style={{ width: '120%', height: 'auto' }}
+        />
+      </div>
+    </Utility>
   </Utility>
 );
 
