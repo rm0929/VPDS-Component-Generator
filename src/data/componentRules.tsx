@@ -4,6 +4,7 @@ export const componentKeywordMap: Record<string, string[]> = {
   'card input': ['CardForm'],
   'card number entry': ['CardForm'],
   'card number': ['CardForm'],
+  'card details': ['CardForm'],
   'signup': ['SignupForm'],
   'sign up': ['SignupForm'],
   'address': ['AddressForm'],
@@ -26,5 +27,4 @@ export const componentKeywordMap: Record<string, string[]> = {
   'determinate progress': ['DeterminateProgress'],
   'determinate linear': ['DeterminateProgress'],
   'progress': ['DeterminateProgress'],
-  // add more mappings as you need…
 };
