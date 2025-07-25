@@ -3,7 +3,11 @@ import { Utility, Typography, Button } from '@visa/nova-react';
 import { VisaChevronDownHigh } from '@visa/nova-icons-react';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
-const HeroSection: React.FC = () => (
+interface HeroSectionProps {
+  onGetStarted: () => void;
+}
+
+const HeroSection: React.FC<HeroSectionProps> = ({ onGetStarted }) => (
   <Utility
     id="hero"
     tag="section"
@@ -22,7 +26,7 @@ const HeroSection: React.FC = () => (
       vFlex
       vFlexCol
       vAlignItems="start"
-      style={{ flex: 1, maxWidth: '50%', paddingRight: '1rem',paddingLeft: '5rem' }}
+      style={{ flex: 1, maxWidth: '50%', paddingRight: '1rem', paddingLeft: '5rem' }}
     >
       <Typography variant="display-1" colorScheme="default">
         Welcome to VPDS UI Generator
@@ -36,15 +40,11 @@ const HeroSection: React.FC = () => (
       </Typography>
       <Button
         buttonSize="large"
+        onClick={onGetStarted}
         style={{ marginTop: '2.5rem' }}
-        onClick={() =>
-          document
-            .getElementById('generator')
-            ?.scrollIntoView({ behavior: 'smooth' })
-        }
       >
-        Get Components
-        <VisaChevronDownHigh/>
+        Get Components&nbsp;
+        <VisaChevronDownHigh />
       </Button>
     </Utility>
 
@@ -53,8 +53,8 @@ const HeroSection: React.FC = () => (
       <div style={{ width: '100%', maxWidth: '400px', margin: '0 auto' }}>
         <DotLottieReact
           src="/UIUX.lottie"
-          loop
           autoplay
+          loop
           style={{ width: '120%', height: 'auto' }}
         />
       </div>
