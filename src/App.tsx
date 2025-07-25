@@ -7,18 +7,23 @@ import HeroSection from './components/HeroSection';
 import HowItWorksSection from './components/HowItWorksSection';
 import GeneratorSection from './components/GeneratorSection';
 
+import lightThemeHref from '@visa/nova-styles/themes/visa-light/index.css?url';
+import darkThemeHref  from '@visa/nova-styles/themes/visa-dark/index.css?url';
+
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
 
-  // update theme attribute
   useEffect(() => {
-    document.documentElement.setAttribute(
-      'data-theme',
-      darkMode ? 'visa-dark' : 'visa-light'
-    );
+    let link = document.getElementById('nova-theme') as HTMLLinkElement | null;
+    if (!link) {
+      link = document.createElement('link');
+      link.id = 'nova-theme';
+      link.rel = 'stylesheet';
+      document.head.appendChild(link);
+    }
+    link.href = darkMode ? darkThemeHref : lightThemeHref;
   }, [darkMode]);
 
-  // scroll target from hero “Get Components”
   const scrollToGenerator = () => {
     document.getElementById('generator')?.scrollIntoView({ behavior: 'smooth' });
   };

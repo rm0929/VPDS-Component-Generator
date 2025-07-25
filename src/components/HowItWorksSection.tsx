@@ -1,4 +1,3 @@
-// src/components/HowItWorksSection.tsx
 import React from 'react';
 import { Utility, Typography } from '@visa/nova-react';
 import { VisaChevronRightTiny, VisaCheckTiny, VisaCopyTiny } from '@visa/nova-icons-react';
@@ -6,8 +5,8 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 
 const steps = [
   { icon: <VisaChevronRightTiny />, label: 'Describe your UI need' },
-  { icon: <VisaCheckTiny />,       label: 'Preview live Nova-React component' },
-  { icon: <VisaCopyTiny />,        label: 'Copy ready-to-use React code' },
+  { icon: <VisaCheckTiny />, label: 'Preview live Nova-React component' },
+  { icon: <VisaCopyTiny />, label: 'Copy ready-to-use React code' },
 ];
 
 const HowItWorksSection: React.FC = () => (
@@ -19,12 +18,11 @@ const HowItWorksSection: React.FC = () => (
     vAlignItems="center"
     style={{ padding: '4rem 1rem' }}
   >
-    {/* Section heading */}
+
     <Typography variant="headline-2" tag="h2" colorScheme="active">
-      How It Works
+      How It Works...
     </Typography>
 
-    {/* Row with left animation, steps, right animation */}
     <Utility
       vFlex
       vFlexRow
@@ -32,9 +30,8 @@ const HowItWorksSection: React.FC = () => (
       vJustifyContent="center"
       style={{ flexWrap: 'wrap', marginTop: '2rem', width: '100%' }}
     >
-      {/* Left Lottie */}
       <Utility style={{ width: '140px', marginRight: '3rem' }}>
-        <DotLottieReact
+        <DotLottieReact 
           src="/Messages.lottie"
           autoplay
           loop
@@ -42,7 +39,6 @@ const HowItWorksSection: React.FC = () => (
         />
       </Utility>
 
-      {/* Center steps */}
       <Utility
         vFlex
         vFlexRow
@@ -50,7 +46,7 @@ const HowItWorksSection: React.FC = () => (
         vAlignItems="start"
         vGap={40}
         style={{
-          flex: '0 1 auto',      // don't force it to grow
+          flex: '0 1 auto',
           flexWrap: 'wrap',
           padding: '0 1rem',
         }}
@@ -77,7 +73,6 @@ const HowItWorksSection: React.FC = () => (
         ))}
       </Utility>
 
-      {/* Right Lottie */}
       <Utility style={{ width: '120px', marginLeft: '3rem' }}>
         <DotLottieReact
           src="/DocumentNotify.lottie"

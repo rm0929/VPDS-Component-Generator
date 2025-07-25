@@ -1,4 +1,3 @@
-// src/components/DateTimePreview.tsx
 import React, { useState } from 'react';
 import {
   Utility,
@@ -22,12 +21,12 @@ interface Props {
 const DateTimePreview: React.FC<Props> = ({ showDate, showTime }) => {
   const [date, setDate] = useState('');
   const [time, setTime] = useState('');
-  // Separate state for each message
+
   const [dateSet, setDateSet] = useState(false);
   const [timeSet, setTimeSet] = useState(false);
 
   const handleSet = () => {
-    // Only set the ones that are visible & filled
+    
     if (showDate && date) setDateSet(true);
     if (showTime && time) setTimeSet(true);
   };

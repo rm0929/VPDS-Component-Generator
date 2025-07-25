@@ -1,14 +1,9 @@
-// src/main.tsx
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
 
-// 1) Nova base styles
 import '@visa/nova-styles/styles.css';
-// 2) Dark theme first
-import '@visa/nova-styles/themes/visa-dark/index.css';
-// 3) Light theme second
-import '@visa/nova-styles/themes/visa-light/index.css';
+
 
 const root = createRoot(document.getElementById('root')!);
 root.render(

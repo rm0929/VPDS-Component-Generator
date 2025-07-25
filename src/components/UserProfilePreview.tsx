@@ -1,4 +1,3 @@
-// src/components/UserProfilePreview.tsx
 import React from 'react';
 import {
   Utility,
@@ -27,13 +26,13 @@ const UserProfilePreview: React.FC = () => (
     {/* Avatar */}
     <Avatar aria-label="User Avatar"
       style={{
-        '--v-avatar-size': '80px',          // override default size
-        '--v-avatar-font-size': '32px',     // increase icon/text size inside
+        '--v-avatar-size': '80px',
+        '--v-avatar-font-size': '32px',
       } as React.CSSProperties}>
       <VisaAccountLow />
     </Avatar>
 
-    {/* Name fields inline */}
+    {/* Name fields */}
     <Utility vFlex vFlexRow vGap={8} style={{ width: '100%' }}>
       <Utility vFlex vFlexCol style={{ flex: 1 }}>
         <Label htmlFor="first-name">First Name</Label>
@@ -74,7 +73,7 @@ const UserProfilePreview: React.FC = () => (
       </InputContainer>
     </Utility>
 
-    {/* Age and Gender inline */}
+    {/* Age and Gender */}
     <Utility vFlex vFlexRow vGap={8} style={{ width: '100%' }}>
       <Utility vFlex vFlexCol style={{ flex: 1 }}>
         <Label htmlFor="age">Age</Label>

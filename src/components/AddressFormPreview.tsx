@@ -1,4 +1,3 @@
-// src/components/AddressFormPreview.tsx
 import React, { useState } from 'react';
 import {
   Utility,
@@ -17,7 +16,6 @@ const countries = ['United States', 'Mexico', 'Canada', 'United Kingdom'];
 const countryCodes = ['+1', '+52', '+1', '+44'];
 
 const AddressFormPreview: React.FC = () => {
-  // form state
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [country, setCountry] = useState('');
@@ -29,14 +27,14 @@ const AddressFormPreview: React.FC = () => {
   const [countryCode, setCountryCode] = useState('');
   const [phone, setPhone] = useState('');
 
-  // error flags
+  // Error state for form validation
   const [errors, setErrors] = useState<Record<string, boolean>>({});
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     const newErrors: Record<string, boolean> = {};
 
-    // validate required fields
+    // validating required fields
     if (!firstName.trim()) newErrors.firstName = true;
     if (!lastName.trim())  newErrors.lastName = true;
     if (!country)          newErrors.country = true;
@@ -49,24 +47,22 @@ const AddressFormPreview: React.FC = () => {
 
     setErrors(newErrors);
 
-    // if no errors, you could proceed
+    // if no errors found, I can proceed
     if (Object.keys(newErrors).length === 0) {
       alert('Form submitted successfully!');
-      // reset or further logic here...
     }
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <Utility vFlex vFlexCol vGap={16} style={{ width: '100%', maxWidth: '400px' }}>
-        {/* A. Name Fields Inline */}
         <Utility vFlex vFlexRow vGap={8}>
           <Utility style={{ width: '50%' }}>
             <Label htmlFor="first-name">First Name</Label>
             <InputContainer>
               <Input
                 id="first-name"
-                placeholder="John"
+                placeholder="Rohan"
                 value={firstName}
                 onChange={e => setFirstName((e.target as HTMLInputElement).value)}
                 aria-invalid={errors.firstName}
@@ -92,7 +88,7 @@ const AddressFormPreview: React.FC = () => {
             <InputContainer>
               <Input
                 id="last-name"
-                placeholder="Doe"
+                placeholder="Mathur"
                 value={lastName}
                 onChange={e => setLastName((e.target as HTMLInputElement).value)}
                 aria-invalid={errors.lastName}
@@ -114,7 +110,7 @@ const AddressFormPreview: React.FC = () => {
           </Utility>
         </Utility>
 
-        {/* B. Country Field */}
+        {/* Country Field */}
         <Label htmlFor="country">Country</Label>
         <InputContainer>
           <Select
@@ -149,7 +145,7 @@ const AddressFormPreview: React.FC = () => {
           </UtilityFragment>
         )}
 
-        {/* C. Address Lines */}
+        {/* Address Lines */}
         <Label htmlFor="address1">Address Line 1</Label>
         <InputContainer>
           <Input
@@ -186,7 +182,7 @@ const AddressFormPreview: React.FC = () => {
           />
         </InputContainer>
 
-        {/* D. City, State, ZIP Inline */}
+        {/* City */}
         <Utility vFlex vFlexRow vGap={8}>
           <Utility style={{ width: '40%' }}>
             <Label htmlFor="city">City</Label>
@@ -213,7 +209,7 @@ const AddressFormPreview: React.FC = () => {
               </UtilityFragment>
             )}
           </Utility>
-
+            {/* State */}
           <Utility style={{ width: '30%' }}>
             <Label htmlFor="state">State</Label>
             <InputContainer>
@@ -239,7 +235,7 @@ const AddressFormPreview: React.FC = () => {
               </UtilityFragment>
             )}
           </Utility>
-
+            {/* Zip */}
           <Utility style={{ width: '30%' }}>
             <Label htmlFor="zip">ZIP Code</Label>
             <InputContainer>
@@ -267,7 +263,7 @@ const AddressFormPreview: React.FC = () => {
           </Utility>
         </Utility>
 
-        {/* E & F. Country Code & Phone Number Inline */}
+        {/* Country Code & Phone Number */}
         <Utility vFlex vFlexRow vAlignItems="end" vGap={8}>
           <Utility style={{ width: '35%' }}>
             <Label htmlFor="country-code">Country Code</Label>
@@ -333,7 +329,7 @@ const AddressFormPreview: React.FC = () => {
           </Utility>
         </Utility>
 
-        {/* Submit */}
+        {/* Submit Button */}
         <Button buttonSize="large" type="submit">Submit</Button>
       </Utility>
     </form>

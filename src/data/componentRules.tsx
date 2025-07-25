@@ -1,6 +1,6 @@
 export const componentKeywordMap: Record<string, string[]> = {
   'login': ['LoginForm'],
-  'remember me': ['LoginForm'],    // LoginFormPreview handles the checkbox
+  'login with remember me': ['LoginForm'],
   'card input': ['CardForm'],
   'card number entry': ['CardForm'],
   'card number': ['CardForm'],

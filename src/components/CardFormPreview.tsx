@@ -44,9 +44,7 @@ const CardFormPreview: React.FC = () => (
         </InputControl>
       </InputContainer>
 
-      {/* Slash Separator */}
       <span style={{ fontSize: '1.25rem', lineHeight: '1', marginTop: '0.5rem' }}>/</span>
-
       {/* Year */}
       <InputContainer style={{ position: 'relative', width: '25%' }}>
         <Select id="exp-year" name="exp-year" style={{ width: '100%' }}>

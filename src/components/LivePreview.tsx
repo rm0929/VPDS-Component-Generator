@@ -1,4 +1,3 @@
-// src/components/LivePreview.tsx
 import React from 'react';
 import { Surface } from '@visa/nova-react';
 

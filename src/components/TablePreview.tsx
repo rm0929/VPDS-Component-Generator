@@ -39,7 +39,6 @@ const TablePreview: React.FC<TablePreviewProps> = ({
     setSubmitted(true);
   };
 
-  // Build headers A, B, C,… or just “Col1”, “Col2”, …
   const headers = Array.from({ length: cols }, (_, i) => `Col ${i + 1}`);
   const body = Array.from({ length: rows }, (_, r) =>
     Array.from({ length: cols }, (_, c) => `R${r + 1}C${c + 1}`)
@@ -47,7 +46,6 @@ const TablePreview: React.FC<TablePreviewProps> = ({
 
   return (
     <Utility vFlex vFlexCol vGap={16} style={{ width: '100%', maxWidth: 600 }}>
-      {/* Inputs for row/col counts */}
       <Utility vFlex vFlexRow vGap={8}>
         <Utility style={{ width: '50%' }}>
           <Label htmlFor="num-rows">Number of Rows</Label>

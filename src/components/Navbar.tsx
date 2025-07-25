@@ -1,7 +1,7 @@
 // src/components/Navbar.tsx
 import React from 'react';
 import { Utility, Typography, Switch } from '@visa/nova-react';
-import { VisaModeLightTiny, VisaModeDarkTiny } from '@visa/nova-icons-react';
+import { VisaModeLightTiny, VisaModeDarkTiny, VisaArrowForwardTiny } from '@visa/nova-icons-react';
 
 interface NavbarProps {
   darkMode: boolean;
@@ -14,15 +14,17 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleDarkMode }) => (
     vFlexRow
     vJustifyContent="between"
     vAlignItems="center"
-    vPadding={16}
+    vPadding={20}
     style={{
+      position: 'fixed',
+      zIndex:10,
       width: '100%',
       background: 'var(--palette-default-surface-1)',
       borderBottom: '1px solid var(--palette-default-border)',
     }}
   >
-    <Typography variant="headline-4" tag="h1" colorScheme="default">
-      Component Suggestion Tool
+    <Typography variant="headline-4" tag="h1" colorScheme='active'>
+      Natural Language <VisaArrowForwardTiny/> Component Suggestion Tool
     </Typography>
 
     <Utility vFlex vFlexRow vAlignItems="center" vGap={8}>
@@ -30,7 +32,7 @@ const Navbar: React.FC<NavbarProps> = ({ darkMode, onToggleDarkMode }) => (
       <Switch
         id="dark-mode-toggle"
         checked={darkMode}
-        onChange={e => onToggleDarkMode((e.target as HTMLInputElement).checked)}
+        onChange={(e) => onToggleDarkMode((e.target as HTMLInputElement).checked)}
         aria-label="Toggle dark mode"
       />
     </Utility>

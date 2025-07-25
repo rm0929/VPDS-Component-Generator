@@ -57,7 +57,6 @@ const NotificationTrayPreview: React.FC = () => {
 
   return (
     <Utility vFlex vFlexCol vGap={8} style={{ position: 'relative' }}>
-      {/* A. Icon with badge */}
       <Button
         iconButton
         aria-label="Toggle notifications"
@@ -71,7 +70,6 @@ const NotificationTrayPreview: React.FC = () => {
         )}
       </Button>
 
-      {/* Tray panel */}
       {open && (
         <Surface
           style={{
@@ -86,16 +84,13 @@ const NotificationTrayPreview: React.FC = () => {
             zIndex: 100,
           }}
         >
-          {/* B. Optional section label */}
           <Utility vFlex vJustifyContent="between" vAlignItems="center">
             <Typography variant="headline-4">Notifications</Typography>
-            {/* K. Settings icon */}
               <VisaSettingsTiny />
           </Utility>
 
           <Divider />
 
-          {/* List items */}
           {demoNotifications.map((n) => {
             const Icon =
               n.type === 'error' ? VisaErrorTiny : n.type === 'warning' ? VisaWarningTiny : VisaNotificationsTiny;
@@ -121,7 +116,6 @@ const NotificationTrayPreview: React.FC = () => {
                     <Icon />
                     {n.title && <Typography variant="subtitle-1">{n.title}</Typography>}
                   </Utility>
-                  {/* G. Timestamp */}
                   {n.timestamp && (
                     <Typography variant="label-small" colorScheme="subtle">
                       {n.timestamp}
@@ -129,10 +123,8 @@ const NotificationTrayPreview: React.FC = () => {
                   )}
                 </Utility>
 
-                {/* D. Message */}
                 <Typography variant="body-2">{n.message}</Typography>
 
-                {/* E. Action link */}
                 {n.actionLabel && (
                   <Link href="#" noUnderline>
                     {n.actionLabel}
@@ -145,11 +137,9 @@ const NotificationTrayPreview: React.FC = () => {
           <Divider />
 
           <Utility vFlex vJustifyContent="between" vAlignItems="center">
-            {/* H. View all */}
             <Link href="#" noUnderline>
               View all
             </Link>
-            {/* I. Mark all read */}
             <Button colorScheme="tertiary" buttonSize="small" onClick={markAllRead}>
               Mark all read
             </Button>

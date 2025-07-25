@@ -1,4 +1,3 @@
-// src/components/AboutSection.tsx
 import React from 'react';
 import { Utility, Typography, Link } from '@visa/nova-react';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
@@ -17,7 +16,7 @@ const AboutSection: React.FC = () => (
       flexWrap: 'wrap'
     }}
   >
-    {/* Left animation */}
+  
     <Utility style={{ flex: 1, minWidth: '200px', maxWidth: '25%', padding: '1rem' }}>
       <DotLottieReact
         src="/Desktop.lottie"
@@ -27,7 +26,7 @@ const AboutSection: React.FC = () => (
       />
     </Utility>
 
-    {/* Center content */}
+
     <Utility
       vFlex
       vFlexCol
@@ -46,8 +45,8 @@ const AboutSection: React.FC = () => (
           textAlign: 'center',
         }}
       >
-        Inspired by Visa's Product Design System, this tool lets you describe any UI pattern—
-        from login forms to modals—and instantly see Nova-React components rendered live,
+        Inspired by Visa's Product Design System, this tool lets you describe any UI pattern-
+        from login forms to card input, and instantly see Nova-React components rendered live,
         plus copy-ready React code. Build faster, stay on brand.
       </Typography>
       <Typography variant="body-2" style={{ marginTop: '1rem' }}>
@@ -62,7 +61,6 @@ const AboutSection: React.FC = () => (
       </Typography>
     </Utility>
 
-    {/* Right animation */}
     <Utility style={{ flex: 1, minWidth: '200px', maxWidth: '25%', padding: '1rem' }}>
       <DotLottieReact
         src="/VisaBranding.lottie"

@@ -1,4 +1,3 @@
-// src/utils/generateCodeSnippet.ts
 import loginFormSource from '../components/LoginFormPreview.tsx?raw';
 import cardFormSource from '../components/CardFormPreview.tsx?raw';
 import signupFormSource from '../components/SignupFormPreview.tsx?raw';
@@ -48,7 +47,6 @@ export function generateCodeSnippet(
   if (components.includes('DeterminateProgress')){ 
     return determProgSource;
   }
-  // …existing cases…
 
   return `// No matching component.`;
 }

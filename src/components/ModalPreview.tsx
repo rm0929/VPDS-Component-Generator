@@ -1,4 +1,3 @@
-// src/components/ModalPreview.tsx
 import React from 'react';
 import {
   Button,
@@ -12,16 +11,13 @@ import {
 } from '@visa/nova-react';
 
 interface Props {
-  /** Controls visibility */
   open: boolean;
-  /** Called when the dialog has closed */
   onClose: () => void;
 }
 
 const ModalPreview: React.FC<Props> = ({ open, onClose }) => {
   const { onKeyNavigation, ref } = useFocusTrap<HTMLDialogElement>();
 
-  // Show/hide native <dialog>
   React.useEffect(() => {
     if (open) {
       ref.current?.showModal();
@@ -30,7 +26,6 @@ const ModalPreview: React.FC<Props> = ({ open, onClose }) => {
     }
   }, [open, ref]);
 
-  // Listen for native “close” event
   React.useEffect(() => {
     const dlg = ref.current;
     if (!dlg) return;
@@ -49,8 +44,8 @@ const ModalPreview: React.FC<Props> = ({ open, onClose }) => {
     >
       <DialogContent
         style={{
-          maxWidth: '400px',      // constrain width
-          whiteSpace: 'normal',   // allow text wrap
+          maxWidth: '400px',
+          whiteSpace: 'normal',   
         }}
       >
         {/* Header + close */}
@@ -62,7 +57,6 @@ const ModalPreview: React.FC<Props> = ({ open, onClose }) => {
           />
         </Utility>
 
-        {/* Body wraps cleanly */}
         <Typography
           id="modal-desc"
           style={{ marginTop: '1rem', wordBreak: 'break-word' }}
@@ -70,7 +64,6 @@ const ModalPreview: React.FC<Props> = ({ open, onClose }) => {
           This is required text that describes the dialog title in more detail.
         </Typography>
 
-        {/* Actions */}
         <Utility
           vFlex
           vFlexWrap

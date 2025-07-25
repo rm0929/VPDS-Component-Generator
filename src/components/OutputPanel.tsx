@@ -1,4 +1,3 @@
-// src/components/OutputPanel.tsx
 import React, { useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import materialDark from 'react-syntax-highlighter/dist/esm/styles/prism/material-dark';
@@ -16,7 +15,6 @@ const OutputPanel: React.FC<Props> = ({ code }) => {
   const handleCopy = () => {
     navigator.clipboard.writeText(code);
     setCopied(true);
-    // clear after 2 seconds
     setTimeout(() => setCopied(false), 2000);
   };
 
@@ -44,7 +42,6 @@ const OutputPanel: React.FC<Props> = ({ code }) => {
            borderRadius: '4px',
          }}
        >
-          {/* Copy button + feedback */}
           <div style={{ position: 'absolute', top: 8, right: 8, textAlign: 'right', zIndex: 10 }}>
             {copied && (
               <Typography

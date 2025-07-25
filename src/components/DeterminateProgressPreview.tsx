@@ -1,4 +1,3 @@
-// src/components/DeterminateProgressPreview.tsx
 import React, { useCallback, useState, useRef } from 'react';
 import {
   Button,
@@ -8,7 +7,6 @@ import {
   Utility,
 } from '@visa/nova-react';
 
-// TIP: Customize this ID, pass it as a prop, or auto‑generate it with useId() from @react
 const id = 'determinate-linear-progress';
 
 const DeterminateProgressPreview: React.FC = () => {

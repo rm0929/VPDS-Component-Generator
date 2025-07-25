@@ -1,4 +1,3 @@
-// src/components/HeroSection.tsx
 import React from 'react';
 import { Utility, Typography, Button } from '@visa/nova-react';
 import { VisaChevronDownHigh } from '@visa/nova-icons-react';
@@ -13,12 +12,12 @@ const HeroSection: React.FC = () => (
     vJustifyContent="between"
     vAlignItems="center"
     style={{
-        minHeight: '60vh',
+      minHeight: '60vh',
       padding: '2rem 1rem',
       background: 'var(--palette-default-surface-highlight)',
     }}
   >
-    {/* Left column: text & CTA */}
+    {/* Left section */}
     <Utility
       vFlex
       vFlexCol
@@ -32,8 +31,8 @@ const HeroSection: React.FC = () => (
         variant="subtitle-1"
         style={{ marginTop: '1rem', maxWidth: '600px' }}
       >
-        Describe your UI pattern in plain English and instantly preview & copy
-        Visa Nova‑React code snippets.
+        Describe UI pattern in plain English and instantly get
+        Visa design systems components.
       </Typography>
       <Button
         buttonSize="large"
@@ -49,7 +48,7 @@ const HeroSection: React.FC = () => (
       </Button>
     </Utility>
 
-    {/* Right column: Lottie animation */}
+    {/* Right Section Animation */}
     <Utility style={{ flex: 1, maxWidth: '50%' }}>
       <div style={{ width: '100%', maxWidth: '400px', margin: '0 auto' }}>
         <DotLottieReact

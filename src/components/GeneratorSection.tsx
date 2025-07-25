@@ -7,7 +7,7 @@ import OutputPanel from './OutputPanel';
 import { suggestComponents } from '../utils/suggestComponents';
 import { generateCodeSnippet } from '../utils/generateCodeSnippet';
 
-// import all Preview components…
+// All Preview components…
 import LoginFormPreview from './LoginFormPreview';
 import CardFormPreview from './CardFormPreview';
 import SignupFormPreview from './SignupFormPreview';
