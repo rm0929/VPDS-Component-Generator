@@ -1,0 +1,26 @@
+export const componentKeywordMap: Record<string, string[]> = {
+  'login': ['LoginForm'],
+  'remember me': ['LoginForm'],    // LoginFormPreview handles the checkbox
+  'card input': ['CardForm'],
+  'card number entry': ['CardForm'],
+  'card number': ['CardForm'],
+  'signup': ['SignupForm'],
+  'sign up': ['SignupForm'],
+  'address': ['AddressForm'],
+  'user profile': ['UserProfile'],
+  'profile': ['UserProfile'],
+  'profile form with avatar': ['UserProfileForm'],
+  'date and time': ['DateTime'],
+  'set date and time': ['DateTime'],
+  'set date': ['DateTime'],
+  'date': ['DateTime'],
+  'set time': ['DateTime'],
+  'time': ['DateTime'],
+  'table': ['Table'],
+  'data table': ['Table'],
+  'table with': ['Table'],
+  'notifications':   ['NotificationTray'],
+  'modal':  ['Modal'],
+  'dialog': ['Modal'],
+  // add more mappings as you need…
+};
