@@ -22,5 +22,9 @@ export const componentKeywordMap: Record<string, string[]> = {
   'notifications':   ['NotificationTray'],
   'modal':  ['Modal'],
   'dialog': ['Modal'],
+  'progress linear': ['DeterminateProgress'],
+  'determinate progress': ['DeterminateProgress'],
+  'determinate linear': ['DeterminateProgress'],
+  'progress': ['DeterminateProgress'],
   // add more mappings as you need…
 };

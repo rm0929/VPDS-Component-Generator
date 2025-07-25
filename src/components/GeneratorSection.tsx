@@ -17,6 +17,8 @@ import DateTimePreview from './DateTimePreview';
 import TablePreview from './TablePreview';
 import NotificationTrayPreview from './NotificationTrayPreview';
 import ModalPreview from './ModalPreview';
+import DeterminateProgressPreview from './DeterminateProgressPreview';
+
 
 const GeneratorSection: React.FC = () => {
   const [preview, setPreview] = useState<React.ReactNode | null>(null);
@@ -47,6 +49,8 @@ const GeneratorSection: React.FC = () => {
       setPreview(<NotificationTrayPreview />);
     } else if (comps.includes('Modal')) {
       setPreview(<ModalPreview open onClose={() => {}} />);
+    } else if (comps.includes('DeterminateProgress')) {
+      setPreview(<DeterminateProgressPreview />);
     } else {
       setPreview(null);
     }

@@ -8,6 +8,8 @@ import dateTimeSource from '../components/DateTimePreview.tsx?raw';
 import tableSource from '../components/TablePreview.tsx?raw';
 import notificationTraySource from '../components/NotificationTrayPreview.tsx?raw';
 import modalSource from '../components/ModalPreview.tsx?raw';
+import determProgSource from '../components/DeterminateProgressPreview.tsx?raw';
+
 
 
 
@@ -43,7 +45,9 @@ export function generateCodeSnippet(
   if (components.includes('Modal')) {
     return modalSource;
   }
-  
+  if (components.includes('DeterminateProgress')){ 
+    return determProgSource;
+  }
   // …existing cases…
 
   return `// No matching component.`;
