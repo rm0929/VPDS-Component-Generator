@@ -107,9 +107,12 @@ A single‑page React application inspired by Visa’s Product Design System (VP
 
 ## 🛠️ Development
 
+Use Node.js 22.14+ (Node 22) and npm. CI runs build, lint, and tests
+independently on pushes and pull requests.
+
 ```bash
 # Install dependencies
-npm install
+npm ci
 
 # Start dev server
 npm run dev
@@ -117,9 +120,24 @@ npm run dev
 # Build for production
 npm run build
 
+# Lint TypeScript and React
+npm run lint
+
+# Run baseline unit tests once
+npm test
+
+# Watch tests during development
+npm test -- --watch
+
 # Preview production build
 npm run preview
 ```
+
+Vitest shares the Vite configuration and runs utility tests in Node. The tests
+cover keyword matching, deduplication, selection priority, all ten raw TSX
+snippet mappings, and unsupported input. They preserve current behavior,
+including substring matches and the unsupported `UserProfileForm` alias.
+Browser interactions and visual previews are not covered by these unit tests.
 
 ## 📦 Deployment
 
