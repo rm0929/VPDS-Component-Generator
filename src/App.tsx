@@ -6,12 +6,14 @@ import AboutSection from './components/AboutSection';
 import HeroSection from './components/HeroSection';
 import HowItWorksSection from './components/HowItWorksSection';
 import GeneratorSection from './components/GeneratorSection';
+import SpecificationDemo from './components/SpecificationDemo';
 
 import lightThemeHref from '@visa/nova-styles/themes/visa-light/index.css?url';
 import darkThemeHref  from '@visa/nova-styles/themes/visa-dark/index.css?url';
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(false);
+  const specificationDemo = new URLSearchParams(window.location.search).get('demo') === 'specification';
 
   useEffect(() => {
     let link = document.getElementById('nova-theme') as HTMLLinkElement | null;
@@ -35,7 +37,7 @@ export default function App() {
       <HeroSection onGetStarted={scrollToGenerator} />
       <AboutSection />
       <HowItWorksSection />
-      <GeneratorSection />
+      {specificationDemo ? <SpecificationDemo /> : <GeneratorSection />}
     </Utility>
   );
 }

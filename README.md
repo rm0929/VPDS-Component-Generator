@@ -133,16 +133,21 @@ npm test -- --watch
 npm run preview
 ```
 
-Vitest shares the Vite configuration and runs utility tests in Node. The tests
-cover keyword matching, deduplication, selection priority, all ten raw TSX
-snippet mappings, and unsupported input. They preserve current behavior,
-including substring matches and the unsupported `UserProfileForm` alias.
-Browser interactions and visual previews are not covered by these unit tests.
+Vitest shares the Vite configuration and runs tests in Node. Coverage includes
+the existing keyword/snippet utilities, specification validation, actual Nova
+server-rendered markup, preview/code consistency, and TypeScript compilation of
+generated TSX. Full browser interactions and visual regression are not covered.
 
 The additive [UI specification and component registry](docs/phase-1a-ui-specification.md)
-define the validated JSON contract for future generation. A handcrafted
+define the validated JSON contract. A handcrafted
 [registration fixture](src/specification/fixtures/registration-form.json) exercises
-that contract. It is not connected to the current keyword generator or UI.
+that contract through the [deterministic preview and TSX generator](docs/phase-1b-rendering.md).
+
+With `npm run dev`, open `http://localhost:5173/?demo=specification#generator`
+(use the port printed by Vite) to view the registration preview and copy its
+generated TSX. The demo does not create accounts or send form data. Its generated
+code is displayed as text and is never executed by the app. Remove the query
+parameter or use the demo's back link to return to the unchanged keyword generator.
 
 ## 📦 Deployment
 
