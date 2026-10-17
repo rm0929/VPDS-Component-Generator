@@ -117,17 +117,17 @@ npm ci
 # Start dev server
 npm run dev
 
-# Build for production
+# Build frontend and backend
 npm run build
 
 # Lint TypeScript and React
 npm run lint
 
-# Run unit tests once
+# Run frontend and API tests
 npm test
 
 # Watch tests during development
-npm test -- --watch
+npm run test:frontend -- --watch
 
 # Preview production build
 npm run preview
@@ -148,6 +148,38 @@ With `npm run dev`, open `http://localhost:5173/?demo=specification#generator`
 generated TSX. The demo does not create accounts or send form data. Its generated
 code is displayed as text and is never executed by the app. Remove the query
 parameter or use the demo's back link to return to the unchanged keyword generator.
+
+The [Phase 2A backend foundation](docs/phase-2a-backend.md) is a small Express
+workspace alongside the existing frontend. It uses a deterministic **non-AI mock**,
+not an LLM. The frontend does not call the API yet.
+
+```bash
+# Optional local backend configuration (no API keys needed)
+cp backend/.env.example backend/.env
+
+# In separate terminals
+npm run dev          # Vite frontend, normally http://localhost:5173
+npm run dev:backend  # API, normally http://127.0.0.1:3001
+
+# Check API health
+curl http://127.0.0.1:3001/api/health
+
+# Request one of the documented mock examples
+curl -X POST http://127.0.0.1:3001/api/generate \
+  -H 'Content-Type: application/json' \
+  -d '{"prompt":"registration form"}'
+
+# Focused checks, or build then run the compiled backend
+npm run test:frontend
+npm run test:api
+npm run build:backend
+npm run start:backend
+```
+
+Run `npm ci` once at the repository root to install both packages from the shared
+lockfile. Use Node 22.14+ on Node 22, as in CI. Backend `.env` files are ignored.
+See the backend report for exact supported prompts, response/error contracts,
+environment limits, CORS configuration, and verification results.
 
 ## 📦 Deployment
 
