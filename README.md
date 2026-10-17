@@ -123,7 +123,7 @@ npm run build
 # Lint TypeScript and React
 npm run lint
 
-# Run baseline unit tests once
+# Run unit tests once
 npm test
 
 # Watch tests during development
@@ -138,6 +138,11 @@ cover keyword matching, deduplication, selection priority, all ten raw TSX
 snippet mappings, and unsupported input. They preserve current behavior,
 including substring matches and the unsupported `UserProfileForm` alias.
 Browser interactions and visual previews are not covered by these unit tests.
+
+The additive [UI specification and component registry](docs/phase-1a-ui-specification.md)
+define the validated JSON contract for future generation. A handcrafted
+[registration fixture](src/specification/fixtures/registration-form.json) exercises
+that contract. It is not connected to the current keyword generator or UI.
 
 ## 📦 Deployment
 
