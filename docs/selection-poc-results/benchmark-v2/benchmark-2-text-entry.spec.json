@@ -1,0 +1,21 @@
+{
+  "version": "1.0",
+  "root": {
+    "id": "node-0",
+    "type": "form",
+    "props": {
+      "label": "Display name"
+    },
+    "children": [
+      {
+        "id": "node-0-0",
+        "type": "textInput",
+        "props": {
+          "name": "display-name",
+          "label": "Display name",
+          "maxLength": 32
+        }
+      }
+    ]
+  }
+}

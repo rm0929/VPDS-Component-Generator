@@ -1,0 +1,53 @@
+{
+  "before": {
+    "gitCommit": "18322bed534c05c187c34fcd6459365311bd557a",
+    "nodeVersion": "v22.14.0",
+    "compilerRevision": "403d1d24115f027e26a28dd686b1458239d4776b3a3143a397c5a386573da49d",
+    "compilerHashes": {
+      "backend/src/compileModelUi.ts": "49659b2297b9932ec07f1973d010ed1a5b0cb28cbfab4d0945ef199d923643c5",
+      "backend/src/modelUiDraft.ts": "7d51639a7bdccc709394c3d8df9db6810cac98ab80e65d6fbf21563fa5b289f1",
+      "src/specification/componentRegistry.ts": "dc7064468f4b00b529eadf36cb06ab107e18a73a70befd9311df18cb60ee6e8e",
+      "src/specification/uiSpecification.ts": "f0a31834f6ff131df75290f38d5b62ecb25b2ae71276bcd8638f6d90dbf11172"
+    },
+    "schemaHash": "385bab39b1c0e9fe1f9b3f1da0f1011cb76a34f43edfc1f33e04ad30854d23ad",
+    "promptHash": "c50372ff66d3568ad1da08a7040fbe933fda546f3a6e44d92d9993a89f65700f",
+    "files": {
+      "backend/evaluation/selection-poc/selection.ts": "ddf4963aecd02ea1e7a5871364b02fa7372bfd5beb3a18ee3f746fdd37a1e358",
+      "backend/evaluation/selection-poc/model.ts": "b299dab79444e6e05d651319ba67aa2c7c694094ac4e7ec622c7690c8f79a967",
+      "backend/evaluation/selection-poc/ollama.ts": "167a04fe9193c04a01bfd11b2360d115b97601ed87f6d48689d81aa34e12beba",
+      "backend/evaluation/selection-poc/assessSelection.ts": "1093c288bd841839866080d2e823fe9a8d19fa081839777e1df1ae1b63dfde44",
+      "backend/evaluation/selection-poc/cases-v1.json": "cd20106e24e0d55fdb6c457551d14a5ce3e301f3256f7d834bc092afe8c8dd7b",
+      "backend/src/semanticModelSchema.ts": "d64ece456b0177229cfa1da0468accb6a765e4347b1d806cd85da7c848d8d18a",
+      "backend/src/semanticUiPlan.ts": "a6adf69619bd36a37b4679c35b480e8e32fc446389e570ef83843bd7decf6d57",
+      "backend/src/compileSemanticUiPlan.ts": "1bdbd42435e2414c4d323831b8645c683141aef8e528e841af8de4305851fb96",
+      "backend/src/ollamaProvider.ts": "0f3608e9ba6eea040afe5e1fd73a80e3046b2b766ea3e346c75873b8afb9ccd4",
+      "backend/src/modelSchema.ts": "f4884911eb846c11a4bc28322b625c3551889ee185b5d66aadb9074dbd8a4192",
+      "src/specification/generateTsx.ts": "c109107885d350343eebd0525deabb89c1ec2a7a9c93304f4b517213f8ffada1"
+    }
+  },
+  "after": {
+    "gitCommit": "18322bed534c05c187c34fcd6459365311bd557a",
+    "nodeVersion": "v22.14.0",
+    "compilerRevision": "403d1d24115f027e26a28dd686b1458239d4776b3a3143a397c5a386573da49d",
+    "compilerHashes": {
+      "backend/src/compileModelUi.ts": "49659b2297b9932ec07f1973d010ed1a5b0cb28cbfab4d0945ef199d923643c5",
+      "backend/src/modelUiDraft.ts": "7d51639a7bdccc709394c3d8df9db6810cac98ab80e65d6fbf21563fa5b289f1",
+      "src/specification/componentRegistry.ts": "dc7064468f4b00b529eadf36cb06ab107e18a73a70befd9311df18cb60ee6e8e",
+      "src/specification/uiSpecification.ts": "f0a31834f6ff131df75290f38d5b62ecb25b2ae71276bcd8638f6d90dbf11172"
+    },
+    "files": {
+      "backend/evaluation/selection-poc/selection.ts": "ddf4963aecd02ea1e7a5871364b02fa7372bfd5beb3a18ee3f746fdd37a1e358",
+      "backend/evaluation/selection-poc/model.ts": "b299dab79444e6e05d651319ba67aa2c7c694094ac4e7ec622c7690c8f79a967",
+      "backend/evaluation/selection-poc/ollama.ts": "167a04fe9193c04a01bfd11b2360d115b97601ed87f6d48689d81aa34e12beba",
+      "backend/evaluation/selection-poc/assessSelection.ts": "1093c288bd841839866080d2e823fe9a8d19fa081839777e1df1ae1b63dfde44",
+      "backend/evaluation/selection-poc/cases-v1.json": "cd20106e24e0d55fdb6c457551d14a5ce3e301f3256f7d834bc092afe8c8dd7b",
+      "backend/src/semanticModelSchema.ts": "d64ece456b0177229cfa1da0468accb6a765e4347b1d806cd85da7c848d8d18a",
+      "backend/src/semanticUiPlan.ts": "a6adf69619bd36a37b4679c35b480e8e32fc446389e570ef83843bd7decf6d57",
+      "backend/src/compileSemanticUiPlan.ts": "1bdbd42435e2414c4d323831b8645c683141aef8e528e841af8de4305851fb96",
+      "backend/src/ollamaProvider.ts": "0f3608e9ba6eea040afe5e1fd73a80e3046b2b766ea3e346c75873b8afb9ccd4",
+      "backend/src/modelSchema.ts": "f4884911eb846c11a4bc28322b625c3551889ee185b5d66aadb9074dbd8a4192",
+      "src/specification/generateTsx.ts": "c109107885d350343eebd0525deabb89c1ec2a7a9c93304f4b517213f8ffada1"
+    }
+  },
+  "unchanged": true
+}

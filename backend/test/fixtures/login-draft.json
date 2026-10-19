@@ -1,0 +1,8 @@
+{
+  "irVersion": "1", "status": "supported",
+  "root": { "type": "form", "props": { "label": "Login" }, "children": [
+    { "type": "emailInput", "props": { "label": "Email", "required": true, "disabled": false } },
+    { "type": "passwordInput", "props": { "label": "Password", "required": true } },
+    { "type": "button", "props": { "label": "Login", "type": "submit", "disabled": false } }
+  ] }
+}

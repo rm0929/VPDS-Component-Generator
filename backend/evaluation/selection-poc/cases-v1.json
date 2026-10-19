@@ -1,0 +1,33 @@
+{
+  "version": "selection-poc-cases-v1",
+  "rules": {
+    "labels": "Trim and compare case-insensitively; preserve actual labels in the specification.",
+    "properties": "Check only explicitly expected properties; preserve explicit false.",
+    "order": "Expected components are ordered; missing and extra components are reported.",
+    "rows": "Zero-based expected component positions must share one row in order with exact membership.",
+    "scope": "The last case tests a PoC composition limit, not a missing Nova capability."
+  },
+  "cases": [
+    { "id": "text-entry", "prompt": "An optional, enabled Display name field, limited to 32 characters.", "expected": "supported", "formLabel": null,
+      "components": [{ "type": "textInput", "props": { "label": "Display name", "required": false, "disabled": false, "maxLength": 32 } }], "rows": [] },
+    { "id": "email", "prompt": "A required Email field with placeholder you@example.com.", "expected": "supported", "formLabel": null,
+      "components": [{ "type": "emailInput", "props": { "label": "Email", "required": true, "placeholder": "you@example.com" } }], "rows": [] },
+    { "id": "password", "prompt": "A disabled password field labeled Secret, limited to 72 characters.", "expected": "supported", "formLabel": null,
+      "components": [{ "type": "passwordInput", "props": { "label": "Secret", "disabled": true, "maxLength": 72 } }], "rows": [] },
+    { "id": "checkbox", "prompt": "An optional, enabled checkbox labeled Notify me.", "expected": "supported", "formLabel": null,
+      "components": [{ "type": "checkbox", "props": { "label": "Notify me", "required": false, "disabled": false } }], "rows": [] },
+    { "id": "content-action", "prompt": "An Account details level-two heading, a Review your choices paragraph, and a disabled Continue button. No form.", "expected": "supported", "formLabel": null,
+      "components": [{ "type": "heading", "props": { "content": "Account details", "level": 2 } }, { "type": "text", "props": { "content": "Review your choices" } }, { "type": "button", "props": { "label": "Continue", "type": "button", "disabled": true } }], "rows": [] },
+    { "id": "form-row", "prompt": "A Contact details form: Full name and Team side by side, Email below, then a Send submit button.", "expected": "supported", "formLabel": "Contact details",
+      "components": [{ "type": "textInput", "props": { "label": "Full name" } }, { "type": "textInput", "props": { "label": "Team" } }, { "type": "emailInput", "props": { "label": "Email" } }, { "type": "button", "props": { "label": "Send", "type": "submit" } }], "rows": [[0, 1]] },
+    { "id": "mixed", "prompt": "A Ready paragraph beside an enabled Inspect button, with an optional Notes field below. No form.", "expected": "supported", "formLabel": null,
+      "components": [{ "type": "text", "props": { "content": "Ready" } }, { "type": "button", "props": { "label": "Inspect", "type": "button", "disabled": false } }, { "type": "textInput", "props": { "label": "Notes", "required": false } }], "rows": [[0, 1]] },
+    { "id": "negation", "prompt": "An Access form with Email, Password, and an Enter submit button. Exclude headings and checkboxes.", "expected": "supported", "formLabel": "Access",
+      "components": [{ "type": "emailInput", "props": { "label": "Email" } }, { "type": "passwordInput", "props": { "label": "Password" } }, { "type": "button", "props": { "label": "Enter", "type": "submit" } }], "rows": [], "forbiddenTypes": ["heading", "checkbox"] },
+    { "id": "repeated-actions", "prompt": "A Preferences form with two optional fields both labeled Code, then Reset and Apply buttons of types reset and submit.", "expected": "supported", "formLabel": "Preferences",
+      "components": [{ "type": "textInput", "props": { "label": "Code", "required": false } }, { "type": "textInput", "props": { "label": "Code", "required": false } }, { "type": "button", "props": { "label": "Reset", "type": "reset" } }, { "type": "button", "props": { "label": "Apply", "type": "submit" } }], "rows": [] },
+    { "id": "unsupported-control", "prompt": "A country-selection dropdown.", "expected": "unsupported", "unsupported": ["component"] },
+    { "id": "unsupported-behavior", "prompt": "A form that saves its entries to a remote API.", "expected": "unsupported", "unsupported": ["behavior"] },
+    { "id": "poc-composition-limit", "prompt": "Two independent forms, one for search and one for updates.", "expected": "poc-scope", "unsupported": ["composition"] }
+  ]
+}

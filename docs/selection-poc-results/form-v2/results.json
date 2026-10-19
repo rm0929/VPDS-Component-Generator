@@ -1,0 +1,228 @@
+[
+  {
+    "event": "metadata",
+    "ollamaVersion": "0.40.5",
+    "modelDigest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0",
+    "model": "qwen3:4b-instruct",
+    "datasetHash": "cd20106e24e0d55fdb6c457551d14a5ce3e301f3256f7d834bc092afe8c8dd7b",
+    "schemaHash": "385bab39b1c0e9fe1f9b3f1da0f1011cb76a34f43edfc1f33e04ad30854d23ad",
+    "promptHash": "c50372ff66d3568ad1da08a7040fbe933fda546f3a6e44d92d9993a89f65700f",
+    "settings": {
+      "temperature": 0,
+      "seed": 0,
+      "contextSize": 8192,
+      "maxOutputTokens": 2048,
+      "responseLimitBytes": 65536,
+      "timeoutMs": 60000,
+      "think": false,
+      "stream": false
+    },
+    "gate": "All three feasibility cases must pass selection, order, row, form, naming, specification and TSX checks.",
+    "responsiveness": "Browser responsiveness and breakpoints are not represented or verified."
+  },
+  {
+    "event": "result",
+    "caseId": "email-label",
+    "phase": "feasibility",
+    "run": 1,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": true,
+    "tsxValid": true,
+    "passed": true,
+    "durationMs": 4522,
+    "inferenceMs": 4145,
+    "assessment": {
+      "selectedTypes": [
+        "emailInput"
+      ],
+      "actions": [],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {}
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": true,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": true,
+      "formCorrect": true,
+      "layoutCorrect": true
+    },
+    "form": {
+      "enabled": false,
+      "labelProvided": false,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "responsive-login",
+    "phase": "feasibility",
+    "run": 1,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": true,
+    "tsxValid": true,
+    "passed": true,
+    "durationMs": 2647,
+    "inferenceMs": 2405,
+    "assessment": {
+      "selectedTypes": [
+        "emailInput",
+        "passwordInput",
+        "checkbox",
+        "button"
+      ],
+      "actions": [
+        {
+          "index": 3,
+          "type": "submit"
+        }
+      ],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "label": true
+          }
+        },
+        {
+          "expectedIndex": 1,
+          "selectedIndex": 1,
+          "typeCorrect": true,
+          "properties": {
+            "label": true
+          }
+        },
+        {
+          "expectedIndex": 2,
+          "selectedIndex": 2,
+          "typeCorrect": true,
+          "properties": {
+            "label": true
+          }
+        },
+        {
+          "expectedIndex": 3,
+          "selectedIndex": 3,
+          "typeCorrect": true,
+          "properties": {}
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": true,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": true,
+      "formCorrect": true,
+      "layoutCorrect": true
+    },
+    "form": {
+      "enabled": true,
+      "labelProvided": true,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "profile-row",
+    "phase": "feasibility",
+    "run": 1,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": true,
+    "tsxValid": true,
+    "passed": false,
+    "durationMs": 2655,
+    "inferenceMs": 2456,
+    "assessment": {
+      "selectedTypes": [
+        "textInput",
+        "textInput",
+        "emailInput",
+        "button"
+      ],
+      "actions": [
+        {
+          "index": 3,
+          "type": "submit"
+        }
+      ],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "label": true
+          }
+        },
+        {
+          "expectedIndex": 1,
+          "selectedIndex": 1,
+          "typeCorrect": true,
+          "properties": {
+            "label": true
+          }
+        },
+        {
+          "expectedIndex": 2,
+          "selectedIndex": 2,
+          "typeCorrect": true,
+          "properties": {
+            "label": true
+          }
+        },
+        {
+          "expectedIndex": 3,
+          "selectedIndex": 3,
+          "typeCorrect": true,
+          "properties": {
+            "label": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": true,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": false,
+      "formCorrect": true,
+      "layoutCorrect": false
+    },
+    "form": {
+      "enabled": true,
+      "labelProvided": true,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "gate",
+    "passed": false,
+    "benchmarkRequested": true
+  },
+  {
+    "event": "complete",
+    "feasibilityCalls": 3,
+    "benchmarkCalls": 0
+  }
+]

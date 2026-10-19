@@ -1,0 +1,55 @@
+{
+  "version": "1.0",
+  "root": {
+    "id": "node-0",
+    "type": "form",
+    "props": {
+      "label": "Preferences"
+    },
+    "children": [
+      {
+        "id": "node-0-0",
+        "type": "verticalLayout",
+        "props": {
+          "gap": "medium"
+        },
+        "children": [
+          {
+            "id": "node-0-0-0",
+            "type": "textInput",
+            "props": {
+              "name": "code",
+              "label": "Code",
+              "required": false
+            }
+          },
+          {
+            "id": "node-0-0-1",
+            "type": "textInput",
+            "props": {
+              "name": "code-2",
+              "label": "Code",
+              "required": false
+            }
+          },
+          {
+            "id": "node-0-0-2",
+            "type": "button",
+            "props": {
+              "label": "Reset",
+              "type": "reset"
+            }
+          },
+          {
+            "id": "node-0-0-3",
+            "type": "button",
+            "props": {
+              "label": "Apply",
+              "type": "submit"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

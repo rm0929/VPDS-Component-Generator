@@ -1,0 +1,3094 @@
+{
+  "variant": "ui-only-interpretation-v1",
+  "retain": true,
+  "reasons": [],
+  "regressions": [],
+  "improvements": [],
+  "before": {
+    "cases": 58,
+    "supportedCases": 50,
+    "schemaValidityRate": 0,
+    "completeCoverageRate": 0,
+    "requirementCoverageRate": 0,
+    "unsupportedAccuracy": 1,
+    "falseUnsupportedCount": 50,
+    "forbiddenViolatingCases": 0,
+    "relationshipFailures": 0,
+    "layout": {
+      "assessed": 0,
+      "unassessed": 50,
+      "overBudgetCases": 0,
+      "meanCount": null,
+      "meanDepth": null,
+      "meanSingleChild": null,
+      "meanRepeatedDirectionEdges": null
+    },
+    "latencyMs": {
+      "median": 558,
+      "p95": 822,
+      "successfulMedian": null,
+      "unsuccessfulMedian": 558
+    }
+  },
+  "after": {
+    "cases": 58,
+    "supportedCases": 50,
+    "schemaValidityRate": 0,
+    "completeCoverageRate": 0,
+    "requirementCoverageRate": 0,
+    "unsupportedAccuracy": 1,
+    "falseUnsupportedCount": 50,
+    "forbiddenViolatingCases": 0,
+    "relationshipFailures": 0,
+    "layout": {
+      "assessed": 0,
+      "unassessed": 50,
+      "overBudgetCases": 0,
+      "meanCount": null,
+      "meanDepth": null,
+      "meanSingleChild": null,
+      "meanRepeatedDirectionEdges": null
+    },
+    "latencyMs": {
+      "median": 530,
+      "p95": 722,
+      "successfulMedian": null,
+      "unsuccessfulMedian": 530
+    }
+  },
+  "perCase": [
+    {
+      "caseId": "registration",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 790,
+          "p95": 3990,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 790
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 567,
+          "p95": 2311,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 567
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        }
+      }
+    },
+    {
+      "caseId": "login",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 820,
+          "p95": 834,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 820
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 528,
+          "p95": 541,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 528
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        }
+      }
+    },
+    {
+      "caseId": "contact",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 558,
+          "p95": 643,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 558
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 524,
+          "p95": 538,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 524
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        }
+      }
+    },
+    {
+      "caseId": "split-name",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 553,
+          "p95": 558,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 553
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 521,
+          "p95": 526,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 521
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        }
+      }
+    },
+    {
+      "caseId": "password-reset",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 736,
+          "p95": 771,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 736
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 494,
+          "p95": 516,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 494
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        }
+      }
+    },
+    {
+      "caseId": "simple-login",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 793,
+          "p95": 809,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 793
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 543,
+          "p95": 574,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 543
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        }
+      }
+    },
+    {
+      "caseId": "horizontal-content",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 458,
+          "p95": 476,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 458
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 485,
+          "p95": 505,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 485
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        }
+      }
+    },
+    {
+      "caseId": "layout-properties",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 480,
+          "p95": 524,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 480
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 473,
+          "p95": 524,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 473
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        }
+      }
+    },
+    {
+      "caseId": "field-properties",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 785,
+          "p95": 811,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 785
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 530,
+          "p95": 556,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 530
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        }
+      }
+    },
+    {
+      "caseId": "unsupported-widget",
+      "before": {
+        "cases": 2,
+        "supportedCases": 0,
+        "schemaValidityRate": null,
+        "completeCoverageRate": null,
+        "requirementCoverageRate": null,
+        "unsupportedAccuracy": 1,
+        "falseUnsupportedCount": 0,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 0,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 715,
+          "p95": 733,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 715
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 0,
+        "schemaValidityRate": null,
+        "completeCoverageRate": null,
+        "requirementCoverageRate": null,
+        "unsupportedAccuracy": 1,
+        "falseUnsupportedCount": 0,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 0,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 490,
+          "p95": 491,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 490
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 0,
+            "falseUnsupportedCount": 0,
+            "falseUnsupportedRate": null,
+            "unsupportedAttempts": 2,
+            "correctUnsupportedCount": 2,
+            "correctUnsupportedRate": 1,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 0,
+            "falseUnsupportedCount": 0,
+            "falseUnsupportedRate": null,
+            "unsupportedAttempts": 2,
+            "correctUnsupportedCount": 2,
+            "correctUnsupportedRate": 1,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        }
+      }
+    },
+    {
+      "caseId": "unsupported-behavior",
+      "before": {
+        "cases": 2,
+        "supportedCases": 0,
+        "schemaValidityRate": null,
+        "completeCoverageRate": null,
+        "requirementCoverageRate": null,
+        "unsupportedAccuracy": 1,
+        "falseUnsupportedCount": 0,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 0,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 541,
+          "p95": 569,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 541
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 0,
+        "schemaValidityRate": null,
+        "completeCoverageRate": null,
+        "requirementCoverageRate": null,
+        "unsupportedAccuracy": 1,
+        "falseUnsupportedCount": 0,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 0,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 537,
+          "p95": 568,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 537
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 0,
+            "falseUnsupportedCount": 0,
+            "falseUnsupportedRate": null,
+            "unsupportedAttempts": 2,
+            "correctUnsupportedCount": 2,
+            "correctUnsupportedRate": 1,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 0,
+            "falseUnsupportedCount": 0,
+            "falseUnsupportedRate": null,
+            "unsupportedAttempts": 2,
+            "correctUnsupportedCount": 2,
+            "correctUnsupportedRate": 1,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        }
+      }
+    },
+    {
+      "caseId": "c-text-input",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 491,
+          "p95": 498,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 491
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 556,
+          "p95": 562,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 556
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        }
+      }
+    },
+    {
+      "caseId": "c-email-input",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 452,
+          "p95": 477,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 452
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 529,
+          "p95": 545,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 529
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        }
+      }
+    },
+    {
+      "caseId": "c-password-input",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 499,
+          "p95": 503,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 499
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 486,
+          "p95": 506,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 486
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        }
+      }
+    },
+    {
+      "caseId": "c-checkbox",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 448,
+          "p95": 451,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 448
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 477,
+          "p95": 497,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 477
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        }
+      }
+    },
+    {
+      "caseId": "c-button",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 493,
+          "p95": 497,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 493
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 545,
+          "p95": 590,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 545
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        }
+      }
+    },
+    {
+      "caseId": "c-text",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 447,
+          "p95": 455,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 447
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 474,
+          "p95": 538,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 474
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        }
+      }
+    },
+    {
+      "caseId": "c-heading",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 461,
+          "p95": 464,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 461
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 483,
+          "p95": 527,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 483
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        }
+      }
+    },
+    {
+      "caseId": "c-row",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 491,
+          "p95": 498,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 491
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 481,
+          "p95": 495,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 481
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 2,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 2,
+            "checkPassRate": 0,
+            "relationshipAttempts": 2,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": 0
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 2,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 2,
+            "checkPassRate": 0,
+            "relationshipAttempts": 2,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": 0
+          }
+        }
+      }
+    },
+    {
+      "caseId": "c-column",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 491,
+          "p95": 497,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 491
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 473,
+          "p95": 506,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 473
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 2,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 2,
+            "checkPassRate": 0,
+            "relationshipAttempts": 2,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": 0
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 2,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 2,
+            "checkPassRate": 0,
+            "relationshipAttempts": 2,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": 0
+          }
+        }
+      }
+    },
+    {
+      "caseId": "c-form-actions",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 775,
+          "p95": 804,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 775
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 525,
+          "p95": 546,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 525
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 4,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 4,
+            "checkPassRate": 0,
+            "relationshipAttempts": 2,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": 0
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 4,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 4,
+            "checkPassRate": 0,
+            "relationshipAttempts": 2,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": 0
+          }
+        }
+      }
+    },
+    {
+      "caseId": "c-profile",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 800,
+          "p95": 822,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 800
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 538,
+          "p95": 540,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 538
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 6,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 6,
+            "checkPassRate": 0,
+            "relationshipAttempts": 2,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": 0
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 6,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 6,
+            "checkPassRate": 0,
+            "relationshipAttempts": 2,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": 0
+          }
+        }
+      }
+    },
+    {
+      "caseId": "c-newsletter",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 732,
+          "p95": 735,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 732
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 548,
+          "p95": 564,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 548
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        }
+      }
+    },
+    {
+      "caseId": "c-negation-login",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 751,
+          "p95": 758,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 751
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 530,
+          "p95": 555,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 530
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        }
+      }
+    },
+    {
+      "caseId": "c-ui-only-login",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 784,
+          "p95": 820,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 784
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 545,
+          "p95": 557,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 545
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        }
+      }
+    },
+    {
+      "caseId": "c-mixed",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 721,
+          "p95": 746,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 721
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 722,
+          "p95": 739,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 722
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 6,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 6,
+            "checkPassRate": 0,
+            "relationshipAttempts": 2,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": 0
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 6,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 6,
+            "checkPassRate": 0,
+            "relationshipAttempts": 2,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": 0
+          }
+        }
+      }
+    },
+    {
+      "caseId": "c-repeated-fields",
+      "before": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 725,
+          "p95": 739,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 725
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 2,
+        "schemaValidityRate": 0,
+        "completeCoverageRate": 0,
+        "requirementCoverageRate": 0,
+        "unsupportedAccuracy": null,
+        "falseUnsupportedCount": 2,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 2,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 532,
+          "p95": 548,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 532
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 2,
+            "falseUnsupportedCount": 2,
+            "falseUnsupportedRate": 1,
+            "unsupportedAttempts": 0,
+            "correctUnsupportedCount": 0,
+            "correctUnsupportedRate": null,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        }
+      }
+    },
+    {
+      "caseId": "c-unsupported-image",
+      "before": {
+        "cases": 2,
+        "supportedCases": 0,
+        "schemaValidityRate": null,
+        "completeCoverageRate": null,
+        "requirementCoverageRate": null,
+        "unsupportedAccuracy": 1,
+        "falseUnsupportedCount": 0,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 0,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 506,
+          "p95": 514,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 506
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 0,
+        "schemaValidityRate": null,
+        "completeCoverageRate": null,
+        "requirementCoverageRate": null,
+        "unsupportedAccuracy": 1,
+        "falseUnsupportedCount": 0,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 0,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 477,
+          "p95": 547,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 477
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 0,
+            "falseUnsupportedCount": 0,
+            "falseUnsupportedRate": null,
+            "unsupportedAttempts": 2,
+            "correctUnsupportedCount": 2,
+            "correctUnsupportedRate": 1,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 0,
+            "falseUnsupportedCount": 0,
+            "falseUnsupportedRate": null,
+            "unsupportedAttempts": 2,
+            "correctUnsupportedCount": 2,
+            "correctUnsupportedRate": 1,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        }
+      }
+    },
+    {
+      "caseId": "c-unsupported-storage",
+      "before": {
+        "cases": 2,
+        "supportedCases": 0,
+        "schemaValidityRate": null,
+        "completeCoverageRate": null,
+        "requirementCoverageRate": null,
+        "unsupportedAccuracy": 1,
+        "falseUnsupportedCount": 0,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 0,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 530,
+          "p95": 590,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 530
+        }
+      },
+      "after": {
+        "cases": 2,
+        "supportedCases": 0,
+        "schemaValidityRate": null,
+        "completeCoverageRate": null,
+        "requirementCoverageRate": null,
+        "unsupportedAccuracy": 1,
+        "falseUnsupportedCount": 0,
+        "forbiddenViolatingCases": 0,
+        "relationshipFailures": 0,
+        "layout": {
+          "assessed": 0,
+          "unassessed": 0,
+          "overBudgetCases": 0,
+          "meanCount": null,
+          "meanDepth": null,
+          "meanSingleChild": null,
+          "meanRepeatedDirectionEdges": null
+        },
+        "latencyMs": {
+          "median": 529,
+          "p95": 555,
+          "successfulMedian": null,
+          "unsuccessfulMedian": 529
+        }
+      },
+      "decreasedQualityMetrics": [],
+      "increasedLayoutMetrics": [],
+      "semanticMetrics": {
+        "before": {
+          "classification": {
+            "supportedAttempts": 0,
+            "falseUnsupportedCount": 0,
+            "falseUnsupportedRate": null,
+            "unsupportedAttempts": 2,
+            "correctUnsupportedCount": 2,
+            "correctUnsupportedRate": 1,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        },
+        "after": {
+          "classification": {
+            "supportedAttempts": 0,
+            "falseUnsupportedCount": 0,
+            "falseUnsupportedRate": null,
+            "unsupportedAttempts": 2,
+            "correctUnsupportedCount": 2,
+            "correctUnsupportedRate": 1,
+            "falseAcceptanceCount": 0,
+            "otherUnsupportedFailures": 0
+          },
+          "layoutAccuracy": {
+            "expectedChecks": 0,
+            "assessedChecks": 0,
+            "passedChecks": 0,
+            "unassessedChecks": 0,
+            "checkPassRate": null,
+            "relationshipAttempts": 0,
+            "accurateAttempts": 0,
+            "completeRelationshipRate": null
+          }
+        }
+      }
+    }
+  ],
+  "semanticMetrics": {
+    "before": {
+      "classification": {
+        "supportedAttempts": 50,
+        "falseUnsupportedCount": 50,
+        "falseUnsupportedRate": 1,
+        "unsupportedAttempts": 8,
+        "correctUnsupportedCount": 8,
+        "correctUnsupportedRate": 1,
+        "falseAcceptanceCount": 0,
+        "otherUnsupportedFailures": 0
+      },
+      "layoutAccuracy": {
+        "expectedChecks": 20,
+        "assessedChecks": 0,
+        "passedChecks": 0,
+        "unassessedChecks": 20,
+        "checkPassRate": 0,
+        "relationshipAttempts": 10,
+        "accurateAttempts": 0,
+        "completeRelationshipRate": 0
+      }
+    },
+    "after": {
+      "classification": {
+        "supportedAttempts": 50,
+        "falseUnsupportedCount": 50,
+        "falseUnsupportedRate": 1,
+        "unsupportedAttempts": 8,
+        "correctUnsupportedCount": 8,
+        "correctUnsupportedRate": 1,
+        "falseAcceptanceCount": 0,
+        "otherUnsupportedFailures": 0
+      },
+      "layoutAccuracy": {
+        "expectedChecks": 20,
+        "assessedChecks": 0,
+        "passedChecks": 0,
+        "unassessedChecks": 20,
+        "checkPassRate": 0,
+        "relationshipAttempts": 10,
+        "accurateAttempts": 0,
+        "completeRelationshipRate": 0
+      }
+    }
+  }
+}

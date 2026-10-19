@@ -7,7 +7,11 @@
     "dev": "node --env-file-if-exists=.env --import tsx --watch src/server.ts",
     "build": "tsc -p tsconfig.build.json",
     "start": "node --env-file-if-exists=.env dist/backend/src/server.js",
-    "test": "tsc -p tsconfig.json && vitest run --config vitest.config.mts"
+    "test": "tsc -p tsconfig.json && vitest run --config vitest.config.mts",
+    "eval:coverage": "tsx evaluation/runCoverage.ts",
+    "eval:ollama": "node --env-file-if-exists=.env --import tsx evaluation/runOllama.ts",
+    "eval:compare": "node --import tsx evaluation/compareExperiments.ts",
+    "poc:feasibility": "node --env-file-if-exists=.env --import tsx evaluation/selection-poc/runFeasibility.ts"
   },
   "dependencies": {
     "cors": "2.8.6",

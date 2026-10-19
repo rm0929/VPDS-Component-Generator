@@ -1,0 +1,36 @@
+{
+  "version": "1.0",
+  "root": {
+    "id": "node-0",
+    "type": "verticalLayout",
+    "props": {
+      "gap": "medium"
+    },
+    "children": [
+      {
+        "id": "node-0-0",
+        "type": "heading",
+        "props": {
+          "content": "Review your choices",
+          "level": 2
+        }
+      },
+      {
+        "id": "node-0-1",
+        "type": "text",
+        "props": {
+          "content": "Review your choices"
+        }
+      },
+      {
+        "id": "node-0-2",
+        "type": "button",
+        "props": {
+          "label": "Continue",
+          "type": "button",
+          "disabled": true
+        }
+      }
+    ]
+  }
+}

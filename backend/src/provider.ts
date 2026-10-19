@@ -4,6 +4,8 @@ import { ApiError } from './errors';
 export interface GenerationProvider {
   readonly id: string;
   readonly isMock: boolean;
+  /** Local inference can need a longer deadline than the deterministic mock. */
+  readonly timeoutMs?: number;
   generate(prompt: string, options: { signal: AbortSignal }): Promise<unknown>;
 }
 

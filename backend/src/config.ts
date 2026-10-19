@@ -8,7 +8,7 @@ const origin = z.string().refine(value => {
 }, 'Use an exact HTTP(S) origin without paths, credentials, or a trailing slash');
 
 const environmentSchema = z.object({
-  API_HOST: z.enum(['127.0.0.1', 'localhost', '0.0.0.0', '::1']).default('127.0.0.1'),
+  API_HOST: z.enum(['127.0.0.1', 'localhost', '::1']).default('127.0.0.1'),
   API_PORT: z.coerce.number().int().min(1).max(65535).default(3001),
   API_CORS_ORIGINS: z.string().default('http://localhost:5173,http://127.0.0.1:5173')
     .transform(value => value.split(',').map(item => item.trim()))
@@ -23,7 +23,7 @@ const environmentSchema = z.object({
 export function readConfig(environment: NodeJS.ProcessEnv = process.env) {
   const env = environmentSchema.parse(environment);
   return {
-    host: env.API_HOST, port: env.API_PORT, corsOrigins: env.API_CORS_ORIGINS,
+    host: env.API_HOST === 'localhost' ? '127.0.0.1' : env.API_HOST, port: env.API_PORT, corsOrigins: env.API_CORS_ORIGINS,
     bodyLimitBytes: env.API_BODY_LIMIT_BYTES,
     generationTimeoutMs: env.API_GENERATION_TIMEOUT_MS, requestTimeoutMs: env.API_REQUEST_TIMEOUT_MS,
   };

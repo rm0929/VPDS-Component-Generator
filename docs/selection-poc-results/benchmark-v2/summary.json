@@ -1,0 +1,1199 @@
+{
+  "attempts": 36,
+  "successes": 15,
+  "selectionValid": 30,
+  "supported": {
+    "attempts": 27,
+    "successes": 12,
+    "measuredSelections": 27,
+    "typesExact": 27,
+    "propertiesCorrect": 21,
+    "orderCorrect": 27,
+    "rowsCorrect": 24,
+    "formIntentCorrect": 21,
+    "formMembershipCorrect": 21,
+    "nameCorrect": 27,
+    "componentPropertiesCorrect": 21,
+    "missingComponents": 0,
+    "extraComponents": 0,
+    "forbiddenComponents": 0,
+    "propertyPasses": 120,
+    "propertyTotal": 126,
+    "specificationValid": 27,
+    "tsxValid": 27,
+    "falseUnsupported": 0
+  },
+  "rowRequested": {
+    "attempts": 6,
+    "correct": 3
+  },
+  "unsupported": {
+    "attempts": 9,
+    "correct": 3,
+    "invalidOutput": 6,
+    "unexpectedSpecification": 0
+  },
+  "failureStages": {
+    "unsupported": 3,
+    "selection_schema": 6
+  },
+  "latencyAll": {
+    "count": 36,
+    "medianMs": 1752.5,
+    "p95NearestRankMs": 2690,
+    "minMs": 794,
+    "maxMs": 4834
+  },
+  "latencySuccesses": {
+    "count": 15,
+    "medianMs": 2210,
+    "p95NearestRankMs": 2690,
+    "minMs": 813,
+    "maxMs": 2690
+  },
+  "latencyFailures": {
+    "count": 21,
+    "medianMs": 1706,
+    "p95NearestRankMs": 2644,
+    "minMs": 794,
+    "maxMs": 4834
+  },
+  "requestSelectionLatency": {
+    "count": 30,
+    "medianMs": 2019.5,
+    "p95NearestRankMs": 2502,
+    "minMs": 813,
+    "maxMs": 4477
+  },
+  "requestSelectionLatencyMissing": 6,
+  "perCase": [
+    {
+      "id": "text-entry",
+      "expected": "supported",
+      "successes": 0,
+      "attempts": [
+        {
+          "run": 1,
+          "passed": false,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 4834,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": true,
+            "propertyPasses": 4,
+            "propertyTotal": 4,
+            "propertyFailures": [],
+            "orderCorrect": true,
+            "rowsCorrect": true,
+            "expectedRows": [],
+            "selectedRows": [],
+            "formIntentCorrect": false,
+            "formMembershipCorrect": false,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": true
+          }
+        },
+        {
+          "run": 2,
+          "passed": false,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 1631,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": true,
+            "propertyPasses": 4,
+            "propertyTotal": 4,
+            "propertyFailures": [],
+            "orderCorrect": true,
+            "rowsCorrect": true,
+            "expectedRows": [],
+            "selectedRows": [],
+            "formIntentCorrect": false,
+            "formMembershipCorrect": false,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": true
+          }
+        },
+        {
+          "run": 3,
+          "passed": false,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 1706,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": true,
+            "propertyPasses": 4,
+            "propertyTotal": 4,
+            "propertyFailures": [],
+            "orderCorrect": true,
+            "rowsCorrect": true,
+            "expectedRows": [],
+            "selectedRows": [],
+            "formIntentCorrect": false,
+            "formMembershipCorrect": false,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": true
+          }
+        }
+      ],
+      "latency": {
+        "count": 3,
+        "medianMs": 1706,
+        "p95NearestRankMs": 4834,
+        "minMs": 1631,
+        "maxMs": 4834
+      }
+    },
+    {
+      "id": "email",
+      "expected": "supported",
+      "successes": 3,
+      "attempts": [
+        {
+          "run": 1,
+          "passed": true,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 1587,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": true,
+            "propertyPasses": 3,
+            "propertyTotal": 3,
+            "propertyFailures": [],
+            "orderCorrect": true,
+            "rowsCorrect": true,
+            "expectedRows": [],
+            "selectedRows": [],
+            "formIntentCorrect": true,
+            "formMembershipCorrect": true,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": true
+          }
+        },
+        {
+          "run": 2,
+          "passed": true,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 1535,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": true,
+            "propertyPasses": 3,
+            "propertyTotal": 3,
+            "propertyFailures": [],
+            "orderCorrect": true,
+            "rowsCorrect": true,
+            "expectedRows": [],
+            "selectedRows": [],
+            "formIntentCorrect": true,
+            "formMembershipCorrect": true,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": true
+          }
+        },
+        {
+          "run": 3,
+          "passed": true,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 1574,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": true,
+            "propertyPasses": 3,
+            "propertyTotal": 3,
+            "propertyFailures": [],
+            "orderCorrect": true,
+            "rowsCorrect": true,
+            "expectedRows": [],
+            "selectedRows": [],
+            "formIntentCorrect": true,
+            "formMembershipCorrect": true,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": true
+          }
+        }
+      ],
+      "latency": {
+        "count": 3,
+        "medianMs": 1574,
+        "p95NearestRankMs": 1587,
+        "minMs": 1535,
+        "maxMs": 1587
+      }
+    },
+    {
+      "id": "password",
+      "expected": "supported",
+      "successes": 0,
+      "attempts": [
+        {
+          "run": 1,
+          "passed": false,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 1774,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": false,
+            "propertyPasses": 2,
+            "propertyTotal": 3,
+            "propertyFailures": [
+              {
+                "expectedIndex": 0,
+                "property": "disabled",
+                "propertyPresent": false
+              }
+            ],
+            "orderCorrect": true,
+            "rowsCorrect": true,
+            "expectedRows": [],
+            "selectedRows": [],
+            "formIntentCorrect": true,
+            "formMembershipCorrect": true,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": false
+          }
+        },
+        {
+          "run": 2,
+          "passed": false,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 1753,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": false,
+            "propertyPasses": 2,
+            "propertyTotal": 3,
+            "propertyFailures": [
+              {
+                "expectedIndex": 0,
+                "property": "disabled",
+                "propertyPresent": false
+              }
+            ],
+            "orderCorrect": true,
+            "rowsCorrect": true,
+            "expectedRows": [],
+            "selectedRows": [],
+            "formIntentCorrect": true,
+            "formMembershipCorrect": true,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": false
+          }
+        },
+        {
+          "run": 3,
+          "passed": false,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 1752,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": false,
+            "propertyPasses": 2,
+            "propertyTotal": 3,
+            "propertyFailures": [
+              {
+                "expectedIndex": 0,
+                "property": "disabled",
+                "propertyPresent": false
+              }
+            ],
+            "orderCorrect": true,
+            "rowsCorrect": true,
+            "expectedRows": [],
+            "selectedRows": [],
+            "formIntentCorrect": true,
+            "formMembershipCorrect": true,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": false
+          }
+        }
+      ],
+      "latency": {
+        "count": 3,
+        "medianMs": 1753,
+        "p95NearestRankMs": 1774,
+        "minMs": 1752,
+        "maxMs": 1774
+      }
+    },
+    {
+      "id": "checkbox",
+      "expected": "supported",
+      "successes": 0,
+      "attempts": [
+        {
+          "run": 1,
+          "passed": false,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 1371,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": true,
+            "propertyPasses": 3,
+            "propertyTotal": 3,
+            "propertyFailures": [],
+            "orderCorrect": true,
+            "rowsCorrect": true,
+            "expectedRows": [],
+            "selectedRows": [],
+            "formIntentCorrect": false,
+            "formMembershipCorrect": false,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": true
+          }
+        },
+        {
+          "run": 2,
+          "passed": false,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 1379,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": true,
+            "propertyPasses": 3,
+            "propertyTotal": 3,
+            "propertyFailures": [],
+            "orderCorrect": true,
+            "rowsCorrect": true,
+            "expectedRows": [],
+            "selectedRows": [],
+            "formIntentCorrect": false,
+            "formMembershipCorrect": false,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": true
+          }
+        },
+        {
+          "run": 3,
+          "passed": false,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 1362,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": true,
+            "propertyPasses": 3,
+            "propertyTotal": 3,
+            "propertyFailures": [],
+            "orderCorrect": true,
+            "rowsCorrect": true,
+            "expectedRows": [],
+            "selectedRows": [],
+            "formIntentCorrect": false,
+            "formMembershipCorrect": false,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": true
+          }
+        }
+      ],
+      "latency": {
+        "count": 3,
+        "medianMs": 1371,
+        "p95NearestRankMs": 1379,
+        "minMs": 1362,
+        "maxMs": 1379
+      }
+    },
+    {
+      "id": "content-action",
+      "expected": "supported",
+      "successes": 0,
+      "attempts": [
+        {
+          "run": 1,
+          "passed": false,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 2327,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": false,
+            "propertyPasses": 5,
+            "propertyTotal": 6,
+            "propertyFailures": [
+              {
+                "expectedIndex": 0,
+                "property": "content",
+                "propertyPresent": true,
+                "caseOrOuterWhitespaceOnly": false
+              }
+            ],
+            "orderCorrect": true,
+            "rowsCorrect": true,
+            "expectedRows": [],
+            "selectedRows": [],
+            "formIntentCorrect": true,
+            "formMembershipCorrect": true,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": false
+          }
+        },
+        {
+          "run": 2,
+          "passed": false,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 2319,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": false,
+            "propertyPasses": 5,
+            "propertyTotal": 6,
+            "propertyFailures": [
+              {
+                "expectedIndex": 0,
+                "property": "content",
+                "propertyPresent": true,
+                "caseOrOuterWhitespaceOnly": false
+              }
+            ],
+            "orderCorrect": true,
+            "rowsCorrect": true,
+            "expectedRows": [],
+            "selectedRows": [],
+            "formIntentCorrect": true,
+            "formMembershipCorrect": true,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": false
+          }
+        },
+        {
+          "run": 3,
+          "passed": false,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 2330,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": false,
+            "propertyPasses": 5,
+            "propertyTotal": 6,
+            "propertyFailures": [
+              {
+                "expectedIndex": 0,
+                "property": "content",
+                "propertyPresent": true,
+                "caseOrOuterWhitespaceOnly": false
+              }
+            ],
+            "orderCorrect": true,
+            "rowsCorrect": true,
+            "expectedRows": [],
+            "selectedRows": [],
+            "formIntentCorrect": true,
+            "formMembershipCorrect": true,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": false
+          }
+        }
+      ],
+      "latency": {
+        "count": 3,
+        "medianMs": 2327,
+        "p95NearestRankMs": 2330,
+        "minMs": 2319,
+        "maxMs": 2330
+      }
+    },
+    {
+      "id": "form-row",
+      "expected": "supported",
+      "successes": 0,
+      "attempts": [
+        {
+          "run": 1,
+          "passed": false,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 2644,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": true,
+            "propertyPasses": 5,
+            "propertyTotal": 5,
+            "propertyFailures": [],
+            "orderCorrect": true,
+            "rowsCorrect": false,
+            "expectedRows": [
+              [
+                0,
+                1
+              ]
+            ],
+            "selectedRows": [],
+            "formIntentCorrect": true,
+            "formMembershipCorrect": true,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": true
+          }
+        },
+        {
+          "run": 2,
+          "passed": false,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 2600,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": true,
+            "propertyPasses": 5,
+            "propertyTotal": 5,
+            "propertyFailures": [],
+            "orderCorrect": true,
+            "rowsCorrect": false,
+            "expectedRows": [
+              [
+                0,
+                1
+              ]
+            ],
+            "selectedRows": [],
+            "formIntentCorrect": true,
+            "formMembershipCorrect": true,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": true
+          }
+        },
+        {
+          "run": 3,
+          "passed": false,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 2609,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": true,
+            "propertyPasses": 5,
+            "propertyTotal": 5,
+            "propertyFailures": [],
+            "orderCorrect": true,
+            "rowsCorrect": false,
+            "expectedRows": [
+              [
+                0,
+                1
+              ]
+            ],
+            "selectedRows": [],
+            "formIntentCorrect": true,
+            "formMembershipCorrect": true,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": true
+          }
+        }
+      ],
+      "latency": {
+        "count": 3,
+        "medianMs": 2609,
+        "p95NearestRankMs": 2644,
+        "minMs": 2600,
+        "maxMs": 2644
+      }
+    },
+    {
+      "id": "mixed",
+      "expected": "supported",
+      "successes": 3,
+      "attempts": [
+        {
+          "run": 1,
+          "passed": true,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 2203,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": true,
+            "propertyPasses": 6,
+            "propertyTotal": 6,
+            "propertyFailures": [],
+            "orderCorrect": true,
+            "rowsCorrect": true,
+            "expectedRows": [
+              [
+                0,
+                1
+              ]
+            ],
+            "selectedRows": [
+              [
+                0,
+                1
+              ]
+            ],
+            "formIntentCorrect": true,
+            "formMembershipCorrect": true,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": true
+          }
+        },
+        {
+          "run": 2,
+          "passed": true,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 2217,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": true,
+            "propertyPasses": 6,
+            "propertyTotal": 6,
+            "propertyFailures": [],
+            "orderCorrect": true,
+            "rowsCorrect": true,
+            "expectedRows": [
+              [
+                0,
+                1
+              ]
+            ],
+            "selectedRows": [
+              [
+                0,
+                1
+              ]
+            ],
+            "formIntentCorrect": true,
+            "formMembershipCorrect": true,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": true
+          }
+        },
+        {
+          "run": 3,
+          "passed": true,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 2210,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": true,
+            "propertyPasses": 6,
+            "propertyTotal": 6,
+            "propertyFailures": [],
+            "orderCorrect": true,
+            "rowsCorrect": true,
+            "expectedRows": [
+              [
+                0,
+                1
+              ]
+            ],
+            "selectedRows": [
+              [
+                0,
+                1
+              ]
+            ],
+            "formIntentCorrect": true,
+            "formMembershipCorrect": true,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": true
+          }
+        }
+      ],
+      "latency": {
+        "count": 3,
+        "medianMs": 2210,
+        "p95NearestRankMs": 2217,
+        "minMs": 2203,
+        "maxMs": 2217
+      }
+    },
+    {
+      "id": "negation",
+      "expected": "supported",
+      "successes": 3,
+      "attempts": [
+        {
+          "run": 1,
+          "passed": true,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 2579,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": true,
+            "propertyPasses": 4,
+            "propertyTotal": 4,
+            "propertyFailures": [],
+            "orderCorrect": true,
+            "rowsCorrect": true,
+            "expectedRows": [],
+            "selectedRows": [],
+            "formIntentCorrect": true,
+            "formMembershipCorrect": true,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": true
+          }
+        },
+        {
+          "run": 2,
+          "passed": true,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 2608,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": true,
+            "propertyPasses": 4,
+            "propertyTotal": 4,
+            "propertyFailures": [],
+            "orderCorrect": true,
+            "rowsCorrect": true,
+            "expectedRows": [],
+            "selectedRows": [],
+            "formIntentCorrect": true,
+            "formMembershipCorrect": true,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": true
+          }
+        },
+        {
+          "run": 3,
+          "passed": true,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 2690,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": true,
+            "propertyPasses": 4,
+            "propertyTotal": 4,
+            "propertyFailures": [],
+            "orderCorrect": true,
+            "rowsCorrect": true,
+            "expectedRows": [],
+            "selectedRows": [],
+            "formIntentCorrect": true,
+            "formMembershipCorrect": true,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": true
+          }
+        }
+      ],
+      "latency": {
+        "count": 3,
+        "medianMs": 2608,
+        "p95NearestRankMs": 2690,
+        "minMs": 2579,
+        "maxMs": 2690
+      }
+    },
+    {
+      "id": "repeated-actions",
+      "expected": "supported",
+      "successes": 3,
+      "attempts": [
+        {
+          "run": 1,
+          "passed": true,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 2505,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": true,
+            "propertyPasses": 8,
+            "propertyTotal": 8,
+            "propertyFailures": [],
+            "orderCorrect": true,
+            "rowsCorrect": true,
+            "expectedRows": [],
+            "selectedRows": [],
+            "formIntentCorrect": true,
+            "formMembershipCorrect": true,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": true
+          }
+        },
+        {
+          "run": 2,
+          "passed": true,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 2618,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": true,
+            "propertyPasses": 8,
+            "propertyTotal": 8,
+            "propertyFailures": [],
+            "orderCorrect": true,
+            "rowsCorrect": true,
+            "expectedRows": [],
+            "selectedRows": [],
+            "formIntentCorrect": true,
+            "formMembershipCorrect": true,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": true
+          }
+        },
+        {
+          "run": 3,
+          "passed": true,
+          "selectionValid": true,
+          "specificationValid": true,
+          "tsxValid": true,
+          "durationMs": 2575,
+          "metrics": {
+            "typesExact": true,
+            "missingIndexes": [],
+            "extraIndexes": [],
+            "forbiddenCount": 0,
+            "propertiesCorrect": true,
+            "propertyPasses": 8,
+            "propertyTotal": 8,
+            "propertyFailures": [],
+            "orderCorrect": true,
+            "rowsCorrect": true,
+            "expectedRows": [],
+            "selectedRows": [],
+            "formIntentCorrect": true,
+            "formMembershipCorrect": true,
+            "nameCorrect": true,
+            "componentPropertiesCorrect": true
+          }
+        }
+      ],
+      "latency": {
+        "count": 3,
+        "medianMs": 2575,
+        "p95NearestRankMs": 2618,
+        "minMs": 2505,
+        "maxMs": 2618
+      }
+    },
+    {
+      "id": "unsupported-control",
+      "expected": "unsupported",
+      "successes": 3,
+      "attempts": [
+        {
+          "run": 1,
+          "passed": true,
+          "selectionValid": true,
+          "specificationValid": false,
+          "tsxValid": null,
+          "durationMs": 826,
+          "metrics": null,
+          "failure": {
+            "stage": "unsupported",
+            "unsupported": [
+              "component"
+            ],
+            "issues": []
+          }
+        },
+        {
+          "run": 2,
+          "passed": true,
+          "selectionValid": true,
+          "specificationValid": false,
+          "tsxValid": null,
+          "durationMs": 813,
+          "metrics": null,
+          "failure": {
+            "stage": "unsupported",
+            "unsupported": [
+              "component"
+            ],
+            "issues": []
+          }
+        },
+        {
+          "run": 3,
+          "passed": true,
+          "selectionValid": true,
+          "specificationValid": false,
+          "tsxValid": null,
+          "durationMs": 893,
+          "metrics": null,
+          "failure": {
+            "stage": "unsupported",
+            "unsupported": [
+              "component"
+            ],
+            "issues": []
+          }
+        }
+      ],
+      "latency": {
+        "count": 3,
+        "medianMs": 826,
+        "p95NearestRankMs": 893,
+        "minMs": 813,
+        "maxMs": 893
+      }
+    },
+    {
+      "id": "unsupported-behavior",
+      "expected": "unsupported",
+      "successes": 0,
+      "attempts": [
+        {
+          "run": 1,
+          "passed": false,
+          "selectionValid": false,
+          "specificationValid": false,
+          "tsxValid": null,
+          "durationMs": 1189,
+          "metrics": null,
+          "failure": {
+            "stage": "selection_schema",
+            "issues": [
+              {
+                "path": [
+                  "unsupported"
+                ],
+                "code": "custom",
+                "message": "Unsupported categories must be unique."
+              }
+            ]
+          }
+        },
+        {
+          "run": 2,
+          "passed": false,
+          "selectionValid": false,
+          "specificationValid": false,
+          "tsxValid": null,
+          "durationMs": 1170,
+          "metrics": null,
+          "failure": {
+            "stage": "selection_schema",
+            "issues": [
+              {
+                "path": [
+                  "unsupported"
+                ],
+                "code": "custom",
+                "message": "Unsupported categories must be unique."
+              }
+            ]
+          }
+        },
+        {
+          "run": 3,
+          "passed": false,
+          "selectionValid": false,
+          "specificationValid": false,
+          "tsxValid": null,
+          "durationMs": 1184,
+          "metrics": null,
+          "failure": {
+            "stage": "selection_schema",
+            "issues": [
+              {
+                "path": [
+                  "unsupported"
+                ],
+                "code": "custom",
+                "message": "Unsupported categories must be unique."
+              }
+            ]
+          }
+        }
+      ],
+      "latency": {
+        "count": 3,
+        "medianMs": 1184,
+        "p95NearestRankMs": 1189,
+        "minMs": 1170,
+        "maxMs": 1189
+      }
+    },
+    {
+      "id": "poc-composition-limit",
+      "expected": "poc-scope",
+      "successes": 0,
+      "attempts": [
+        {
+          "run": 1,
+          "passed": false,
+          "selectionValid": false,
+          "specificationValid": false,
+          "tsxValid": null,
+          "durationMs": 794,
+          "metrics": null,
+          "failure": {
+            "stage": "selection_schema",
+            "issues": [
+              {
+                "path": [
+                  "components"
+                ],
+                "code": "custom",
+                "message": "A supported selection must contain components."
+              }
+            ]
+          }
+        },
+        {
+          "run": 2,
+          "passed": false,
+          "selectionValid": false,
+          "specificationValid": false,
+          "tsxValid": null,
+          "durationMs": 799,
+          "metrics": null,
+          "failure": {
+            "stage": "selection_schema",
+            "issues": [
+              {
+                "path": [
+                  "components"
+                ],
+                "code": "custom",
+                "message": "A supported selection must contain components."
+              }
+            ]
+          }
+        },
+        {
+          "run": 3,
+          "passed": false,
+          "selectionValid": false,
+          "specificationValid": false,
+          "tsxValid": null,
+          "durationMs": 816,
+          "metrics": null,
+          "failure": {
+            "stage": "selection_schema",
+            "issues": [
+              {
+                "path": [
+                  "components"
+                ],
+                "code": "custom",
+                "message": "A supported selection must contain components."
+              }
+            ]
+          }
+        }
+      ],
+      "latency": {
+        "count": 3,
+        "medianMs": 799,
+        "p95NearestRankMs": 816,
+        "minMs": 794,
+        "maxMs": 816
+      }
+    }
+  ]
+}

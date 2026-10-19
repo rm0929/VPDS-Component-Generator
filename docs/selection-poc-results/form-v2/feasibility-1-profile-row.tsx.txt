@@ -1,0 +1,37 @@
+import { Button, Input, InputContainer, Label, Utility } from '@visa/nova-react';
+
+export default function GeneratedUI() {
+  return (
+    <form id={"node-0"} aria-label={"Profile"} onSubmit={(event) => event.preventDefault()}>
+      <Utility id={"node-0-0"} vFlex={true} vFlexCol={true} vGap={16}>
+        <Utility vFlex={true} vFlexCol={true} vGap={8}>
+          <Label htmlFor={"node-0-0-0"}>
+            {"First name"}
+          </Label>
+          <InputContainer>
+            <Input id={"node-0-0-0"} name={"first-name"} type={"text"} required={false} />
+          </InputContainer>
+        </Utility>
+        <Utility vFlex={true} vFlexCol={true} vGap={8}>
+          <Label htmlFor={"node-0-0-1"}>
+            {"Last name"}
+          </Label>
+          <InputContainer>
+            <Input id={"node-0-0-1"} name={"last-name"} type={"text"} required={false} />
+          </InputContainer>
+        </Utility>
+        <Utility vFlex={true} vFlexCol={true} vGap={8}>
+          <Label htmlFor={"node-0-0-2"}>
+            {"Email"}
+          </Label>
+          <InputContainer>
+            <Input id={"node-0-0-2"} name={"email"} type={"email"} required={false} />
+          </InputContainer>
+        </Utility>
+        <Button id={"node-0-0-3"} type={"submit"}>
+          {"Save Profile"}
+        </Button>
+      </Utility>
+    </form>
+  );
+}

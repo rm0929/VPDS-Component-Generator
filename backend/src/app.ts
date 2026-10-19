@@ -10,7 +10,9 @@ import { API_ERRORS, ApiError } from './errors';
 import type { ApiErrorCode } from './errors';
 import { generateWithTimeout } from './provider';
 import type { GenerationProvider } from './provider';
-import { mockProvider } from './mockProvider';
+import { createConfiguredProvider } from './providers';
+import { createGenerationDiagnostics } from './diagnostics';
+import type { GenerationDiagnostics } from './diagnostics';
 
 const requestSchema = z.strictObject({ prompt: z.string().trim().min(1).max(2000) });
 
@@ -19,11 +21,12 @@ export type ApiLogEntry = {
   status: number; durationMs: number; errorCode?: ApiErrorCode;
 };
 export type ApiLogger = (entry: ApiLogEntry) => void;
-export type AppOptions = { config?: ApiConfig; provider?: GenerationProvider; logger?: ApiLogger };
+export type AppOptions = { config?: ApiConfig; provider?: GenerationProvider; logger?: ApiLogger; diagnostics?: GenerationDiagnostics };
 
 export function createApp(options: AppOptions = {}) {
   const config = options.config ?? readConfig();
-  const provider = options.provider ?? mockProvider;
+  const diagnose = options.diagnostics ?? createGenerationDiagnostics();
+  const provider = options.provider ?? createConfiguredProvider(undefined, diagnose);
   const logger = options.logger ?? (entry => console.log(JSON.stringify(entry)));
   const app = express();
   app.disable('x-powered-by');
@@ -78,15 +81,18 @@ export function createApp(options: AppOptions = {}) {
     try {
       let output: unknown;
       try {
-        output = await generateWithTimeout(provider, input.data.prompt, config.generationTimeoutMs, disconnected.signal);
+        output = await generateWithTimeout(provider, input.data.prompt, provider.timeoutMs ?? config.generationTimeoutMs, disconnected.signal);
       } catch (error) {
         if (error instanceof ApiError) throw error;
         throw new ApiError('PROVIDER_FAILURE');
       }
       let parsed;
       try { parsed = uiSpecificationSchema.safeParse(output); }
-      catch { throw new ApiError('INVALID_PROVIDER_OUTPUT'); }
-      if (!parsed.success) throw new ApiError('INVALID_PROVIDER_OUTPUT');
+      catch { diagnose('ui_schema'); throw new ApiError('INVALID_PROVIDER_OUTPUT'); }
+      if (!parsed.success) {
+        diagnose('ui_schema', parsed.error.issues);
+        throw new ApiError('INVALID_PROVIDER_OUTPUT');
+      }
       if (!res.destroyed) res.json({
         data: { specification: parsed.data },
         meta: { provider: provider.id, isMock: provider.isMock }, requestId: res.locals.requestId,

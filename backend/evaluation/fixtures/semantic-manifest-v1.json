@@ -1,0 +1,13 @@
+{
+  "experimentVersion": "semantic-ui-only-v1",
+  "datasetVersion": "phase2b-eval-v2",
+  "datasetHash": "97e04137a3089d780d994d29c2700253b5bbcfc4434ae5cae5f0883e807b3d9b",
+  "baselinePromptHash": "be569383a31cd033cd438418f3e12b658b08340a483a82657259043e5468fc02",
+  "variantPromptHash": "8b86abe07b8a8efbb67f7532e9c85948fc67b4dcf5f9e96776363076f4b241ba",
+  "schemaHash": "fa003f11f804c96bb59d65ad5fa80e48f37d2553f15922dd43aaacb3b1f61f22",
+  "semanticCompilerRevision": "d873fcc9de9dd35dad08053a48bb9ca3b698ad7da9409f0ad8e234c14f41af41",
+  "semanticCompilerHashes": {
+    "backend/src/compileSemanticUiPlan.ts": "1bdbd42435e2414c4d323831b8645c683141aef8e528e841af8de4305851fb96",
+    "backend/src/semanticUiPlan.ts": "a6adf69619bd36a37b4679c35b480e8e32fc446389e570ef83843bd7decf6d57"
+  }
+}

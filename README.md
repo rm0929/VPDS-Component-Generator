@@ -150,8 +150,10 @@ code is displayed as text and is never executed by the app. Remove the query
 parameter or use the demo's back link to return to the unchanged keyword generator.
 
 The [Phase 2A backend foundation](docs/phase-2a-backend.md) is a small Express
-workspace alongside the existing frontend. It uses a deterministic **non-AI mock**,
-not an LLM. The frontend does not call the API yet.
+workspace alongside the existing frontend. It defaults to a deterministic
+**non-AI mock**. [Phase 2B adds optional local Ollama generation](docs/phase-2b-local-ollama.md)
+with `qwen3:4b-instruct`; no paid service or API key is used. The frontend does
+not call the API yet.
 
 ```bash
 # Optional local backend configuration (no API keys needed)
@@ -180,6 +182,31 @@ Run `npm ci` once at the repository root to install both packages from the share
 lockfile. Use Node 22.14+ on Node 22, as in CI. Backend `.env` files are ignored.
 See the backend report for exact supported prompts, response/error contracts,
 environment limits, CORS configuration, and verification results.
+
+To opt into local inference, set `API_PROVIDER=ollama` in `backend/.env`, install
+the model with `ollama pull qwen3:4b-instruct`, and run Ollama on
+`127.0.0.1:11434`. Follow the [local-only setup guide](docs/phase-2b-local-ollama.md)
+to disable Ollama cloud features, configure memory/output limits, and diagnose
+failures. Both services must remain on loopback; public bind addresses are rejected.
+The frontend remains unchanged until Phase 2C. Ollama now returns an internal UI
+draft without technical IDs or field names; a deterministic compiler produces the
+existing UI specification. See the [draft architecture and verification report](docs/ui-draft-architecture.md)
+for the unsupported-request outcome and separate validity/coverage evaluation.
+
+The [SemanticUiPlan v1 schema and composer](docs/semantic-ui-plan-v1.md) now have an
+[opt-in Ollama workflow](docs/semantic-ui-plan-ollama.md). With `API_PROVIDER=ollama`,
+select `OLLAMA_WORKFLOW=semantic-plan` to use it; `OLLAMA_WORKFLOW=draft` remains
+the default baseline with its original prompt. Each workflow uses one inference
+call and returns the same validated UI specification. Restart the backend after
+changing selection. The frontend is unchanged and does not call the API yet.
+
+Manual local-model quality checks extend the existing harness with a frozen,
+versioned challenge dataset and isolated prompt experiments. See the
+[evaluation protocol](docs/evaluation-baseline-v2.md) and
+[experiment report and commands](docs/phase-2b-prompt-evaluation.md).
+Automated tests verify the evaluator without downloading models or running inference.
+The subsequent [concise replacement experiment](docs/phase-2b-concise-prompt-experiment.md)
+records all 29 per-case comparisons and explains why the runtime prompt was retained.
 
 ## 📦 Deployment
 

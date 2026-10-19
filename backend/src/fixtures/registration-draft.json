@@ -1,0 +1,20 @@
+{
+  "irVersion": "1",
+  "status": "supported",
+  "root": {
+    "type": "form",
+    "props": { "label": "Create an account" },
+    "children": [{
+      "type": "verticalLayout",
+      "props": { "gap": "medium" },
+      "children": [
+        { "type": "textInput", "props": { "label": "Name", "required": true } },
+        { "type": "emailInput", "props": { "label": "Email", "required": true } },
+        { "type": "passwordInput", "props": { "label": "Password", "required": true } },
+        { "type": "passwordInput", "props": { "label": "Confirm password", "required": true } },
+        { "type": "checkbox", "props": { "label": "I agree to the terms", "required": true } },
+        { "type": "button", "props": { "label": "Create account", "type": "submit", "disabled": false } }
+      ]
+    }]
+  }
+}

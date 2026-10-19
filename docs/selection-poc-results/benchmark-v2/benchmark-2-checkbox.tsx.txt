@@ -1,0 +1,14 @@
+import { Checkbox, Label, Utility } from '@visa/nova-react';
+
+export default function GeneratedUI() {
+  return (
+    <form id={"node-0"} aria-label={"Generated form"} onSubmit={(event) => event.preventDefault()}>
+      <Utility vFlex={true} vAlignItems={"center"} vGap={8}>
+        <Checkbox id={"node-0-0"} name={"notify-me"} required={false} />
+        <Label htmlFor={"node-0-0"}>
+          {"Notify me"}
+        </Label>
+      </Utility>
+    </form>
+  );
+}
