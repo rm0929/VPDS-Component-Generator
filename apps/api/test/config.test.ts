@@ -7,6 +7,8 @@ describe('backend configuration', () => {
     const config = readConfig({});
     expect(config).toEqual({
       host: '127.0.0.1', port: 3001, corsOrigins: ['http://localhost:5173', 'http://127.0.0.1:5173'],
+      publicMode: false, publicGenerationEnabled: false,
+      rateLimit: { enabled: false, windowMs: 61000, max: 1, dailyMax: 20 },
       bodyLimitBytes: 8192, generationTimeoutMs: 5000, requestTimeoutMs: 15000,
     });
     const server = createApiServer({ config, logger: () => {} });

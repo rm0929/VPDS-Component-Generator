@@ -1,3 +1,4 @@
+import { createRequestLimiter } from './requestLimits';
 import { randomUUID } from 'node:crypto';
 import express from 'express';
 import type { ErrorRequestHandler, Request, Response } from 'express';
@@ -27,6 +28,8 @@ export function createApp(options: AppOptions = {}) {
   const config = options.config ?? readConfig();
   const diagnose = options.diagnostics ?? createGenerationDiagnostics();
   const provider = options.provider ?? createConfiguredProvider(undefined, diagnose);
+  if (config.publicMode && (provider.id !== 'groq-flat-selection' || provider.isMock)) throw new Error('Public mode requires the real Groq provider.');
+  const admit = createRequestLimiter(config.rateLimit);
   const logger = options.logger ?? (entry => console.log(JSON.stringify(entry)));
   const app = express();
   app.disable('x-powered-by');
@@ -63,7 +66,7 @@ export function createApp(options: AppOptions = {}) {
       else callback(new ApiError('CORS_ORIGIN_DENIED'));
     },
     methods: ['GET', 'POST', 'OPTIONS'], allowedHeaders: ['Content-Type'],
-    exposedHeaders: ['X-Request-ID'], credentials: false, maxAge: 600,
+    exposedHeaders: ['X-Request-ID', 'Retry-After'], credentials: false, maxAge: 600,
   }));
 
   app.get('/api/health', (_req, res) => {
@@ -75,6 +78,8 @@ export function createApp(options: AppOptions = {}) {
   }, express.json({ limit: config.bodyLimitBytes, inflate: false, strict: true }), async (req: Request, res: Response) => {
     const input = requestSchema.safeParse(req.body);
     if (!input.success) throw new ApiError('INVALID_REQUEST');
+    if (config.publicMode && !config.publicGenerationEnabled) throw new ApiError('PUBLIC_GENERATION_DISABLED');
+    admit();
     const disconnected = new AbortController();
     const onClose = () => disconnected.abort();
     res.once('close', onClose);
@@ -121,6 +126,8 @@ export function createApp(options: AppOptions = {}) {
       else if (error.type === 'entity.parse.failed' || error.type === 'request.size.invalid' || error.type === 'request.aborted') code = 'INVALID_REQUEST';
       else if (error.type === 'encoding.unsupported' || error.type === 'charset.unsupported') code = 'UNSUPPORTED_MEDIA_TYPE';
     }
+    if (error instanceof ApiError && code === 'RATE_LIMITED' && Number.isInteger(error.retryAfterSeconds)
+      && error.retryAfterSeconds! >= 1 && error.retryAfterSeconds! <= 86400) res.setHeader('Retry-After', error.retryAfterSeconds!);
     res.locals.errorCode = code;
     res.status(API_ERRORS[code].status).json({ error: { code, message: API_ERRORS[code].message }, requestId: res.locals.requestId });
   };

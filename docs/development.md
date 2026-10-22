@@ -84,3 +84,7 @@ npm run preview       # static web build only
 `apps/api/dist/server.js` is the compiled API entry point. Shared core is compiled CommonJS; Vite consumes shared browser source entry points. No browser renderer is imported by API runtime code.
 
 Manual evaluation lives in `tools/evaluation`. The flat-selection runner retains explicit opt-in and writes new output directories; CI runs only automated tests. Rejected prompt experiments and their runner/comparison commands have been removed. Do not rewrite frozen datasets, manifests or past results when code moves. Source-path changes legitimately produce new compiler revision hashes.
+
+## Optional hosted backend
+
+Local commands/settings above are unchanged. A hosted frontend can set the public build variable `VITE_API_BASE_URL` to an exact HTTPS backend origin. The main frontend accepts real flat-selection Ollama or Groq output, never mocks. See [public-demo setup and release gates](public-demo.md) for Render/Vercel settings, backend-only secrets, privacy and quota/cold-start behavior. Do not expose loopback Ollama. Public generation remains disabled until authorized live schema/token checks pass.

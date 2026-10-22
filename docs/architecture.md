@@ -36,3 +36,7 @@ No eval, dynamic code execution, arbitrary imports, handlers or styling objects 
 Root npm commands delegate to four private workspaces. The shared package has explicit browser-source and compiled CommonJS entry points with declarations, preserving the API's module format. Web Vite uses browser conditions; Node uses compiled core. Build the shared workspace before starting or testing consumers.
 
 Compatibility workflows, compiler/scorer tests and manual flat-selection tooling were retained. Rejected prompt-variant runners and their exclusive tests were removed. Defaults remain mock provider and draft workflow; the AI startup shortcut explicitly selects real Ollama/flat selection.
+
+## Optional public provider
+
+`API_PROVIDER=groq` uses a separate strict-wire adapter over the same selection schema, catalog and compiler. Ollama prompts/settings and compatibility workflows remain unchanged. The Groq adapter makes optional wire keys required and nullable, then removes only schema-declared optional null placeholders before existing validation. The API owns one Groq inference deadline and cancellation signal. Explicit public mode requires Groq, exact HTTPS CORS and bounded per-process budgets; generation is release-gated off by default. The browser can use a public HTTPS `VITE_API_BASE_URL` and validates the unchanged response. See [deployment, privacy and unresolved release gates](public-demo.md).

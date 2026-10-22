@@ -32,7 +32,19 @@ const ollamaEnvironmentSchema = z.object({
 });
 
 export function readProviderConfig(environment: NodeJS.ProcessEnv = process.env) {
-  const provider = z.enum(['mock', 'ollama']).parse(environment.API_PROVIDER ?? 'mock');
+  const provider = z.enum(['mock', 'ollama', 'groq']).parse(environment.API_PROVIDER ?? 'mock');
+  if (environment.API_PUBLIC_MODE === 'true' && provider !== 'groq') throw new Error('Public mode requires Groq.');
+  if (provider === 'groq') {
+    const env = z.object({
+      GROQ_API_KEY: z.string().min(1).max(1000).regex(/^[^\s]+$/),
+      GROQ_MODEL: z.literal('openai/gpt-oss-20b').default('openai/gpt-oss-20b'),
+      GROQ_MAX_OUTPUT_TOKENS: z.coerce.number().int().min(128).max(4096).default(2048),
+      GROQ_RESPONSE_LIMIT_BYTES: z.coerce.number().int().min(4096).max(262144).default(65536),
+      GROQ_TIMEOUT_MS: z.never().optional(),
+    }).parse(environment);
+    return { provider, apiKey: env.GROQ_API_KEY, model: env.GROQ_MODEL,
+      maxOutputTokens: env.GROQ_MAX_OUTPUT_TOKENS, responseLimitBytes: env.GROQ_RESPONSE_LIMIT_BYTES } as const;
+  }
   if (provider === 'mock') return { provider } as const;
   const env = ollamaEnvironmentSchema.parse(environment);
   return {
@@ -45,3 +57,5 @@ export function readProviderConfig(environment: NodeJS.ProcessEnv = process.env)
 }
 
 export type OllamaConfig = Extract<ReturnType<typeof readProviderConfig>, { provider: 'ollama' }>;
+
+export type GroqConfig = Extract<ReturnType<typeof readProviderConfig>, { provider: 'groq' }>;

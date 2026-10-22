@@ -69,9 +69,10 @@ npm run lint
 npm test            # web, shared specification, API and evaluation tests
 ```
 
+- [Public demo setup, privacy and release gates](docs/public-demo.md)
 - [Development and shutdown](docs/development.md)
 - [Architecture and safety boundaries](docs/architecture.md)
 - [Limitations and selected evidence](docs/limitations.md)
 - [Evaluation protocol and selected evidence](docs/evaluation/README.md)
 
-CI uses mocks/fake local HTTP servers and does not download models or run inference. Static frontend hosting alone does not deploy the local AI system. No production hosting configuration is provided.
+CI uses mocks/fake local HTTP servers and does not download models or run inference. Static frontend hosting alone does not deploy the local AI system. Optional Render/Groq public-demo support is implemented but remains release-gated; three local live schema/token checks passed, and account limits are confirmed, while hosted end-to-end behavior remains unverified. See the [public-demo setup](docs/public-demo.md).

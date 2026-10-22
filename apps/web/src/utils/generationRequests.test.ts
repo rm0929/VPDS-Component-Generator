@@ -92,3 +92,13 @@ describe('generation request ownership and races', () => {
     expect(change.mock.calls.at(-1)?.[0]).toMatchObject({ status: 'error', code: 'WRONG_PROVIDER' });
   });
 });
+
+
+it('accepts hosted Groq flat selection without allowing mock fallback', async () => {
+  const states: GenerationState[] = [];
+  const generated = result(); generated.meta.provider = 'groq-flat-selection';
+  const requests = createGenerationRequests(state => states.push(state), async () => generated);
+  await requests.generate('Example'); expect(states.at(-1)?.status).toBe('success');
+  generated.meta.isMock = true;
+  await requests.generate('Example'); expect(states.at(-1)).toMatchObject({ status: 'error', code: 'WRONG_PROVIDER' });
+});

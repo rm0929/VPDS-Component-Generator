@@ -1,0 +1,282 @@
+{
+  "recordVersion": 1,
+  "date": "2026-10-22",
+  "baselineCommit": "d4f8f493c403ff4040a97d9ae30042f5c1e7c2af",
+  "workingTree": "Includes uncommitted Groq/public-demo implementation; commit alone does not reproduce these checks.",
+  "method": "Real Groq through temporary loopback Express POST /api/generate, production provider and strict adapter; one attempt per case, zero retries. No key, Authorization header or raw upstream error body retained.",
+  "sourceSnapshotAtReport": {
+    "apps/api/src/ai/groqProvider.ts": "d7d688bfbcb5d96191703f0bc0baea9abb4cf4759f263417b74f919f80e9cb94",
+    "apps/api/src/ai/groqSelectionSchema.ts": "9979964e82adf83069bc79b3a3acfaac25ed884f66aec1d0e28539540f1091cd",
+    "apps/api/src/ai/model.ts": "2521b300cff84479fd95861551b69eae22bce7da706694a511dc2d7b70e0319e",
+    "apps/api/src/ai/selection.ts": "25fd50598f4fe66833f41205bda8cd38ccfea8ede2e5ec11452a7d88afa3377d",
+    "apps/api/src/ai/compileModelUi.ts": "4c9207ea77d386e92316f4b97c18d022d857d7f34fd806dd1ec020248f0f2c51",
+    "packages/ui-specification/src/uiSpecification.ts": "eec3091867502722c2936a87d92c6a9d7f351e11f83dae3373ace8695ea7fe9e",
+    "packages/ui-specification/src/generateTsx.ts": "5c2ac72fd84623d164a3fd3aae2ccea0234456fa85d6689b1c08cbe39396df55"
+  },
+  "observedAccountLimits": {
+    "tokensPerMinute": 8000,
+    "requestsPerDay": 1000,
+    "tokensPerDay": null
+  },
+  "documentedFreeTierTokensPerDay": 200000,
+  "dailyTokenLimitNote": "Account owner confirmed 200000 TPD on 2026-10-22. No account or billing settings were changed.",
+  "checks": [
+    {
+      "prompt": "Create a text input labeled Full name.",
+      "startedAt": "2026-10-22T15:28:28.373Z",
+      "upstreamCalls": 1,
+      "settings": {
+        "provider": "groq",
+        "model": "openai/gpt-oss-20b",
+        "keyConfigured": true,
+        "publicMode": false,
+        "publicGenerationEnabled": false,
+        "host": "127.0.0.1",
+        "inferenceDeadlineMs": 25000,
+        "maxCompletionTokens": 2048,
+        "responseLimitBytes": 65536,
+        "temperature": 0,
+        "reasoningEffort": "low",
+        "stream": false,
+        "rateLimit": {
+          "enabled": false,
+          "windowMs": 60000,
+          "max": 1,
+          "dailyMax": 20
+        }
+      },
+      "upstreamStatus": 200,
+      "quotaHeaders": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-requests": "999",
+        "x-ratelimit-remaining-tokens": "3382",
+        "x-ratelimit-reset-requests": "1m26.4s",
+        "x-ratelimit-reset-tokens": "34.635s"
+      },
+      "usage": {
+        "inputTokens": 4441,
+        "outputTokens": 83,
+        "totalTokens": 4524,
+        "reasoningTokens": 13
+      },
+      "apiStatus": 200,
+      "latencyMs": 1307,
+      "authoritativeValidation": true,
+      "actualComponents": [
+        {
+          "type": "textInput",
+          "props": {
+            "name": "full-name",
+            "label": "Full name"
+          },
+          "formAncestor": false
+        }
+      ],
+      "tsxCompilation": {
+        "passed": true,
+        "diagnosticCodes": []
+      },
+      "semanticPassed": true,
+      "promptLength": 38,
+      "inputPlusMaximumCompletionTokens": 6489,
+      "tpmHeadroomTokens": 1511
+    },
+    {
+      "prompt": "Create a login form with email, password, and a submit button.",
+      "startedAt": "2026-10-22T15:32:20.368Z",
+      "upstreamCalls": 1,
+      "settings": {
+        "provider": "groq",
+        "model": "openai/gpt-oss-20b",
+        "keyConfigured": true,
+        "publicMode": false,
+        "publicGenerationEnabled": false,
+        "host": "127.0.0.1",
+        "inferenceDeadlineMs": 25000,
+        "maxCompletionTokens": 2048,
+        "responseLimitBytes": 65536,
+        "temperature": 0,
+        "reasoningEffort": "low",
+        "stream": false,
+        "rateLimit": {
+          "enabled": false,
+          "windowMs": 60000,
+          "max": 1,
+          "dailyMax": 20
+        }
+      },
+      "upstreamStatus": 200,
+      "quotaHeaders": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-requests": "999",
+        "x-ratelimit-remaining-tokens": "3470",
+        "x-ratelimit-reset-requests": "1m26.4s",
+        "x-ratelimit-reset-tokens": "33.975s"
+      },
+      "usage": {
+        "inputTokens": 4447,
+        "outputTokens": 151,
+        "totalTokens": 4598,
+        "reasoningTokens": 22
+      },
+      "apiStatus": 200,
+      "latencyMs": 1366,
+      "authoritativeValidation": true,
+      "actualComponents": [
+        {
+          "type": "form",
+          "props": {
+            "label": "Generated form"
+          },
+          "formAncestor": false
+        },
+        {
+          "type": "verticalLayout",
+          "props": {
+            "gap": "medium"
+          },
+          "formAncestor": true
+        },
+        {
+          "type": "emailInput",
+          "props": {
+            "name": "work-email",
+            "label": "Work email"
+          },
+          "formAncestor": true
+        },
+        {
+          "type": "passwordInput",
+          "props": {
+            "name": "access-key",
+            "label": "Access key"
+          },
+          "formAncestor": true
+        },
+        {
+          "type": "button",
+          "props": {
+            "label": "Enter",
+            "type": "submit"
+          },
+          "formAncestor": true
+        }
+      ],
+      "tsxCompilation": {
+        "passed": true,
+        "diagnosticCodes": []
+      },
+      "semanticPassed": true,
+      "promptLength": 62,
+      "inputPlusMaximumCompletionTokens": 6495,
+      "tpmHeadroomTokens": 1505
+    },
+    {
+      "prompt": "Create a text input labeled Full name. The following synthetic reference is context only: do not display it or add controls for it. Reference: a949a67d8a5bf64e9f760434664cf27aded5606a54ca06aaea9e3245e221c875d564a67c79d9ff0264038cbd8c71b01d1a83817b0921bad9f544feb37c66251fbc8fead0335788cda58d25251c3b2465c1355dae6e3453b059b08c058120a8e9024a68cef3e44673f670cb83ba12bf9d4364c0412d5da09ee8dccef2cb1494b4dd654eca6a2e7616d9464780f925abcafa539828abed45d10cf0d1d636dedc41a6d6e8aecfa38cc38ea384016aba98b38c1184eaf64fae3bc58a4dd6aa1c6a563d9523a806f1d4abfd538c7539881332c9bd614d432c27110ae16d926d19f60ac4fd01fb568cb80e2804875920ac84560c7b6a9454f4e5447c39e82e117796cac6d70aa91dc20057a3ce59b78145aa204e9dd2c62b14229e437d4953fd67098c73ba40b6f9a38e43cc0dd52c6a5ba5018363f97c95bc62695b0f4ff95b52eb0f0aebafec8af73e42305fb89d9870f178fbf354de0eb5ff85365cd6a969d6b65d076bc5f5b5d16c158827e2872fb46579c50eee18f6a1d06c01b9f80619022517396981dfaeee89c468ad1ab06d9eea9dd454e1671442341b280a2e18c9e808ebd358f8f351b576cd31afe7e779e60c624a625f55dee133719648fc9958648d975ee1dfe3862b586fdcefebead02d36bcfac6e6a42963d9274d47824669b0e1bc61ea939aa4deaf1cda83f9cf9cc16eaf8c34b92873c54cdaa8b895e3bf176785661e7f4c974ef4f5548d82edf60f541df2fcab39ae076faa2e22f7d357e8864b06bc2710de2121be5ccdcbbbe45c6ec83e5ddd3f304eae2d89dbc5634ff4dfa75f5bd43778a99489041aed80fd901f93c5f7203df4c28f72e0442ef7058a4b932c99cfdf07ad2186512e6a1bdf662f916ba98c4ee00830b5f86dfdbdf8ea4d74aea75d3a3ba94f83c5353c1cfaaef50648b38abab977b23fd14daeb488cd66bcda17c05fc670a2e49d235f37ab70b4c9caded6bb227afd403d342b658f5db216280240615de4c8d3b7604e2219b48048fe664fad0011e23d4a021d25d1659373fb2c345a042716d48efa331a8e31d31e32b7bea5c71b83ac8f3db328eabae1db52719ad350bbfb6dae5c4d571c8ecf8d84a4faabb4e1f3f72b380a2640b4ea02867ef16577ab2fb6fd6d4a7298dfa331452837fa15b2f6e32decc80f675fca5d97047a4891491c0fed11771b2c0ac3274d1f299a25ccc3140cd0a7d1320df3a06ddad4cda4d7c5bb4390c2a081b2af6ab834d3a5b0780e7b81f747b2b0b2177a22. Only create the requested labeled text input, without a form.",
+      "startedAt": "2026-10-22T16:01:07.221Z",
+      "upstreamCalls": 1,
+      "settings": {
+        "provider": "groq",
+        "model": "openai/gpt-oss-20b",
+        "keyConfigured": true,
+        "publicMode": false,
+        "publicGenerationEnabled": false,
+        "host": "127.0.0.1",
+        "inferenceDeadlineMs": 25000,
+        "maxCompletionTokens": 2048,
+        "responseLimitBytes": 65536,
+        "temperature": 0,
+        "reasoningEffort": "low",
+        "stream": false,
+        "rateLimit": {
+          "enabled": false,
+          "windowMs": 60000,
+          "max": 1,
+          "dailyMax": 20
+        }
+      },
+      "upstreamStatus": 200,
+      "quotaHeaders": {
+        "x-ratelimit-limit-requests": "1000",
+        "x-ratelimit-limit-tokens": "8000",
+        "x-ratelimit-remaining-requests": "999",
+        "x-ratelimit-remaining-tokens": "2316",
+        "x-ratelimit-reset-requests": "1m26.4s",
+        "x-ratelimit-reset-tokens": "42.63s"
+      },
+      "usage": {
+        "inputTokens": 5496,
+        "outputTokens": 91,
+        "totalTokens": 5587,
+        "reasoningTokens": 17
+      },
+      "apiStatus": 200,
+      "latencyMs": 993,
+      "authoritativeValidation": true,
+      "actualComponents": [
+        {
+          "type": "textInput",
+          "props": {
+            "name": "full-name",
+            "label": "Full name"
+          },
+          "formAncestor": false
+        }
+      ],
+      "tsxCompilation": {
+        "passed": true,
+        "diagnosticCodes": []
+      },
+      "semanticPassed": true,
+      "promptLength": 2000,
+      "inputPlusMaximumCompletionTokens": 7544,
+      "tpmHeadroomTokens": 456
+    }
+  ],
+  "capacity": {
+    "testedPromptCharacters": 2000,
+    "inputTokens": 5496,
+    "configuredMaximumCompletionTokens": 2048,
+    "reservedTotalTokens": 7544,
+    "observedTpm": 8000,
+    "headroomTokens": 456,
+    "twentyReservationsTokens": 150880,
+    "dailyHeadroomTokens": 49120
+  },
+  "admissionCorrection": {
+    "previous": "Process-anchored fixed windows allowed boundary bursts.",
+    "new": "Rolling per-process admission timestamps for both short and 24-hour budgets.",
+    "recommendedWindowMs": 61000,
+    "recommendedMaxRequests": 1,
+    "recommendedDailyMaxRequests": 20,
+    "validation": "Offline mocked/clock-controlled tests; all live checks used private mode with admission limits disabled."
+  },
+  "limitations": [
+    "One maximum-length synthetic ASCII prompt is not a worst-case token bound for all possible 2000-character Unicode inputs.",
+    "Organization-level usage from other clients, restarts and additional processes can invalidate this local budget.",
+    "Hosted Render/Vercel wiring, cold starts and CORS remain unverified; public generation stays disabled. Confirmed account limits do not reserve quota against other organization clients."
+  ],
+  "verificationAfterAdmissionCorrection": {
+    "backendBuild": "passed",
+    "lint": "passed",
+    "backendTests": {
+      "passed": 725,
+      "testFiles": 19,
+      "inference": "mocked/fake local HTTP only"
+    },
+    "whitespaceCheck": "passed",
+    "liveGeneratedTsxCompilation": "passed for all three saved specifications"
+  },
+  "verifiedAccountLimits": {
+    "model": "openai/gpt-oss-20b",
+    "requestsPerMinute": 30,
+    "requestsPerDay": 1000,
+    "tokensPerMinute": 8000,
+    "tokensPerDay": 200000,
+    "confirmedBy": "Account owner",
+    "confirmedOn": "2026-10-22",
+    "note": "TPM and RPD also observed in recorded live headers; no additional API request was made for this confirmation."
+  }
+}

@@ -4,6 +4,10 @@ The current application is experimental. Structural validity, component/property
 
 No inference was run for repository cleanup. The retained records below are historical first-attempt measurements at their recorded catalog, model digest, runtime and settings. Their input/result/raw-response bytes are unchanged; paths have moved. They must not be presented as fresh measurements of the current catalog.
 
+## Public-provider release checks
+
+[Groq: three authorized first-attempt checks](groq-release-checks/README.md) records schema acceptance, actual token usage, a 2000-character capacity request, generated-TSX checks and admission limits. This is separate from historical Ollama accuracy benchmarks.
+
 ## Retained cases and tools
 
 - [Frozen 12-case flat-selection dataset](../../tools/evaluation/selection/cases-v1.json): exact prompts, component/property expectations, order, rows, form membership, negation and unsupported requests. Its original SHA-256 is enforced by tests.

@@ -81,3 +81,33 @@ describe('typed specification API client', () => {
       .rejects.toMatchObject({ code: 'CANCELLED' });
   });
 });
+
+
+describe('hosted backend routing and lifecycle', () => {
+  it('uses the configured HTTPS origin and never transmits credentials', async () => {
+    const request = vi.fn<typeof fetch>().mockResolvedValue(response({ ...success, meta: { provider: 'groq-flat-selection', isMock: false } }));
+    await expect(generateSpecification('Example', { request, baseUrl: 'https://example.onrender.com' })).resolves.toMatchObject({ meta: { provider: 'groq-flat-selection' } });
+    expect(request).toHaveBeenCalledWith('https://example.onrender.com/api/generate', expect.objectContaining({ credentials: 'omit', redirect: 'error' }));
+  });
+  it.each(['http://example.com', 'https://user:pass@example.com', 'https://example.com/', 'https://example.com/path', 'javascript:alert(1)'])('rejects invalid API origin %s before fetching', async baseUrl => {
+    const request = vi.fn<typeof fetch>();
+    await expect(generateSpecification('Example', { request, baseUrl })).rejects.toMatchObject({ code: 'API_CONFIGURATION_ERROR' });
+    expect(request).not.toHaveBeenCalled();
+  });
+  it.each(['cancel', 'timeout'] as const)('aborts hosted HTTP on %s and clears its timer', async kind => {
+    vi.useFakeTimers();
+    try {
+      let actualSignal: AbortSignal | undefined;
+      const request = vi.fn<typeof fetch>().mockImplementation(async (_url, init) => new Promise((_resolve, reject) => {
+        actualSignal = init?.signal as AbortSignal;
+        actualSignal.addEventListener('abort', () => reject(new Error('PRIVATE')), { once: true });
+      }));
+      const controller = new AbortController();
+      const pending = generateSpecification('Example', { request, signal: controller.signal, baseUrl: 'https://example.onrender.com' });
+      const assertion = expect(pending).rejects.toMatchObject({ code: kind === 'cancel' ? 'CANCELLED' : 'BACKEND_TIMEOUT' });
+      if (kind === 'cancel') controller.abort(); else await vi.advanceTimersByTimeAsync(90000);
+      await assertion;
+      expect(actualSignal?.aborted).toBe(true); expect(vi.getTimerCount()).toBe(0);
+    } finally { vi.useRealTimers(); }
+  });
+});

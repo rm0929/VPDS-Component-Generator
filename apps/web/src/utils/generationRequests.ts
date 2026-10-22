@@ -23,7 +23,7 @@ export function createGenerationRequests(onChange: (state: GenerationState) => v
       try {
         const result = await request(prompt, { signal: controller.signal });
         if (attempt !== version || controller.signal.aborted) return;
-        if (result.meta.isMock || result.meta.provider !== 'ollama-local-flat-selection') throw new GenerationClientError('WRONG_PROVIDER');
+        if (result.meta.isMock || !['ollama-local-flat-selection', 'groq-flat-selection'].includes(result.meta.provider)) throw new GenerationClientError('WRONG_PROVIDER');
         onChange({ status: 'success', specification: result.data.specification, generation: attempt, requestId: result.requestId });
       } catch (error) {
         if (attempt !== version || controller.signal.aborted) return;
