@@ -21,7 +21,7 @@ export default tseslint.config([
     },
   },
   {
-    files: ['backend/**/*.{ts,mts}'],
+    files: ['apps/api/**/*.{ts,mts}', 'tools/evaluation/**/*.{ts,mts}'],
     languageOptions: { globals: globals.node },
   },
 ])

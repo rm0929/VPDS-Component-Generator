@@ -25,3 +25,9 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+
+# Workspace test/build caches
+coverage/
+.cache/
+.vite/
+*.tsbuildinfo

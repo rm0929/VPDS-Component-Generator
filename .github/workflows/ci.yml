@@ -23,5 +23,6 @@ jobs:
         with:
           node-version: 22
           cache: npm
+      # Root commands build shared contracts before each consumer; tests use no live model.
       - run: npm ci
       - run: npm run ${{ matrix.check }}

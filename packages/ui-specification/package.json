@@ -1,0 +1,71 @@
+{
+  "name": "@vpds/ui-specification",
+  "private": true,
+  "version": "0.0.0",
+  "type": "commonjs",
+  "exports": {
+    "./UiSpecificationPreview": {
+      "types": "./dist/UiSpecificationPreview.d.ts",
+      "browser": "./src/UiSpecificationPreview.tsx",
+      "default": "./dist/UiSpecificationPreview.js"
+    },
+    "./generateTsx": {
+      "types": "./dist/generateTsx.d.ts",
+      "browser": "./src/generateTsx.ts",
+      "default": "./dist/generateTsx.js"
+    },
+    "./presentation": {
+      "types": "./dist/presentation.d.ts",
+      "browser": "./src/presentation.ts",
+      "default": "./dist/presentation.js"
+    },
+    "./componentRegistry": {
+      "types": "./dist/componentRegistry.d.ts",
+      "browser": "./src/componentRegistry.ts",
+      "default": "./dist/componentRegistry.js"
+    },
+    "./uiSpecification": {
+      "types": "./dist/uiSpecification.d.ts",
+      "browser": "./src/uiSpecification.ts",
+      "default": "./dist/uiSpecification.js"
+    },
+    "./interactions/DialogExample": {
+      "types": "./dist/interactions/DialogExample.d.ts",
+      "browser": "./src/interactions/DialogExample.tsx",
+      "default": "./dist/interactions/DialogExample.js"
+    },
+    "./interactions/interactionSource": {
+      "types": "./dist/interactions/interactionSource.d.ts",
+      "browser": "./src/interactions/interactionSource.ts",
+      "default": "./dist/interactions/interactionSource.js"
+    },
+    "./interactions/FlagExample": {
+      "types": "./dist/interactions/FlagExample.d.ts",
+      "browser": "./src/interactions/FlagExample.tsx",
+      "default": "./dist/interactions/FlagExample.js"
+    },
+    "./fixtures/registration-form.json": {
+      "types": "./dist/fixtures/registration-form.json",
+      "browser": "./src/fixtures/registration-form.json",
+      "default": "./dist/fixtures/registration-form.json"
+    },
+    "./contracts/apiErrors": {
+      "types": "./dist/contracts/apiErrors.d.ts",
+      "browser": "./src/contracts/apiErrors.ts",
+      "default": "./dist/contracts/apiErrors.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "tsc -p tsconfig.test.json && vitest run --config vitest.config.mts"
+  },
+  "dependencies": {
+    "zod": "4.6.7"
+  },
+  "peerDependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "@visa/nova-react": "^2.5.4",
+    "@visa/nova-icons-react": "^2.0.4"
+  }
+}
