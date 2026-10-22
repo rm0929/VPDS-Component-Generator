@@ -2,7 +2,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { createOllamaProvider } from '../src/ollamaProvider';
 import { readProviderConfig } from '../src/providerConfig';
 import { z } from 'zod';
-import { COMPONENT_TYPES, componentRegistry, SPEC_LIMITS } from '../../src/specification/componentRegistry';
+import { BASE_COMPONENT_TYPES as COMPONENT_TYPES, componentRegistry, SPEC_LIMITS } from '../../src/specification/componentRegistry';
 import registration from '../src/fixtures/registration-draft.json';
 import { modelUiDraftSchema, draftPropsSchemas } from '../src/modelUiDraft';
 import type { DraftNode } from '../src/modelUiDraft';

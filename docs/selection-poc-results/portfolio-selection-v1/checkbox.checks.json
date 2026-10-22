@@ -1,0 +1,66 @@
+{
+  "id": "checkbox",
+  "prompt": "Create a required checkbox labeled Accept terms.",
+  "expected": {
+    "components": [
+      {
+        "type": "checkbox",
+        "props": {
+          "label": "Accept terms",
+          "required": true
+        }
+      }
+    ],
+    "form": false,
+    "horizontalGroups": 0
+  },
+  "naturalDescription": false,
+  "calls": 1,
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "form",
+      "props": {
+        "label": "Accept terms"
+      },
+      "children": [
+        {
+          "id": "node-0-0",
+          "type": "checkbox",
+          "props": {
+            "name": "accept-terms",
+            "label": "Accept terms",
+            "required": true
+          }
+        }
+      ]
+    }
+  },
+  "captured": true,
+  "latencyMs": 1355,
+  "diagnostics": [],
+  "selectionValid": true,
+  "structurallyValid": true,
+  "tsx": "import { Checkbox, Label, Utility } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <form id={\"node-0\"} aria-label={\"Accept terms\"} onSubmit={(event) => event.preventDefault()}>\n      <Utility vFlex={true} vAlignItems={\"center\"} vGap={8}>\n        <Checkbox id={\"node-0-0\"} name={\"accept-terms\"} required={true} />\n        <Label htmlFor={\"node-0-0\"}>\n          {\"Accept terms\"}\n        </Label>\n      </Utility>\n    </form>\n  );\n}\n",
+  "previewHtml": "<form id=\"node-0\" aria-label=\"Accept terms\"><div class=\"v-align-items-center v-flex v-gap-8\"><input class=\"v-checkbox\" type=\"checkbox\" id=\"node-0-0\" required=\"\" name=\"accept-terms\"/><label class=\"v-label\" for=\"node-0-0\">Accept terms</label></div></form>",
+  "novaServerRender": true,
+  "previewCodeConsistent": true,
+  "actual": [
+    {
+      "type": "checkbox",
+      "props": {
+        "name": "accept-terms",
+        "label": "Accept terms",
+        "required": true
+      },
+      "inForm": true
+    }
+  ],
+  "checks": {
+    "componentTypes": true,
+    "requiredProperties": true,
+    "composition": false
+  },
+  "semanticPass": false
+}

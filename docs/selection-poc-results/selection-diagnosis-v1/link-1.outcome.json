@@ -1,0 +1,21 @@
+{
+  "id": "link",
+  "repetition": 1,
+  "prompt": "Create a link labeled Visa design guidance pointing to https://design.visa.com/.",
+  "calls": 1,
+  "captureComplete": true,
+  "latencyMs": 1410,
+  "diagnostics": [],
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "button",
+      "props": {
+        "label": "Visa design guidance",
+        "type": "button",
+        "disabled": false
+      }
+    }
+  }
+}

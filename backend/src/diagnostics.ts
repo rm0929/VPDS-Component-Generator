@@ -6,6 +6,8 @@ const stageMessages = {
   model_json: 'The model message is not valid JSON.',
   model_draft: 'The model draft failed internal contract validation.',
   semantic_plan: 'The semantic UI plan failed shape or relationship validation.',
+  selection_schema: 'The flat component selection failed contract validation.',
+  composition: 'The flat component selection failed composition validation.',
   unsupported_request: 'The model reported an unsupported UI request.',
   ui_schema: 'The model document failed authoritative UI validation.',
   requirement_coverage: 'The validated UI is missing recognized requirements.',
@@ -39,12 +41,19 @@ const customMessages = new Map([
     'The composed UI exceeds the nesting limit.',
     'Submit/reset buttons require explicit form membership.',
     'Form groups cannot be nested.',
+    'Expected bounded JSON selection data.',
+    'A supported selection must contain components.',
+    'The first component has no previous component.',
+    'Unsupported categories must be unique.',
+    'Submit/reset buttons require a declared form.',
+    'A disabled form must have a null label.',
   ].map(message => [message, message] as const),
 ]);
 // Issue paths can contain model-owned keys. Never print arbitrary path segments.
 const pathKeys = new Set(['irVersion', 'status', 'reason', 'version', 'root', 'id', 'type', 'props', 'children', 'name', 'label',
-  'placeholder', 'required', 'disabled', 'maxLength', 'content', 'level', 'gap',
-  'done', 'done_reason', 'message', 'role', 'planVersion', 'elements', 'groups', 'kind', 'members', 'element', 'group']);
+  'placeholder', 'required', 'disabled', 'maxLength', 'content', 'level', 'gap', 'headingLevel', 'triggerLabel', 'closeLabel', 'variant', 'dismissible', 'text', 'links', 'options', 'defaultValue', 'title', 'description', 'action', 'includeCardholder', 'mode', 'value', 'paused', 'rows', 'defaultChecked', 'badgeType', 'dividerType', 'href',
+  'done', 'done_reason', 'message', 'role', 'planVersion', 'elements', 'groups', 'kind', 'members', 'element', 'group',
+  'form', 'enabled', 'components', 'besidePrevious', 'unsupported']);
 
 export type DiagnosticEntry = {
   stage: FailureStage; message: string;

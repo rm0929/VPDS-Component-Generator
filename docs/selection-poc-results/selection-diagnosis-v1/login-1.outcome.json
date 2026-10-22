@@ -1,0 +1,67 @@
+{
+  "id": "login",
+  "repetition": 1,
+  "prompt": "I need a login form with remember me.",
+  "calls": 1,
+  "captureComplete": true,
+  "latencyMs": 2787,
+  "diagnostics": [],
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "form",
+      "props": {
+        "label": "Login"
+      },
+      "children": [
+        {
+          "id": "node-0-0",
+          "type": "verticalLayout",
+          "props": {
+            "gap": "medium"
+          },
+          "children": [
+            {
+              "id": "node-0-0-0",
+              "type": "textarea",
+              "props": {
+                "name": "email",
+                "label": "Email",
+                "required": true,
+                "rows": 1
+              }
+            },
+            {
+              "id": "node-0-0-1",
+              "type": "textarea",
+              "props": {
+                "name": "password",
+                "label": "Password",
+                "required": true,
+                "rows": 1
+              }
+            },
+            {
+              "id": "node-0-0-2",
+              "type": "checkbox",
+              "props": {
+                "name": "remember-me",
+                "label": "Remember me",
+                "required": false
+              }
+            },
+            {
+              "id": "node-0-0-3",
+              "type": "button",
+              "props": {
+                "label": "Login",
+                "type": "submit"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

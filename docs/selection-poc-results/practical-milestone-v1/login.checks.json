@@ -1,0 +1,58 @@
+{
+  "id": "login",
+  "prompt": "I need a login form with remember me.",
+  "calls": 1,
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "form",
+      "props": {
+        "label": "Login"
+      },
+      "children": [
+        {
+          "id": "node-0-0",
+          "type": "verticalLayout",
+          "props": {
+            "gap": "medium"
+          },
+          "children": [
+            {
+              "id": "node-0-0-0",
+              "type": "button",
+              "props": {
+                "label": "Email",
+                "type": "button"
+              }
+            },
+            {
+              "id": "node-0-0-1",
+              "type": "button",
+              "props": {
+                "label": "Password",
+                "type": "button"
+              }
+            },
+            {
+              "id": "node-0-0-2",
+              "type": "button",
+              "props": {
+                "label": "Remember me",
+                "type": "button"
+              }
+            }
+          ]
+        }
+      ]
+    }
+  },
+  "captured": true,
+  "latencyMs": 1834,
+  "diagnostics": [],
+  "selectionValid": true,
+  "structurallyValid": true,
+  "tsx": "import { Button, Utility } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <form id={\"node-0\"} aria-label={\"Login\"} onSubmit={(event) => event.preventDefault()}>\n      <Utility id={\"node-0-0\"} vFlex={true} vFlexCol={true} vGap={16}>\n        <Button id={\"node-0-0-0\"} type={\"button\"}>\n          {\"Email\"}\n        </Button>\n        <Button id={\"node-0-0-1\"} type={\"button\"}>\n          {\"Password\"}\n        </Button>\n        <Button id={\"node-0-0-2\"} type={\"button\"}>\n          {\"Remember me\"}\n        </Button>\n      </Utility>\n    </form>\n  );\n}\n",
+  "previewHtml": "<form id=\"node-0\" aria-label=\"Login\"><div class=\"v-flex v-flex-col v-gap-16\" id=\"node-0-0\"><button class=\"v-button\" id=\"node-0-0-0\" type=\"button\">Email</button><button class=\"v-button\" id=\"node-0-0-1\" type=\"button\">Password</button><button class=\"v-button\" id=\"node-0-0-2\" type=\"button\">Remember me</button></div></form>",
+  "novaServerRender": true
+}

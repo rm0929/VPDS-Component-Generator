@@ -1,0 +1,119 @@
+{
+  "protocol": "Exactly the six requested prompts, one inference each; no retries or changes during the pass. Exact ordered component list, required properties and no unrequested form/row. Unquoted description/message permits an optional terminal period, declared before inference. Technical rendering/consistency/compilation are separate from semantic checks.",
+  "cases": [
+    {
+      "id": "payment-card",
+      "prompt": "Create payment-card input fields.",
+      "expected": {
+        "components": [
+          {
+            "type": "paymentCard",
+            "props": {}
+          }
+        ],
+        "form": false,
+        "horizontalGroups": 0
+      }
+    },
+    {
+      "id": "content-card",
+      "prompt": "Create a content card titled Analytics with description View your reports.",
+      "expected": {
+        "components": [
+          {
+            "type": "contentCard",
+            "props": {
+              "title": "Analytics"
+            }
+          }
+        ],
+        "propertyAlternatives": {
+          "description": [
+            "View your reports",
+            "View your reports."
+          ]
+        },
+        "form": false,
+        "horizontalGroups": 0
+      }
+    },
+    {
+      "id": "dialog",
+      "prompt": "Create a dialog titled Confirm changes with a Cancel button.",
+      "expected": {
+        "components": [
+          {
+            "type": "dialog",
+            "props": {
+              "title": "Confirm changes",
+              "closeLabel": "Cancel"
+            }
+          }
+        ],
+        "form": false,
+        "horizontalGroups": 0
+      }
+    },
+    {
+      "id": "flag",
+      "prompt": "Show a dismissible success flag saying Changes saved.",
+      "expected": {
+        "components": [
+          {
+            "type": "flag",
+            "props": {
+              "variant": "success",
+              "dismissible": true
+            }
+          }
+        ],
+        "propertyAlternatives": {
+          "content": [
+            "Changes saved",
+            "Changes saved."
+          ]
+        },
+        "form": false,
+        "horizontalGroups": 0
+      }
+    },
+    {
+      "id": "footer",
+      "prompt": "Create a footer with Copyright 2026 and a Privacy link pointing to https://example.com/privacy.",
+      "expected": {
+        "components": [
+          {
+            "type": "footer",
+            "props": {
+              "text": "Copyright 2026",
+              "links": [
+                {
+                  "label": "Privacy",
+                  "href": "https://example.com/privacy"
+                }
+              ]
+            }
+          }
+        ],
+        "form": false,
+        "horizontalGroups": 0
+      }
+    },
+    {
+      "id": "text-input",
+      "prompt": "Create a text input labeled Full name.",
+      "expected": {
+        "components": [
+          {
+            "type": "textInput",
+            "props": {
+              "label": "Full name"
+            }
+          }
+        ],
+        "form": false,
+        "horizontalGroups": 0
+      }
+    }
+  ]
+}

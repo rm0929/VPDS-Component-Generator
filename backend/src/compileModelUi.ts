@@ -33,6 +33,8 @@ export function compileModelUi(input: unknown): UiSpecification {
   };
   const visit = (node: DraftNode, position: string): unknown => {
     const props = node.type === 'textInput' || node.type === 'emailInput' || node.type === 'passwordInput' || node.type === 'checkbox'
+      || node.type === 'textarea' || node.type === 'switch'
+      || node.type === 'select' || node.type === 'radioGroup' || node.type === 'paymentCard'
       ? { ...node.props, name: fieldName(node.props.label) } : { ...node.props };
     return { id: `node-${position}`, type: node.type, props,
       ...(node.children ? { children: node.children.map((child, index) => visit(child, `${position}-${index}`)) } : {}),

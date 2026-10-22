@@ -66,8 +66,9 @@ const GeneratorSection: React.FC = () => {
       style={{ padding: '4rem 1rem', background: 'var(--palette-default-surface-1)' }}
     >
       <Typography variant="headline-2" tag="h2" colorScheme="active">
-        Try It Now
+        Legacy keyword demo
       </Typography>
+      <Typography>Fixed keyword examples only. This secondary demo does not use AI.</Typography>
         <Utility style={{ marginTop: '1rem', width: '100%', maxWidth: '600px' }}>
             <InputBox onSubmit={handleGenerate} />
         </Utility>

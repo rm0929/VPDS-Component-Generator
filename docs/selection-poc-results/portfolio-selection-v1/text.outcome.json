@@ -1,0 +1,31 @@
+{
+  "id": "text",
+  "prompt": "Create a paragraph with the exact text \"Changes saved.\".",
+  "expected": {
+    "components": [
+      {
+        "type": "text",
+        "props": {
+          "content": "Changes saved."
+        }
+      }
+    ],
+    "form": false,
+    "horizontalGroups": 0
+  },
+  "naturalDescription": false,
+  "calls": 1,
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "text",
+      "props": {
+        "content": "Changes saved."
+      }
+    }
+  },
+  "captured": true,
+  "latencyMs": 1133,
+  "diagnostics": []
+}

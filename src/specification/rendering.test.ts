@@ -1,7 +1,10 @@
 import { Children, createElement, isValidElement } from 'react';
 import type { ReactElement, ReactNode } from 'react';
 import { renderToStaticMarkup } from 'react-dom/server';
-import { Button, Checkbox, Input, InputContainer, Label, Typography, Utility } from '@visa/nova-react';
+import { Footer, InputControl, Badge, Button, Checkbox, ContentCard, ContentCardBody, ContentCardTitle, ProgressLinear, ProgressLabel, Radio, Select, Divider, Input, InputContainer, Label, Link, Switch, SwitchLabel, Textarea, Typography, Utility } from '@visa/nova-react';
+import { VisaCardGenericLow } from '@visa/nova-icons-react';
+import { DialogExample } from './interactions/DialogExample';
+import { FlagExample } from './interactions/FlagExample';
 import ts from 'typescript';
 import { describe, expect, it } from 'vitest';
 import registrationJson from './fixtures/registration-form.json?raw';
@@ -20,6 +23,19 @@ const examples = {
   button: { id: 'continue', type: 'button', props: { label: 'Continue', type: 'button', disabled: false } },
   text: { id: 'description', type: 'text', props: { content: 'Description' } },
   heading: { id: 'title', type: 'heading', props: { content: 'Registration', level: 2 } },
+  textarea: { id: 'notes', type: 'textarea', props: { name: 'notes', label: 'Notes', rows: 4, maxLength: 300, required: false, disabled: false } },
+  switch: { id: 'alerts', type: 'switch', props: { name: 'alerts', label: 'Alerts', defaultChecked: false, disabled: false } },
+  badge: { id: 'status', type: 'badge', props: { content: 'Ready', badgeType: 'stable' } },
+  divider: { id: 'separator', type: 'divider', props: { dividerType: 'decorative' } },
+  link: { id: 'help', type: 'link', props: { label: 'Help', href: 'https://design.visa.com/?a=1&b=2' } },
+  select: { id: 'country', type: 'select', props: { name: 'country', label: 'Country', options: ['Canada', 'Japan'], defaultValue: 'Japan', required: false, disabled: false } },
+  radioGroup: { id: 'delivery', type: 'radioGroup', props: { name: 'delivery', label: 'Delivery', options: ['Standard', 'Express'], defaultValue: 'Express', required: false, disabled: false } },
+  contentCard: { id: 'summary', type: 'contentCard', props: { title: 'Release', description: 'Ready today', action: { label: 'Explore', href: '/release' } } },
+  paymentCard: { id: 'payment', type: 'paymentCard', props: { name: 'payment', label: 'Card details', includeCardholder: true, required: false, disabled: false } },
+  progress: { id: 'upload', type: 'progress', props: { label: 'Upload', mode: 'determinate', value: 0, paused: false } },
+  dialog: { id: 'review', type: 'dialog', props: { title: 'Review update', content: 'Review the information.', triggerLabel: 'Review', closeLabel: 'Cancel' } },
+  flag: { id: 'feedback', type: 'flag', props: { content: 'Updated', variant: 'success', dismissible: true } },
+  footer: { id: 'bottom', type: 'footer', props: { text: 'Example service', links: [{ label: 'Terms', href: '/terms' }] } },
   verticalLayout: { id: 'column', type: 'verticalLayout', props: { gap: 'large' }, children: [{ id: 'column-text', type: 'text', props: { content: 'Column' } }] },
   horizontalLayout: { id: 'row', type: 'horizontalLayout', props: { gap: 'small' }, children: [{ id: 'row-text', type: 'text', props: { content: 'Row' } }] },
   form: { id: 'form', type: 'form', props: { label: 'Registration form' }, children: [{ id: 'submit', type: 'button', props: { label: 'Register', type: 'submit' } }] },
@@ -32,7 +48,14 @@ const markup = (specification: UiSpecification) => renderToStaticMarkup(createEl
 
 type ComparableElement = { tag: string; props: Record<string, unknown>; children: (ComparableElement | string)[] };
 const novaNames = new Map<unknown, string>([
+  [DialogExample, 'DialogExample'], [FlagExample, 'FlagExample'], [Footer, 'Footer'],
+  [InputControl, 'InputControl'], [VisaCardGenericLow, 'VisaCardGenericLow'],
+  ['nav', 'nav'], ['ul', 'ul'], ['li', 'li'], ['details', 'details'], ['summary', 'summary'],
   [Button, 'Button'], [Checkbox, 'Checkbox'], [Input, 'Input'], [InputContainer, 'InputContainer'],
+  [Badge, 'Badge'], [Divider, 'Divider'], [Link, 'Link'], [Switch, 'Switch'], [SwitchLabel, 'SwitchLabel'], [Textarea, 'Textarea'],
+  [Select, 'Select'], [Radio, 'Radio'], [ContentCard, 'ContentCard'], [ContentCardBody, 'ContentCardBody'],
+  [ContentCardTitle, 'ContentCardTitle'], [ProgressLinear, 'ProgressLinear'], [ProgressLabel, 'ProgressLabel'],
+  ['option', 'option'], ['fieldset', 'fieldset'], ['legend', 'legend'],
   [Label, 'Label'], [Typography, 'Typography'], [Utility, 'Utility'], ['form', 'form'],
 ]);
 
@@ -44,7 +67,8 @@ function reactTree(element: ReactElement): ComparableElement {
   return {
     tag,
     props: Object.fromEntries(Object.entries(props)
-      .filter(([key, value]) => key !== 'children' && value !== undefined)
+      .filter(([key, value]) => key !== 'children' && value !== undefined
+        && !(tag === 'Link' && (key === 'onClick' || key === 'onAuxClick')))
       .map(([key, value]) => [key, key === 'onSubmit' ? 'prevent-submit' : value])),
     children: Children.toArray(props.children as ReactNode).map(child => {
       if (typeof child === 'string') return child;

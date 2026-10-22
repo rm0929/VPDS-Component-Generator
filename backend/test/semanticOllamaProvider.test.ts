@@ -5,7 +5,7 @@ import type { OllamaConfig } from '../src/providerConfig';
 import { buildSemanticModelInstructions, buildSemanticModelSchema } from '../src/semanticModelSchema';
 import { compileSemanticUiPlan } from '../src/compileSemanticUiPlan';
 import { createGenerationDiagnostics } from '../src/diagnostics';
-import { COMPONENT_TYPES } from '../../src/specification/componentRegistry';
+import { BASE_COMPONENT_TYPES as COMPONENT_TYPES } from '../../src/specification/componentRegistry';
 import type { UiNode } from '../../src/specification/componentRegistry';
 import { uiSpecificationSchema } from '../../src/specification/uiSpecification';
 import { allTypesPlan, profilePlan } from './fixtures/semantic-plans';
@@ -242,7 +242,7 @@ describe('opt-in semantic-plan Ollama workflow (mocked HTTP, no inference)', () 
   });
 
   it('preserves safe connection-failure errors', async () => {
-    const request = vi.fn<typeof fetch>().mockRejectedValue(new Error('PRIVATE-ADDRESS'));
+    const request = vi.fn<typeof fetch>().mockRejectedValue(new TypeError('PRIVATE-ADDRESS', { cause: { code: 'ECONNREFUSED' } }));
     await expect(createOllamaProvider(config(), request).generate('Private prompt', { signal: signal() }))
       .rejects.toMatchObject({ code: 'OLLAMA_UNAVAILABLE', message: 'The local Ollama server is unavailable.' });
   });

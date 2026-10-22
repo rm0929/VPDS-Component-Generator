@@ -86,9 +86,7 @@ export function createApp(options: AppOptions = {}) {
         if (error instanceof ApiError) throw error;
         throw new ApiError('PROVIDER_FAILURE');
       }
-      let parsed;
-      try { parsed = uiSpecificationSchema.safeParse(output); }
-      catch { diagnose('ui_schema'); throw new ApiError('INVALID_PROVIDER_OUTPUT'); }
+      const parsed = uiSpecificationSchema.safeParse(output);
       if (!parsed.success) {
         diagnose('ui_schema', parsed.error.issues);
         throw new ApiError('INVALID_PROVIDER_OUTPUT');

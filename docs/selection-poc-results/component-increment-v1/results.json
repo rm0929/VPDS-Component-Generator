@@ -1,0 +1,574 @@
+{
+  "phase": "increment-v1",
+  "url": "http://127.0.0.1:5173/",
+  "startedAt": "2026-10-20T18:11:10.289Z",
+  "inputs": "inputs.json",
+  "requests": [
+    {
+      "id": "8637.548",
+      "url": "http://127.0.0.1:5173/api/generate",
+      "method": "POST",
+      "body": "{\"prompt\":\"Create one required multiline text area labeled \\\"Notes\\\", with 4 rows and a maximum length of 300 characters. No form or other components.\"}",
+      "status": 200,
+      "finished": true,
+      "responseFile": "textarea.response.json"
+    },
+    {
+      "id": "8637.559",
+      "url": "http://127.0.0.1:5173/api/generate",
+      "method": "POST",
+      "body": "{\"prompt\":\"Create one switch labeled \\\"Email alerts\\\", initially off and not disabled. No form or other components.\"}",
+      "status": 200,
+      "finished": true,
+      "responseFile": "switch.response.json"
+    },
+    {
+      "id": "8637.560",
+      "url": "http://127.0.0.1:5173/api/generate",
+      "method": "POST",
+      "body": "{\"prompt\":\"Create one text badge with the exact text \\\"Ready\\\". No form or other components.\"}",
+      "status": 200,
+      "finished": true,
+      "responseFile": "badge.response.json"
+    },
+    {
+      "id": "8637.561",
+      "url": "http://127.0.0.1:5173/api/generate",
+      "method": "POST",
+      "body": "{\"prompt\":\"Create one decorative horizontal divider. No form or other components.\"}",
+      "status": 200,
+      "finished": true,
+      "responseFile": "divider.response.json"
+    },
+    {
+      "id": "8637.562",
+      "url": "http://127.0.0.1:5173/api/generate",
+      "method": "POST",
+      "body": "{\"prompt\":\"Create one link labeled \\\"Visa design guidance\\\" pointing to https://design.visa.com/. No form or other components.\"}",
+      "status": 200,
+      "finished": true,
+      "responseFile": "link.response.json"
+    },
+    {
+      "id": "8637.563",
+      "url": "http://127.0.0.1:5173/api/generate",
+      "method": "POST",
+      "body": "{\"prompt\":\"I need a login form with remember me\"}",
+      "status": 200,
+      "finished": true,
+      "responseFile": "login-regression.response.json"
+    }
+  ],
+  "attempts": [
+    {
+      "id": "textarea",
+      "prompt": "Create one required multiline text area labeled \"Notes\", with 4 rows and a maximum length of 300 characters. No form or other components.",
+      "startedAt": "2026-10-20T18:11:11.935Z",
+      "latencyMs": 4877,
+      "ui": {
+        "alert": null,
+        "status": "Interface generated. Review the result below.",
+        "preview": true,
+        "controls": [
+          {
+            "id": "node-0",
+            "tag": "TEXTAREA",
+            "type": "textarea",
+            "role": null,
+            "label": "Notes",
+            "disabled": false,
+            "required": true,
+            "checked": null,
+            "name": "notes",
+            "rows": 4,
+            "maxLength": -1,
+            "href": null,
+            "ariaHidden": null,
+            "className": "v-input",
+            "form": null
+          }
+        ],
+        "forms": [],
+        "suggestions": [
+          "Text area: Label, InputContainer, Textarea"
+        ],
+        "tsx": "import { InputContainer, Label, Textarea, Utility } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Utility vFlex={true} vFlexCol={true} vGap={8}>\n      <Label htmlFor={\"node-0\"}>\n        {\"Notes\"}\n      </Label>\n      <InputContainer>\n        <Textarea id={\"node-0\"} name={\"notes\"} placeholder={\"Enter your notes here\"} required={true} rows={4} />\n      </InputContainer>\n    </Utility>\n  );\n}\n"
+      },
+      "httpStatus": 200,
+      "meta": {
+        "provider": "ollama-local-flat-selection",
+        "isMock": false
+      },
+      "errorCode": null,
+      "checks": {
+        "validSpecification": true,
+        "preview": true,
+        "displayedTsxMatchesSpecification": true,
+        "exactComponentSelection": true,
+        "formMembership": true,
+        "label": true,
+        "required": true,
+        "rows": true,
+        "maxLength": false,
+        "tsxCompiles": true
+      },
+      "actual": [
+        {
+          "type": "textarea",
+          "props": {
+            "name": "notes",
+            "label": "Notes",
+            "placeholder": "Enter your notes here",
+            "required": true,
+            "rows": 4
+          },
+          "id": "node-0"
+        }
+      ],
+      "success": false
+    },
+    {
+      "id": "switch",
+      "prompt": "Create one switch labeled \"Email alerts\", initially off and not disabled. No form or other components.",
+      "startedAt": "2026-10-20T18:11:16.830Z",
+      "latencyMs": 1724,
+      "ui": {
+        "alert": null,
+        "status": "Interface generated. Review the result below.",
+        "preview": true,
+        "controls": [
+          {
+            "id": "node-0",
+            "tag": "TEXTAREA",
+            "type": "textarea",
+            "role": null,
+            "label": "Email alerts",
+            "disabled": false,
+            "required": false,
+            "checked": null,
+            "name": "email-alerts",
+            "rows": 1,
+            "maxLength": -1,
+            "href": null,
+            "ariaHidden": null,
+            "className": "v-input",
+            "form": null
+          }
+        ],
+        "forms": [],
+        "suggestions": [
+          "Text area: Label, InputContainer, Textarea"
+        ],
+        "tsx": "import { InputContainer, Label, Textarea, Utility } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Utility vFlex={true} vFlexCol={true} vGap={8}>\n      <Label htmlFor={\"node-0\"}>\n        {\"Email alerts\"}\n      </Label>\n      <InputContainer>\n        <Textarea id={\"node-0\"} name={\"email-alerts\"} required={false} disabled={false} rows={1} />\n      </InputContainer>\n    </Utility>\n  );\n}\n"
+      },
+      "httpStatus": 200,
+      "meta": {
+        "provider": "ollama-local-flat-selection",
+        "isMock": false
+      },
+      "errorCode": null,
+      "checks": {
+        "validSpecification": true,
+        "preview": true,
+        "displayedTsxMatchesSpecification": true,
+        "exactComponentSelection": false,
+        "formMembership": true,
+        "label": true,
+        "initiallyOff": false,
+        "enabled": true,
+        "accessibleSwitch": false,
+        "toggleWorks": null,
+        "tsxCompiles": true
+      },
+      "actual": [
+        {
+          "type": "textarea",
+          "props": {
+            "name": "email-alerts",
+            "label": "Email alerts",
+            "required": false,
+            "disabled": false,
+            "rows": 1
+          },
+          "id": "node-0"
+        }
+      ],
+      "interaction": null,
+      "success": false,
+      "verificationGap": "The model returned a textarea. No generated switch existed for the live toggle check; native switch rendering/state are covered by deterministic tests."
+    },
+    {
+      "id": "badge",
+      "prompt": "Create one text badge with the exact text \"Ready\". No form or other components.",
+      "startedAt": "2026-10-20T18:11:18.556Z",
+      "latencyMs": 1326,
+      "ui": {
+        "alert": null,
+        "status": "Interface generated. Review the result below.",
+        "preview": true,
+        "controls": [
+          {
+            "id": "node-0",
+            "tag": "DIV",
+            "type": null,
+            "role": null,
+            "label": "Ready",
+            "disabled": null,
+            "required": null,
+            "checked": null,
+            "name": null,
+            "rows": null,
+            "maxLength": null,
+            "href": null,
+            "ariaHidden": null,
+            "className": "v-badge v-badge-stable",
+            "form": null
+          }
+        ],
+        "forms": [],
+        "suggestions": [
+          "Badge: Badge"
+        ],
+        "tsx": "import { Badge } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Badge id={\"node-0\"} badgeType={\"stable\"}>\n      {\"Ready\"}\n    </Badge>\n  );\n}\n"
+      },
+      "httpStatus": 200,
+      "meta": {
+        "provider": "ollama-local-flat-selection",
+        "isMock": false
+      },
+      "errorCode": null,
+      "checks": {
+        "validSpecification": true,
+        "preview": true,
+        "displayedTsxMatchesSpecification": true,
+        "exactComponentSelection": true,
+        "formMembership": true,
+        "exactText": true,
+        "textVariant": true,
+        "tsxCompiles": true
+      },
+      "actual": [
+        {
+          "type": "badge",
+          "props": {
+            "content": "Ready",
+            "badgeType": "stable"
+          },
+          "id": "node-0"
+        }
+      ],
+      "success": true
+    },
+    {
+      "id": "divider",
+      "prompt": "Create one decorative horizontal divider. No form or other components.",
+      "startedAt": "2026-10-20T18:11:19.883Z",
+      "latencyMs": 1217,
+      "ui": {
+        "alert": null,
+        "status": "Interface generated. Review the result below.",
+        "preview": true,
+        "controls": [
+          {
+            "id": "node-0",
+            "tag": "HR",
+            "type": null,
+            "role": null,
+            "label": "",
+            "disabled": null,
+            "required": null,
+            "checked": null,
+            "name": null,
+            "rows": null,
+            "maxLength": null,
+            "href": null,
+            "ariaHidden": "true",
+            "className": "v-divider v-divider-decorative",
+            "form": null
+          }
+        ],
+        "forms": [],
+        "suggestions": [
+          "Divider: Divider"
+        ],
+        "tsx": "import { Divider } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Divider id={\"node-0\"} dividerType={\"decorative\"} />\n  );\n}\n"
+      },
+      "httpStatus": 200,
+      "meta": {
+        "provider": "ollama-local-flat-selection",
+        "isMock": false
+      },
+      "errorCode": null,
+      "checks": {
+        "validSpecification": true,
+        "preview": true,
+        "displayedTsxMatchesSpecification": true,
+        "exactComponentSelection": true,
+        "formMembership": true,
+        "decorative": true,
+        "horizontalRule": true,
+        "tsxCompiles": true
+      },
+      "actual": [
+        {
+          "type": "divider",
+          "props": {
+            "dividerType": "decorative"
+          },
+          "id": "node-0"
+        }
+      ],
+      "success": true
+    },
+    {
+      "id": "link",
+      "prompt": "Create one link labeled \"Visa design guidance\" pointing to https://design.visa.com/. No form or other components.",
+      "startedAt": "2026-10-20T18:11:21.102Z",
+      "latencyMs": 1524,
+      "ui": {
+        "alert": null,
+        "status": "Interface generated. Review the result below.",
+        "preview": true,
+        "controls": [
+          {
+            "id": "node-0",
+            "tag": "BUTTON",
+            "type": "button",
+            "role": null,
+            "label": "Visa design guidance",
+            "disabled": false,
+            "required": null,
+            "checked": null,
+            "name": "",
+            "rows": null,
+            "maxLength": null,
+            "href": null,
+            "ariaHidden": null,
+            "className": "v-button",
+            "form": null
+          }
+        ],
+        "forms": [],
+        "suggestions": [
+          "Button: Button"
+        ],
+        "tsx": "import { Button } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Button id={\"node-0\"} type={\"button\"} disabled={false}>\n      {\"Visa design guidance\"}\n    </Button>\n  );\n}\n"
+      },
+      "httpStatus": 200,
+      "meta": {
+        "provider": "ollama-local-flat-selection",
+        "isMock": false
+      },
+      "errorCode": null,
+      "checks": {
+        "validSpecification": true,
+        "preview": true,
+        "displayedTsxMatchesSpecification": true,
+        "exactComponentSelection": false,
+        "formMembership": true,
+        "label": true,
+        "destination": false,
+        "previewNavigationPrevented": null,
+        "tsxCompiles": true
+      },
+      "actual": [
+        {
+          "type": "button",
+          "props": {
+            "label": "Visa design guidance",
+            "type": "button",
+            "disabled": false
+          },
+          "id": "node-0"
+        }
+      ],
+      "success": false,
+      "verificationGap": "The model returned a button. No generated link existed for the live navigation check; link containment is covered by deterministic rendering tests."
+    },
+    {
+      "id": "login-regression",
+      "prompt": "I need a login form with remember me",
+      "startedAt": "2026-10-20T18:11:22.631Z",
+      "latencyMs": 3564,
+      "ui": {
+        "alert": null,
+        "status": "Interface generated. Review the result below.",
+        "preview": true,
+        "controls": [
+          {
+            "id": "node-0-0-0",
+            "tag": "TEXTAREA",
+            "type": "textarea",
+            "role": null,
+            "label": "Email",
+            "disabled": false,
+            "required": true,
+            "checked": null,
+            "name": "email",
+            "rows": 1,
+            "maxLength": -1,
+            "href": null,
+            "ariaHidden": null,
+            "className": "v-input",
+            "form": "node-0"
+          },
+          {
+            "id": "node-0-0-1",
+            "tag": "TEXTAREA",
+            "type": "textarea",
+            "role": null,
+            "label": "Password",
+            "disabled": false,
+            "required": true,
+            "checked": null,
+            "name": "password",
+            "rows": 1,
+            "maxLength": -1,
+            "href": null,
+            "ariaHidden": null,
+            "className": "v-input",
+            "form": "node-0"
+          },
+          {
+            "id": "node-0-0-2",
+            "tag": "INPUT",
+            "type": "checkbox",
+            "role": null,
+            "label": "Remember me",
+            "disabled": false,
+            "required": false,
+            "checked": false,
+            "name": "remember-me",
+            "rows": null,
+            "maxLength": -1,
+            "href": null,
+            "ariaHidden": null,
+            "className": "v-checkbox",
+            "form": "node-0"
+          },
+          {
+            "id": "node-0-0-3",
+            "tag": "BUTTON",
+            "type": "submit",
+            "role": null,
+            "label": "Login",
+            "disabled": false,
+            "required": null,
+            "checked": null,
+            "name": "",
+            "rows": null,
+            "maxLength": null,
+            "href": null,
+            "ariaHidden": null,
+            "className": "v-button",
+            "form": "node-0"
+          }
+        ],
+        "forms": [
+          {
+            "id": "node-0",
+            "label": "Login"
+          }
+        ],
+        "suggestions": [
+          "Form: form",
+          "Vertical layout: Utility",
+          "Text area: Label, InputContainer, Textarea",
+          "Text area: Label, InputContainer, Textarea",
+          "Checkbox: Checkbox, Label",
+          "Button: Button"
+        ],
+        "tsx": "import { Button, Checkbox, InputContainer, Label, Textarea, Utility } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <form id={\"node-0\"} aria-label={\"Login\"} onSubmit={(event) => event.preventDefault()}>\n      <Utility id={\"node-0-0\"} vFlex={true} vFlexCol={true} vGap={16}>\n        <Utility vFlex={true} vFlexCol={true} vGap={8}>\n          <Label htmlFor={\"node-0-0-0\"}>\n            {\"Email\"}\n          </Label>\n          <InputContainer>\n            <Textarea id={\"node-0-0-0\"} name={\"email\"} required={true} rows={1} />\n          </InputContainer>\n        </Utility>\n        <Utility vFlex={true} vFlexCol={true} vGap={8}>\n          <Label htmlFor={\"node-0-0-1\"}>\n            {\"Password\"}\n          </Label>\n          <InputContainer>\n            <Textarea id={\"node-0-0-1\"} name={\"password\"} required={true} rows={1} />\n          </InputContainer>\n        </Utility>\n        <Utility vFlex={true} vAlignItems={\"center\"} vGap={8}>\n          <Checkbox id={\"node-0-0-2\"} name={\"remember-me\"} required={false} />\n          <Label htmlFor={\"node-0-0-2\"}>\n            {\"Remember me\"}\n          </Label>\n        </Utility>\n        <Button id={\"node-0-0-3\"} type={\"submit\"}>\n          {\"Login\"}\n        </Button>\n      </Utility>\n    </form>\n  );\n}\n"
+      },
+      "httpStatus": 200,
+      "meta": {
+        "provider": "ollama-local-flat-selection",
+        "isMock": false
+      },
+      "errorCode": null,
+      "checks": {
+        "validSpecification": true,
+        "preview": true,
+        "displayedTsxMatchesSpecification": true,
+        "exactComponentSelection": false,
+        "formMembership": true,
+        "email": false,
+        "password": false,
+        "rememberMe": true,
+        "loginSubmit": true,
+        "tsxCompiles": true
+      },
+      "actual": [
+        {
+          "type": "textarea",
+          "props": {
+            "name": "email",
+            "label": "Email",
+            "required": true,
+            "rows": 1
+          },
+          "id": "node-0-0-0"
+        },
+        {
+          "type": "textarea",
+          "props": {
+            "name": "password",
+            "label": "Password",
+            "required": true,
+            "rows": 1
+          },
+          "id": "node-0-0-1"
+        },
+        {
+          "type": "checkbox",
+          "props": {
+            "name": "remember-me",
+            "label": "Remember me",
+            "required": false
+          },
+          "id": "node-0-0-2"
+        },
+        {
+          "type": "button",
+          "props": {
+            "label": "Login",
+            "type": "submit"
+          },
+          "id": "node-0-0-3"
+        }
+      ],
+      "success": false
+    }
+  ],
+  "health": {
+    "status": "ok",
+    "provider": "ollama-local-flat-selection",
+    "isMock": false,
+    "requestId": "de82e5b0-7af3-498f-9b88-6fd1bf7dc8ac"
+  },
+  "runtime": {
+    "ollamaVersion": "0.40.5",
+    "modelDigest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0"
+  },
+  "source": {
+    "gitCommit": "ea21577fb3a366a839b6b2d4acbee6935ccda76b",
+    "nodeVersion": "v22.14.0",
+    "compilerRevision": "a4c0294281ca282d1e2f641bd7fe69f5c5783b66070a74ee197cb4977332af83",
+    "compilerHashes": {
+      "backend/src/compileModelUi.ts": "36972eb7de27bcf7cd53985266844551fecbd87c76f5dbada6a9e4ac2db7abaa",
+      "backend/src/modelUiDraft.ts": "576d754f20db3e91c2eeaed99271b662d1bfcbaaefab51173e53f08fe4be5937",
+      "src/specification/componentRegistry.ts": "bc008cf15613334eddaa62907962cbf37730d130bb206d0e567977549e696d95",
+      "src/specification/uiSpecification.ts": "8f6ee79a75079fedb73f6abfb82b741ddc159f44326a1c6bf079ae04ab51de68"
+    }
+  },
+  "schemaHash": "47c162558c08d61092c256bfa20a8d05abd1672d0d08e48384c5bf86e697b8d9",
+  "messagesHash": "22cf2bd2ede57c5f8f0e3539832e092250a2cb4e0e7ab5ea4d3dcfeacaa96cf6",
+  "initial": {
+    "input": "ai-ui-desc",
+    "heading": "Experimental AI",
+    "selectedView": "Experimental AI"
+  },
+  "typeScriptDiagnostics": [],
+  "completedAt": "2026-10-20T18:11:26.681Z",
+  "postCount": 6
+}

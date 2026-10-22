@@ -1,0 +1,54 @@
+{
+  "id": "badge",
+  "prompt": "Create a text badge saying Ready.",
+  "expected": {
+    "components": [
+      {
+        "type": "badge",
+        "props": {
+          "content": "Ready"
+        }
+      }
+    ],
+    "form": false,
+    "horizontalGroups": 0
+  },
+  "naturalDescription": false,
+  "calls": 1,
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "badge",
+      "props": {
+        "content": "Ready",
+        "badgeType": "stable"
+      }
+    }
+  },
+  "captured": true,
+  "latencyMs": 1180,
+  "diagnostics": [],
+  "selectionValid": true,
+  "structurallyValid": true,
+  "tsx": "import { Badge } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Badge id={\"node-0\"} badgeType={\"stable\"}>\n      {\"Ready\"}\n    </Badge>\n  );\n}\n",
+  "previewHtml": "<div class=\"v-badge v-badge-stable\" id=\"node-0\">Ready</div>",
+  "novaServerRender": true,
+  "previewCodeConsistent": true,
+  "actual": [
+    {
+      "type": "badge",
+      "props": {
+        "content": "Ready",
+        "badgeType": "stable"
+      },
+      "inForm": false
+    }
+  ],
+  "checks": {
+    "componentTypes": true,
+    "requiredProperties": true,
+    "composition": true
+  },
+  "semanticPass": true
+}

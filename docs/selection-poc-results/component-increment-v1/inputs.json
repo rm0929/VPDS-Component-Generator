@@ -1,0 +1,46 @@
+{
+  "recordVersion": "component-increment-1",
+  "applicationUrl": "http://127.0.0.1:5173/",
+  "cases": [
+    {
+      "id": "textarea",
+      "prompt": "Create one required multiline text area labeled \"Notes\", with 4 rows and a maximum length of 300 characters. No form or other components."
+    },
+    {
+      "id": "switch",
+      "prompt": "Create one switch labeled \"Email alerts\", initially off and not disabled. No form or other components."
+    },
+    {
+      "id": "badge",
+      "prompt": "Create one text badge with the exact text \"Ready\". No form or other components."
+    },
+    {
+      "id": "divider",
+      "prompt": "Create one decorative horizontal divider. No form or other components."
+    },
+    {
+      "id": "link",
+      "prompt": "Create one link labeled \"Visa design guidance\" pointing to https://design.visa.com/. No form or other components."
+    },
+    {
+      "id": "login-regression",
+      "prompt": "I need a login form with remember me"
+    }
+  ],
+  "attemptsPerCase": 1,
+  "retries": 0,
+  "model": "qwen3:4b-instruct",
+  "inference": {
+    "temperature": 0,
+    "seed": 0,
+    "num_ctx": 8192,
+    "num_predict": 2048,
+    "stream": false,
+    "think": false,
+    "keep_alive": "2m"
+  },
+  "timeoutMs": 60000,
+  "responseLimitBytes": 65536,
+  "novaReactVersion": "2.5.4",
+  "settingsProvenance": "Production provider settings; backend was explicitly started with these overrides. Confirmed health and installed model are recorded before inference."
+}

@@ -1,0 +1,59 @@
+{
+  "id": "content-card",
+  "prompt": "Create a content card titled Analytics with description View your reports.",
+  "expected": {
+    "components": [
+      {
+        "type": "contentCard",
+        "props": {
+          "title": "Analytics"
+        }
+      }
+    ],
+    "propertyAlternatives": {
+      "description": [
+        "View your reports",
+        "View your reports."
+      ]
+    },
+    "form": false,
+    "horizontalGroups": 0
+  },
+  "calls": 1,
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "dialog",
+      "props": {
+        "title": "Analytics",
+        "content": "View your reports"
+      }
+    }
+  },
+  "captured": true,
+  "latencyMs": 1253,
+  "diagnostics": [],
+  "selectionValid": true,
+  "structurallyValid": true,
+  "tsx": "import { useEffect, useRef } from 'react';\nimport { Button, Dialog, DialogContent, DialogHeader, Typography, useFocusTrap } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <DialogExample id={\"node-0\"} title={\"Analytics\"} content={\"View your reports\"} triggerLabel={\"Open Analytics\"} closeLabel={\"Close\"} />\n  );\n}\n\ntype DialogPresentationProps = { id: string; title: string; content: string; triggerLabel: string; closeLabel: string };\n\nfunction DialogExample({ id, title, content, triggerLabel, closeLabel }: DialogPresentationProps) {\n  const { ref, onKeyNavigation } = useFocusTrap<HTMLDialogElement>();\n  const trigger = useRef<HTMLButtonElement>(null);\n  useEffect(() => {\n    const dialog = ref.current;\n    const restoreFocus = () => trigger.current?.focus();\n    dialog?.addEventListener('close', restoreFocus);\n    return () => dialog?.removeEventListener('close', restoreFocus);\n  }, [ref]);\n  return <>\n    <Button id={id} type=\"button\" ref={trigger} aria-haspopup=\"dialog\" aria-controls={`${id}--dialog`}\n      onClick={() => { if (!ref.current?.open) ref.current?.showModal(); }}>{triggerLabel}</Button>\n    <Dialog style={{ inlineSize: '30rem', maxInlineSize: 'calc(100vw - 2rem)' }} id={`${id}--dialog`} ref={ref} aria-labelledby={`${id}--title`} aria-describedby={`${id}--content`}\n      onKeyDown={event => onKeyNavigation(event, Boolean(ref.current?.open))}>\n      <DialogContent>\n        <DialogHeader id={`${id}--title`} tag=\"h2\">{title}</DialogHeader>\n        <Typography id={`${id}--content`}>{content}</Typography>\n        <Button type=\"button\" autoFocus onClick={() => ref.current?.close()}>{closeLabel}</Button>\n      </DialogContent>\n    </Dialog>\n  </>;\n}\n",
+  "previewHtml": "<button class=\"v-button\" id=\"node-0\" type=\"button\" aria-haspopup=\"dialog\" aria-controls=\"node-0--dialog\">Open Analytics</button><dialog class=\"v-message v-dialog v-dialog-default\" style=\"inline-size:30rem;max-inline-size:calc(100vw - 2rem)\" id=\"node-0--dialog\" aria-labelledby=\"node-0--title\" aria-describedby=\"node-0--content\"><div class=\"v-message-content v-pb-2 v-pr-2\"><h2 class=\"v-dialog-header v-align-items-center v-flex v-gap-6 v-justify-content-start\" id=\"node-0--title\">Analytics</h2><p id=\"node-0--content\">View your reports</p><button class=\"v-button\" type=\"button\" autofocus=\"\">Close</button></div></dialog>",
+  "novaServerRender": true,
+  "previewCodeConsistent": true,
+  "actual": [
+    {
+      "type": "dialog",
+      "props": {
+        "title": "Analytics",
+        "content": "View your reports"
+      },
+      "inForm": false
+    }
+  ],
+  "checks": {
+    "componentTypes": false,
+    "requiredProperties": false,
+    "composition": true
+  },
+  "semanticPass": false
+}

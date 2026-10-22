@@ -1,0 +1,56 @@
+{
+  "id": "button",
+  "prompt": "Create a disabled ordinary button labeled Preview.",
+  "expected": {
+    "components": [
+      {
+        "type": "button",
+        "props": {
+          "label": "Preview",
+          "type": "button",
+          "disabled": true
+        }
+      }
+    ],
+    "form": false,
+    "horizontalGroups": 0
+  },
+  "naturalDescription": false,
+  "calls": 1,
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "button",
+      "props": {
+        "label": "Preview",
+        "type": "button"
+      }
+    }
+  },
+  "captured": true,
+  "latencyMs": 1243,
+  "diagnostics": [],
+  "selectionValid": true,
+  "structurallyValid": true,
+  "tsx": "import { Button } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Button id={\"node-0\"} type={\"button\"}>\n      {\"Preview\"}\n    </Button>\n  );\n}\n",
+  "previewHtml": "<button class=\"v-button\" id=\"node-0\" type=\"button\">Preview</button>",
+  "novaServerRender": true,
+  "previewCodeConsistent": true,
+  "actual": [
+    {
+      "type": "button",
+      "props": {
+        "label": "Preview",
+        "type": "button"
+      },
+      "inForm": false
+    }
+  ],
+  "checks": {
+    "componentTypes": true,
+    "requiredProperties": false,
+    "composition": true
+  },
+  "semanticPass": false
+}

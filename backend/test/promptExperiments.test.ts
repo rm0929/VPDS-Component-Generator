@@ -9,7 +9,7 @@ import { compileModelUi } from '../src/compileModelUi';
 import baseline from '../evaluation/fixtures/baseline-prompt-v1.json';
 import { CONCISE_PROMPT } from '../evaluation/concisePrompt';
 import { hash } from '../evaluation/metadata';
-import { COMPONENT_TYPES } from '../../src/specification/componentRegistry';
+import { BASE_COMPONENT_TYPES as COMPONENT_TYPES } from '../../src/specification/componentRegistry';
 
 describe('isolated prompt experiments', () => {
   it.each([

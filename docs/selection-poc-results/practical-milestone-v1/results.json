@@ -1,0 +1,308 @@
+{
+  "completedAt": "2026-10-21T05:10:43.876Z",
+  "calls": 9,
+  "noRetries": true,
+  "unchangedDuringPass": true,
+  "typeScriptDiagnostics": [],
+  "results": [
+    {
+      "id": "select",
+      "prompt": "Create a Country select with Canada, France, and Japan.",
+      "calls": 1,
+      "specification": {
+        "version": "1.0",
+        "root": {
+          "id": "node-0",
+          "type": "select",
+          "props": {
+            "name": "country",
+            "label": "Country",
+            "options": [
+              "Canada",
+              "France",
+              "Japan"
+            ],
+            "defaultValue": "Canada"
+          }
+        }
+      },
+      "captured": true,
+      "latencyMs": 3962,
+      "diagnostics": [],
+      "selectionValid": true,
+      "structurallyValid": true,
+      "tsx": "import { InputContainer, Label, Select, Utility } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Utility vFlex={true} vFlexCol={true} vGap={8}>\n      <Label htmlFor={\"node-0\"}>\n        {\"Country\"}\n      </Label>\n      <InputContainer>\n        <Select id={\"node-0\"} name={\"country\"} defaultValue={\"Canada\"}>\n          <option value={\"Canada\"}>\n            {\"Canada\"}\n          </option>\n          <option value={\"France\"}>\n            {\"France\"}\n          </option>\n          <option value={\"Japan\"}>\n            {\"Japan\"}\n          </option>\n        </Select>\n      </InputContainer>\n    </Utility>\n  );\n}\n",
+      "previewHtml": "<div class=\"v-flex v-flex-col v-gap-8\"><label class=\"v-label\" for=\"node-0\">Country</label><div class=\"v-surface v-input-container\"><select class=\"v-input\" id=\"node-0\" name=\"country\"><option value=\"Canada\" selected=\"\">Canada</option><option value=\"France\">France</option><option value=\"Japan\">Japan</option></select></div></div>",
+      "novaServerRender": true,
+      "tsxCompiles": true
+    },
+    {
+      "id": "radio",
+      "prompt": "Create a Delivery radio group with Standard and Express options.",
+      "calls": 1,
+      "specification": {
+        "version": "1.0",
+        "root": {
+          "id": "node-0",
+          "type": "radioGroup",
+          "props": {
+            "name": "delivery",
+            "label": "Delivery",
+            "options": [
+              "Standard",
+              "Express"
+            ],
+            "required": false
+          }
+        }
+      },
+      "captured": true,
+      "latencyMs": 1265,
+      "diagnostics": [],
+      "selectionValid": true,
+      "structurallyValid": true,
+      "tsx": "import { Label, Radio, Utility } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <fieldset id={\"node-0\"}>\n      <legend>\n        {\"Delivery\"}\n      </legend>\n      <Utility vFlex={true} vAlignItems={\"center\"} vGap={8}>\n        <Radio id={\"node-0--option-0\"} name={\"delivery\"} value={\"Standard\"} required={false} />\n        <Label htmlFor={\"node-0--option-0\"}>\n          {\"Standard\"}\n        </Label>\n      </Utility>\n      <Utility vFlex={true} vAlignItems={\"center\"} vGap={8}>\n        <Radio id={\"node-0--option-1\"} name={\"delivery\"} value={\"Express\"} required={false} />\n        <Label htmlFor={\"node-0--option-1\"}>\n          {\"Express\"}\n        </Label>\n      </Utility>\n    </fieldset>\n  );\n}\n",
+      "previewHtml": "<fieldset id=\"node-0\"><legend>Delivery</legend><div class=\"v-align-items-center v-flex v-gap-8\"><input class=\"v-radio\" type=\"radio\" id=\"node-0--option-0\" name=\"delivery\" value=\"Standard\"/><label class=\"v-label\" for=\"node-0--option-0\">Standard</label></div><div class=\"v-align-items-center v-flex v-gap-8\"><input class=\"v-radio\" type=\"radio\" id=\"node-0--option-1\" name=\"delivery\" value=\"Express\"/><label class=\"v-label\" for=\"node-0--option-1\">Express</label></div></fieldset>",
+      "novaServerRender": true,
+      "tsxCompiles": true
+    },
+    {
+      "id": "content-card",
+      "prompt": "Create a content card titled Project status, with description Ready for review and a Details button.",
+      "calls": 1,
+      "specification": {
+        "version": "1.0",
+        "root": {
+          "id": "node-0",
+          "type": "verticalLayout",
+          "props": {
+            "gap": "medium"
+          },
+          "children": [
+            {
+              "id": "node-0-0",
+              "type": "heading",
+              "props": {
+                "content": "Project status",
+                "level": 2
+              }
+            },
+            {
+              "id": "node-0-1",
+              "type": "heading",
+              "props": {
+                "content": "Ready for review",
+                "level": 3
+              }
+            },
+            {
+              "id": "node-0-2",
+              "type": "button",
+              "props": {
+                "label": "Details",
+                "type": "button"
+              }
+            }
+          ]
+        }
+      },
+      "captured": true,
+      "latencyMs": 2024,
+      "diagnostics": [],
+      "selectionValid": true,
+      "structurallyValid": true,
+      "tsx": "import { Button, Typography, Utility } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Utility id={\"node-0\"} vFlex={true} vFlexCol={true} vGap={16}>\n      <Typography id={\"node-0-0\"} tag={\"h2\"} variant={\"headline-2\"}>\n        {\"Project status\"}\n      </Typography>\n      <Typography id={\"node-0-1\"} tag={\"h3\"} variant={\"headline-3\"}>\n        {\"Ready for review\"}\n      </Typography>\n      <Button id={\"node-0-2\"} type={\"button\"}>\n        {\"Details\"}\n      </Button>\n    </Utility>\n  );\n}\n",
+      "previewHtml": "<div class=\"v-flex v-flex-col v-gap-16\" id=\"node-0\"><h2 class=\"v-typography-headline-2\" id=\"node-0-0\">Project status</h2><h3 class=\"v-typography-headline-3\" id=\"node-0-1\">Ready for review</h3><button class=\"v-button\" id=\"node-0-2\" type=\"button\">Details</button></div>",
+      "novaServerRender": true,
+      "tsxCompiles": true
+    },
+    {
+      "id": "payment-card",
+      "prompt": "Create payment-card fields with card number, expiry, and security code.",
+      "calls": 1,
+      "specification": {
+        "version": "1.0",
+        "root": {
+          "id": "node-0",
+          "type": "paymentCard",
+          "props": {
+            "name": "card-details",
+            "label": "Card details",
+            "includeCardholder": true
+          }
+        }
+      },
+      "captured": true,
+      "latencyMs": 1245,
+      "diagnostics": [],
+      "selectionValid": true,
+      "structurallyValid": true,
+      "tsx": "import { Input, InputContainer, Label, Typography, Utility } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <fieldset id={\"node-0\"}>\n      <legend>\n        {\"Card details\"}\n      </legend>\n      <Utility vFlex={true} vFlexCol={true} vGap={8}>\n        <Label htmlFor={\"node-0--cardholder\"}>\n          {\"Cardholder name\"}\n        </Label>\n        <InputContainer>\n          <Input id={\"node-0--cardholder\"} name={\"card-details[cardholder]\"} type={\"text\"} />\n        </InputContainer>\n      </Utility>\n      <Utility vFlex={true} vFlexCol={true} vGap={8}>\n        <Label htmlFor={\"node-0--number\"}>\n          {\"Card number\"}\n        </Label>\n        <InputContainer>\n          <Input id={\"node-0--number\"} name={\"card-details[number]\"} type={\"text\"} />\n        </InputContainer>\n      </Utility>\n      <Utility vFlex={true} vFlexCol={true} vGap={8}>\n        <Label htmlFor={\"node-0--expiry\"}>\n          {\"Expiry (MM/YY)\"}\n        </Label>\n        <InputContainer>\n          <Input id={\"node-0--expiry\"} name={\"card-details[expiry]\"} type={\"text\"} />\n        </InputContainer>\n      </Utility>\n      <Utility vFlex={true} vFlexCol={true} vGap={8}>\n        <Label htmlFor={\"node-0--security-code\"}>\n          {\"Security code\"}\n        </Label>\n        <InputContainer>\n          <Input id={\"node-0--security-code\"} name={\"card-details[security-code]\"} type={\"password\"} />\n        </InputContainer>\n      </Utility>\n      <Typography id={\"node-0--notice\"} tag={\"p\"} variant={\"body-1\"}>\n        {\"UI example only. No card validation or payment processing.\"}\n      </Typography>\n    </fieldset>\n  );\n}\n",
+      "previewHtml": "<fieldset id=\"node-0\"><legend>Card details</legend><div class=\"v-flex v-flex-col v-gap-8\"><label class=\"v-label\" for=\"node-0--cardholder\">Cardholder name</label><div class=\"v-surface v-input-container\"><input class=\"v-input\" id=\"node-0--cardholder\" type=\"text\" name=\"card-details[cardholder]\"/></div></div><div class=\"v-flex v-flex-col v-gap-8\"><label class=\"v-label\" for=\"node-0--number\">Card number</label><div class=\"v-surface v-input-container\"><input class=\"v-input\" id=\"node-0--number\" type=\"text\" name=\"card-details[number]\"/></div></div><div class=\"v-flex v-flex-col v-gap-8\"><label class=\"v-label\" for=\"node-0--expiry\">Expiry (MM/YY)</label><div class=\"v-surface v-input-container\"><input class=\"v-input\" id=\"node-0--expiry\" type=\"text\" name=\"card-details[expiry]\"/></div></div><div class=\"v-flex v-flex-col v-gap-8\"><label class=\"v-label\" for=\"node-0--security-code\">Security code</label><div class=\"v-surface v-input-container\"><input class=\"v-input\" id=\"node-0--security-code\" type=\"password\" name=\"card-details[security-code]\"/></div></div><p class=\"v-typography-body-1\" id=\"node-0--notice\">UI example only. No card validation or payment processing.</p></fieldset>",
+      "novaServerRender": true,
+      "tsxCompiles": true
+    },
+    {
+      "id": "determinate",
+      "prompt": "Show Upload progress at 40 percent.",
+      "calls": 1,
+      "specification": {
+        "version": "1.0",
+        "root": {
+          "id": "node-0",
+          "type": "progress",
+          "props": {
+            "label": "Upload",
+            "mode": "determinate",
+            "value": 40
+          }
+        }
+      },
+      "captured": true,
+      "latencyMs": 1293,
+      "diagnostics": [],
+      "selectionValid": true,
+      "structurallyValid": true,
+      "tsx": "import { ProgressLabel, ProgressLinear, Utility } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Utility vFlex={true} vFlexCol={true} vGap={8}>\n      <ProgressLabel htmlFor={\"node-0\"}>\n        {\"Upload\"}\n      </ProgressLabel>\n      <ProgressLinear id={\"node-0\"} max={100} value={40} />\n    </Utility>\n  );\n}\n",
+      "previewHtml": "<div class=\"v-flex v-flex-col v-gap-8\"><label class=\"v-progress-label\" for=\"node-0\">Upload</label><progress class=\"v-progress v-progress-bar\" style=\"animation-play-state:running\" id=\"node-0\" max=\"100\" value=\"40\"></progress></div>",
+      "novaServerRender": true,
+      "tsxCompiles": true
+    },
+    {
+      "id": "indeterminate",
+      "prompt": "Show an indeterminate Loading progress indicator.",
+      "calls": 1,
+      "specification": {
+        "version": "1.0",
+        "root": {
+          "id": "node-0",
+          "type": "progress",
+          "props": {
+            "label": "Loading",
+            "mode": "indeterminate"
+          }
+        }
+      },
+      "captured": true,
+      "latencyMs": 1181,
+      "diagnostics": [],
+      "selectionValid": true,
+      "structurallyValid": true,
+      "tsx": "import { ProgressLabel, ProgressLinear, Utility } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Utility vFlex={true} vFlexCol={true} vGap={8}>\n      <ProgressLabel htmlFor={\"node-0\"}>\n        {\"Loading\"}\n      </ProgressLabel>\n      <ProgressLinear id={\"node-0\"} max={100} />\n    </Utility>\n  );\n}\n",
+      "previewHtml": "<div class=\"v-flex v-flex-col v-gap-8\"><label class=\"v-progress-label\" for=\"node-0\">Loading</label><progress class=\"v-progress v-progress-bar\" style=\"animation-play-state:running\" id=\"node-0\" max=\"100\"></progress></div>",
+      "novaServerRender": true,
+      "tsxCompiles": true
+    },
+    {
+      "id": "switch",
+      "prompt": "Create a switch labeled Email alerts.",
+      "calls": 1,
+      "specification": {
+        "version": "1.0",
+        "root": {
+          "id": "node-0",
+          "type": "switch",
+          "props": {
+            "name": "email-alerts",
+            "label": "Email alerts",
+            "defaultChecked": false
+          }
+        }
+      },
+      "captured": true,
+      "latencyMs": 1180,
+      "diagnostics": [],
+      "selectionValid": true,
+      "structurallyValid": true,
+      "tsx": "import { Switch, SwitchLabel, Utility } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Utility vFlex={true} vAlignItems={\"center\"} vGap={8}>\n      <Switch id={\"node-0\"} name={\"email-alerts\"} defaultChecked={false} />\n      <SwitchLabel htmlFor={\"node-0\"}>\n        {\"Email alerts\"}\n      </SwitchLabel>\n    </Utility>\n  );\n}\n",
+      "previewHtml": "<div class=\"v-align-items-center v-flex v-gap-8\"><input class=\"v-switch\" role=\"switch\" type=\"checkbox\" id=\"node-0\" name=\"email-alerts\"/><label class=\"v-label v-switch-label\" for=\"node-0\">Email alerts</label></div>",
+      "novaServerRender": true,
+      "tsxCompiles": true
+    },
+    {
+      "id": "link",
+      "prompt": "Create a link labeled Visa design guidance pointing to https://design.visa.com/.",
+      "calls": 1,
+      "specification": {
+        "version": "1.0",
+        "root": {
+          "id": "node-0",
+          "type": "button",
+          "props": {
+            "label": "Visa design guidance",
+            "type": "button",
+            "disabled": false
+          }
+        }
+      },
+      "captured": true,
+      "latencyMs": 1376,
+      "diagnostics": [],
+      "selectionValid": true,
+      "structurallyValid": true,
+      "tsx": "import { Button } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Button id={\"node-0\"} type={\"button\"} disabled={false}>\n      {\"Visa design guidance\"}\n    </Button>\n  );\n}\n",
+      "previewHtml": "<button class=\"v-button\" id=\"node-0\" type=\"button\">Visa design guidance</button>",
+      "novaServerRender": true,
+      "tsxCompiles": true
+    },
+    {
+      "id": "login",
+      "prompt": "I need a login form with remember me.",
+      "calls": 1,
+      "specification": {
+        "version": "1.0",
+        "root": {
+          "id": "node-0",
+          "type": "form",
+          "props": {
+            "label": "Login"
+          },
+          "children": [
+            {
+              "id": "node-0-0",
+              "type": "verticalLayout",
+              "props": {
+                "gap": "medium"
+              },
+              "children": [
+                {
+                  "id": "node-0-0-0",
+                  "type": "button",
+                  "props": {
+                    "label": "Email",
+                    "type": "button"
+                  }
+                },
+                {
+                  "id": "node-0-0-1",
+                  "type": "button",
+                  "props": {
+                    "label": "Password",
+                    "type": "button"
+                  }
+                },
+                {
+                  "id": "node-0-0-2",
+                  "type": "button",
+                  "props": {
+                    "label": "Remember me",
+                    "type": "button"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      },
+      "captured": true,
+      "latencyMs": 1834,
+      "diagnostics": [],
+      "selectionValid": true,
+      "structurallyValid": true,
+      "tsx": "import { Button, Utility } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <form id={\"node-0\"} aria-label={\"Login\"} onSubmit={(event) => event.preventDefault()}>\n      <Utility id={\"node-0-0\"} vFlex={true} vFlexCol={true} vGap={16}>\n        <Button id={\"node-0-0-0\"} type={\"button\"}>\n          {\"Email\"}\n        </Button>\n        <Button id={\"node-0-0-1\"} type={\"button\"}>\n          {\"Password\"}\n        </Button>\n        <Button id={\"node-0-0-2\"} type={\"button\"}>\n          {\"Remember me\"}\n        </Button>\n      </Utility>\n    </form>\n  );\n}\n",
+      "previewHtml": "<form id=\"node-0\" aria-label=\"Login\"><div class=\"v-flex v-flex-col v-gap-16\" id=\"node-0-0\"><button class=\"v-button\" id=\"node-0-0-0\" type=\"button\">Email</button><button class=\"v-button\" id=\"node-0-0-1\" type=\"button\">Password</button><button class=\"v-button\" id=\"node-0-0-2\" type=\"button\">Remember me</button></div></form>",
+      "novaServerRender": true,
+      "tsxCompiles": true
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "id": "explicit-switch",
+  "repetition": 1,
+  "prompt": "Create a switch labeled Email alerts.",
+  "calls": 1,
+  "captureComplete": true,
+  "latencyMs": 4804,
+  "diagnostics": [],
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "checkbox",
+      "props": {
+        "name": "email-alerts",
+        "label": "Email alerts",
+        "required": false,
+        "disabled": false
+      }
+    }
+  },
+  "rawSelection": {
+    "components": [
+      {
+        "props": {
+          "label": "Email alerts",
+          "disabled": false,
+          "required": false
+        },
+        "type": "checkbox"
+      }
+    ],
+    "form": {
+      "enabled": false,
+      "label": null
+    },
+    "unsupported": [],
+    "version": "selection-poc-2"
+  },
+  "selectionValid": true,
+  "actual": [
+    {
+      "type": "checkbox",
+      "props": {
+        "name": "email-alerts",
+        "label": "Email alerts",
+        "required": false,
+        "disabled": false
+      },
+      "parent": null,
+      "inForm": false
+    }
+  ],
+  "rawToCompiledTypesPreserved": true,
+  "rawToCompiledPropertiesPreserved": true,
+  "checks": {
+    "componentTypes": false,
+    "properties": true,
+    "form": true,
+    "layout": true
+  },
+  "layoutNote": "No exact layout was requested; layout check only records absence of an unrequested horizontal group.",
+  "tsx": "import { Checkbox, Label, Utility } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Utility vFlex={true} vAlignItems={\"center\"} vGap={8}>\n      <Checkbox id={\"node-0\"} name={\"email-alerts\"} required={false} disabled={false} />\n      <Label htmlFor={\"node-0\"}>\n        {\"Email alerts\"}\n      </Label>\n    </Utility>\n  );\n}\n",
+  "tsxCompiles": true,
+  "propertyNote": "Requested label retained despite wrong component type; model also added disabled:false and required:false.",
+  "rawPropertyOrder": [
+    [
+      "props",
+      "type"
+    ]
+  ]
+}

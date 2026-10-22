@@ -1,0 +1,436 @@
+{
+  "prompts": [
+    "Create one text input labeled \"Full name\". Do not include a form or any other components.",
+    "Create one disabled password input labeled \"Password\". Do not include a form or any other components.",
+    "Create a login form with an email input labeled \"Email\", a password input labeled \"Password\", a checkbox labeled \"Remember me\", and a submit button labeled \"Login\".",
+    "Create exactly two buttons labeled \"Preview\" and \"Cancel\" side by side, outside any form.",
+    "Create a heading with the exact text \"Build once. Share everywhere.\". Do not include any other components.",
+    "Create a data table with columns Name and Email and two rows of sample data."
+  ],
+  "attempts": [
+    {
+      "number": 1,
+      "prompt": "Create one text input labeled \"Full name\". Do not include a form or any other components.",
+      "latencyMs": 4038,
+      "httpStatus": 200,
+      "meta": {
+        "provider": "ollama-local-flat-selection",
+        "isMock": false
+      },
+      "checks": {
+        "validSpecification": true,
+        "displayedTsxMatchesSpecification": true,
+        "previewMatchesSpecification": true,
+        "layoutMatchesSpecification": true,
+        "oneTextInput": true,
+        "exactLabel": true,
+        "noForm": true,
+        "noExtraLeaves": true,
+        "tsxCompiles": true
+      },
+      "rendered": true,
+      "hasCode": true,
+      "uiMessage": null,
+      "specification": {
+        "version": "1.0",
+        "root": {
+          "id": "node-0",
+          "type": "textInput",
+          "props": {
+            "name": "full-name",
+            "label": "Full name"
+          }
+        }
+      },
+      "actual": [
+        {
+          "type": "textInput",
+          "props": {
+            "name": "full-name",
+            "label": "Full name"
+          },
+          "inForm": false,
+          "parent": null
+        }
+      ],
+      "layouts": [],
+      "forms": [],
+      "displayedTsx": "import { Input, InputContainer, Label, Utility } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Utility vFlex={true} vFlexCol={true} vGap={8}>\n      <Label htmlFor={\"node-0\"}>\n        {\"Full name\"}\n      </Label>\n      <InputContainer>\n        <Input id={\"node-0\"} name={\"full-name\"} type={\"text\"} />\n      </InputContainer>\n    </Utility>\n  );\n}\n",
+      "preview": [
+        {
+          "id": "node-0",
+          "tag": "INPUT",
+          "type": "text",
+          "label": "Full name",
+          "disabled": false,
+          "required": false,
+          "name": "full-name",
+          "placeholder": "",
+          "formId": null
+        }
+      ],
+      "layoutDom": [],
+      "success": true,
+      "typeScriptDiagnosticCodes": []
+    },
+    {
+      "number": 2,
+      "prompt": "Create one disabled password input labeled \"Password\". Do not include a form or any other components.",
+      "latencyMs": 1502,
+      "httpStatus": 200,
+      "meta": {
+        "provider": "ollama-local-flat-selection",
+        "isMock": false
+      },
+      "checks": {
+        "validSpecification": true,
+        "displayedTsxMatchesSpecification": true,
+        "previewMatchesSpecification": true,
+        "layoutMatchesSpecification": true,
+        "onePasswordInput": true,
+        "disabled": false,
+        "exactLabel": true,
+        "noForm": true,
+        "noExtraLeaves": true,
+        "tsxCompiles": true
+      },
+      "rendered": true,
+      "hasCode": true,
+      "uiMessage": null,
+      "specification": {
+        "version": "1.0",
+        "root": {
+          "id": "node-0",
+          "type": "passwordInput",
+          "props": {
+            "name": "password",
+            "label": "Password",
+            "required": false
+          }
+        }
+      },
+      "actual": [
+        {
+          "type": "passwordInput",
+          "props": {
+            "name": "password",
+            "label": "Password",
+            "required": false
+          },
+          "inForm": false,
+          "parent": null
+        }
+      ],
+      "layouts": [],
+      "forms": [],
+      "displayedTsx": "import { Input, InputContainer, Label, Utility } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Utility vFlex={true} vFlexCol={true} vGap={8}>\n      <Label htmlFor={\"node-0\"}>\n        {\"Password\"}\n      </Label>\n      <InputContainer>\n        <Input id={\"node-0\"} name={\"password\"} type={\"password\"} required={false} />\n      </InputContainer>\n    </Utility>\n  );\n}\n",
+      "preview": [
+        {
+          "id": "node-0",
+          "tag": "INPUT",
+          "type": "password",
+          "label": "Password",
+          "disabled": false,
+          "required": false,
+          "name": "password",
+          "placeholder": "",
+          "formId": null
+        }
+      ],
+      "layoutDom": [],
+      "success": false,
+      "typeScriptDiagnosticCodes": []
+    },
+    {
+      "number": 3,
+      "prompt": "Create a login form with an email input labeled \"Email\", a password input labeled \"Password\", a checkbox labeled \"Remember me\", and a submit button labeled \"Login\".",
+      "httpStatus": 200,
+      "backendDurationMs": 2667,
+      "captureIncomplete": true,
+      "success": false,
+      "verification": "Returned HTTP 200 and passed specification parsing, but detailed capture was lost before saving. Not retried."
+    },
+    {
+      "number": 4,
+      "prompt": "Create exactly two buttons labeled \"Preview\" and \"Cancel\" side by side, outside any form.",
+      "latencyMs": 3697,
+      "httpStatus": 200,
+      "meta": {
+        "provider": "ollama-local-flat-selection",
+        "isMock": false
+      },
+      "checks": {
+        "validSpecification": true,
+        "displayedTsxMatchesSpecification": true,
+        "previewMatchesSpecification": true,
+        "layoutMatchesSpecification": true,
+        "exactTwoButtons": true,
+        "noForm": true,
+        "sideBySide": false,
+        "tsxCompiles": true
+      },
+      "rendered": true,
+      "hasCode": true,
+      "uiMessage": null,
+      "specification": {
+        "version": "1.0",
+        "root": {
+          "id": "node-0",
+          "type": "verticalLayout",
+          "props": {
+            "gap": "medium"
+          },
+          "children": [
+            {
+              "id": "node-0-0",
+              "type": "button",
+              "props": {
+                "label": "Preview",
+                "type": "button"
+              }
+            },
+            {
+              "id": "node-0-1",
+              "type": "button",
+              "props": {
+                "label": "Cancel",
+                "type": "button"
+              }
+            }
+          ]
+        }
+      },
+      "actual": [
+        {
+          "type": "button",
+          "props": {
+            "label": "Preview",
+            "type": "button"
+          },
+          "inForm": false,
+          "parent": "node-0"
+        },
+        {
+          "type": "button",
+          "props": {
+            "label": "Cancel",
+            "type": "button"
+          },
+          "inForm": false,
+          "parent": "node-0"
+        }
+      ],
+      "layouts": [
+        {
+          "id": "node-0",
+          "type": "verticalLayout",
+          "children": [
+            "node-0-0",
+            "node-0-1"
+          ]
+        }
+      ],
+      "forms": [],
+      "displayedTsx": "import { Button, Utility } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Utility id={\"node-0\"} vFlex={true} vFlexCol={true} vGap={16}>\n      <Button id={\"node-0-0\"} type={\"button\"}>\n        {\"Preview\"}\n      </Button>\n      <Button id={\"node-0-1\"} type={\"button\"}>\n        {\"Cancel\"}\n      </Button>\n    </Utility>\n  );\n}\n",
+      "preview": [
+        {
+          "id": "node-0-0",
+          "tag": "BUTTON",
+          "type": "button",
+          "label": "Preview",
+          "disabled": false,
+          "name": "",
+          "formId": null
+        },
+        {
+          "id": "node-0-1",
+          "tag": "BUTTON",
+          "type": "button",
+          "label": "Cancel",
+          "disabled": false,
+          "name": "",
+          "formId": null
+        }
+      ],
+      "layoutDom": [
+        {
+          "id": "node-0",
+          "type": "verticalLayout",
+          "children": [
+            "node-0-0",
+            "node-0-1"
+          ],
+          "display": "flex",
+          "direction": "column"
+        }
+      ],
+      "success": false,
+      "typeScriptDiagnosticCodes": []
+    },
+    {
+      "number": 5,
+      "prompt": "Create a heading with the exact text \"Build once. Share everywhere.\". Do not include any other components.",
+      "latencyMs": 1353,
+      "httpStatus": 200,
+      "meta": {
+        "provider": "ollama-local-flat-selection",
+        "isMock": false
+      },
+      "checks": {
+        "validSpecification": true,
+        "displayedTsxMatchesSpecification": true,
+        "previewMatchesSpecification": true,
+        "layoutMatchesSpecification": true,
+        "oneHeading": true,
+        "exactQuotedText": true,
+        "noExtraLeaves": true,
+        "noForm": true,
+        "tsxCompiles": true
+      },
+      "rendered": true,
+      "hasCode": true,
+      "uiMessage": null,
+      "specification": {
+        "version": "1.0",
+        "root": {
+          "id": "node-0",
+          "type": "heading",
+          "props": {
+            "content": "Build once. Share everywhere.",
+            "level": 1
+          }
+        }
+      },
+      "actual": [
+        {
+          "type": "heading",
+          "props": {
+            "content": "Build once. Share everywhere.",
+            "level": 1
+          },
+          "inForm": false,
+          "parent": null
+        }
+      ],
+      "layouts": [],
+      "forms": [],
+      "displayedTsx": "import { Typography } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Typography id={\"node-0\"} tag={\"h1\"} variant={\"headline-1\"}>\n      {\"Build once. Share everywhere.\"}\n    </Typography>\n  );\n}\n",
+      "preview": [
+        {
+          "id": "node-0",
+          "tag": "H1",
+          "label": "Build once. Share everywhere.",
+          "formId": null
+        }
+      ],
+      "layoutDom": [],
+      "success": true,
+      "typeScriptDiagnosticCodes": []
+    },
+    {
+      "number": 6,
+      "prompt": "Create a data table with columns Name and Email and two rows of sample data.",
+      "latencyMs": 999,
+      "httpStatus": 422,
+      "errorCode": "UNSUPPORTED_UI_REQUEST",
+      "checks": {
+        "correctUnsupportedOutcome": true,
+        "noPartialPreview": true,
+        "noPartialCode": true,
+        "unsupportedUiState": true
+      },
+      "rendered": false,
+      "hasCode": false,
+      "uiMessage": "Unsupported request. This request includes a component, property, behavior, or grouping outside the supported scope. Simplify it and try again.",
+      "success": true
+    }
+  ],
+  "model": "qwen3:4b-instruct",
+  "workflow": "flat-selection",
+  "retryCount": 0,
+  "linkStyles": [
+    {
+      "theme": "light",
+      "selector": "nav[aria-label=\"Generator views\"] a[href*=\"generator=ai\"]",
+      "state": "rest",
+      "color": "rgb(20, 52, 203)",
+      "background": "rgba(255, 255, 255, 0)",
+      "focusVisible": false,
+      "outline": "rgb(20, 52, 203) none 3px",
+      "outlineOffset": "0px"
+    },
+    {
+      "theme": "light",
+      "selector": "nav[aria-label=\"Generator views\"] a[href*=\"generator=ai\"]",
+      "state": "keyboard-focus",
+      "color": "rgb(23, 59, 232)",
+      "background": "rgba(179, 215, 255, 0.35)",
+      "focusVisible": true,
+      "outline": "rgb(15, 37, 149) dashed 1px",
+      "outlineOffset": "1px"
+    },
+    {
+      "theme": "light",
+      "selector": ".ai-suggestions a",
+      "state": "rest",
+      "color": "rgb(20, 52, 203)",
+      "background": "rgba(255, 255, 255, 0)",
+      "focusVisible": false,
+      "outline": "rgb(20, 52, 203) none 3px",
+      "outlineOffset": "0px"
+    },
+    {
+      "theme": "light",
+      "selector": ".ai-suggestions a",
+      "state": "keyboard-focus",
+      "color": "rgb(23, 59, 232)",
+      "background": "rgba(179, 215, 255, 0.35)",
+      "focusVisible": true,
+      "outline": "rgb(15, 37, 149) dashed 1px",
+      "outlineOffset": "1px"
+    },
+    {
+      "theme": "dark",
+      "selector": "nav[aria-label=\"Generator views\"] a[href*=\"generator=ai\"]",
+      "state": "rest",
+      "color": "rgb(189, 234, 255)",
+      "background": "rgb(26, 26, 26)",
+      "focusVisible": false,
+      "outline": "rgb(189, 234, 255) none 3px",
+      "outlineOffset": "0px"
+    },
+    {
+      "theme": "dark",
+      "selector": "nav[aria-label=\"Generator views\"] a[href*=\"generator=ai\"]",
+      "state": "keyboard-focus",
+      "color": "rgb(219, 244, 255)",
+      "background": "rgba(0, 0, 0, 0.353)",
+      "focusVisible": true,
+      "outline": "rgb(128, 215, 255) dashed 1px",
+      "outlineOffset": "1px"
+    },
+    {
+      "theme": "dark",
+      "selector": ".ai-suggestions a",
+      "state": "rest",
+      "color": "rgb(189, 234, 255)",
+      "background": "rgb(10, 10, 10)",
+      "focusVisible": false,
+      "outline": "rgb(189, 234, 255) none 3px",
+      "outlineOffset": "0px"
+    },
+    {
+      "theme": "dark",
+      "selector": ".ai-suggestions a",
+      "state": "keyboard-focus",
+      "color": "rgb(219, 244, 255)",
+      "background": "rgba(0, 0, 0, 0.353)",
+      "focusVisible": true,
+      "outline": "rgb(128, 215, 255) dashed 1px",
+      "outlineOffset": "1px"
+    }
+  ],
+  "recordingIssue": "Browser evaluation failed",
+  "postRequestCount": 6,
+  "typeScriptDiagnosticCount": 0
+}

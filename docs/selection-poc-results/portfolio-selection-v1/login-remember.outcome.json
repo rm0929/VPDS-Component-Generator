@@ -1,0 +1,56 @@
+{
+  "id": "login-remember",
+  "prompt": "Create a login form with remember me.",
+  "expected": {
+    "components": [
+      {
+        "type": "emailInput",
+        "props": {}
+      },
+      {
+        "type": "passwordInput",
+        "props": {}
+      },
+      {
+        "type": "checkbox",
+        "props": {
+          "label": "Remember me"
+        }
+      },
+      {
+        "type": "button",
+        "props": {
+          "type": "submit"
+        }
+      }
+    ],
+    "form": true,
+    "horizontalGroups": 0
+  },
+  "naturalDescription": false,
+  "calls": 1,
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "form",
+      "props": {
+        "label": "Login"
+      },
+      "children": [
+        {
+          "id": "node-0-0",
+          "type": "checkbox",
+          "props": {
+            "name": "remember-me",
+            "label": "Remember me",
+            "required": false
+          }
+        }
+      ]
+    }
+  },
+  "captured": true,
+  "latencyMs": 1164,
+  "diagnostics": []
+}

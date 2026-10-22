@@ -1,0 +1,42 @@
+{
+  "id": "footer",
+  "prompt": "Create a footer with Copyright 2026 and a Privacy link pointing to https://example.com/privacy.",
+  "expected": {
+    "components": [
+      {
+        "type": "footer",
+        "props": {
+          "text": "Copyright 2026",
+          "links": [
+            {
+              "label": "Privacy",
+              "href": "https://example.com/privacy"
+            }
+          ]
+        }
+      }
+    ],
+    "form": false,
+    "horizontalGroups": 0
+  },
+  "calls": 1,
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "footer",
+      "props": {
+        "text": "Copyright 2026",
+        "links": [
+          {
+            "label": "Privacy",
+            "href": "https://example.com/privacy"
+          }
+        ]
+      }
+    }
+  },
+  "captured": true,
+  "latencyMs": 1579,
+  "diagnostics": []
+}

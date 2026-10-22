@@ -1,0 +1,252 @@
+{
+  "source": "Chrome with intercepted fixture responses; no model calls",
+  "checks": {
+    "example": {
+      "value": "Create an email input labeled Work email.",
+      "calls": 0,
+      "focused": "ai-ui-desc"
+    },
+    "loading": {
+      "status": "Generating locally\u2026 You can cancel or submit a new description.",
+      "cancel": true,
+      "noPreview": true
+    },
+    "cancel": {
+      "aborted": true,
+      "status": "Generation cancelled. Your next idea is welcome."
+    },
+    "stale": {
+      "supersededAborted": true,
+      "preview": true,
+      "alert": null,
+      "status": "Interface generated. Review the result below."
+    },
+    "consistency": {
+      "suggestions": [
+        "Form: form",
+        "Vertical layout: Utility",
+        "Heading: Typography",
+        "Email input: Label, InputContainer, Input",
+        "Password input: Label, InputContainer, Input",
+        "Checkbox: Checkbox, Label",
+        "Button: Button"
+      ],
+      "preview": "Welcome to your workspaceWork emailPasswordRemember this deviceContinue",
+      "code": "1import { Button, Checkbox, Input, InputContainer, Label, Typography, Utility } from '@visa/nova-react';\n2\n3export default function GeneratedUI() {\n4  return (\n5    <form id={\"workspace\"} aria-label={\"Workspace access\"} onSubmit={(event) => event.preventDefault()}>\n6      <Utility id={\"fields\"} vFlex={true} vFlexCol={true} vGap={16}>\n7        <Typography id={\"title\"} tag={\"h2\"} variant={\"headline-2\"}>\n8          {\"Welcome to your workspace\"}\n9        </Typography>\n10        <Utility vFlex={true} vFlexCol={true} vGap={8}>\n11          <Label htmlFor={\"email\"}>\n12            {\"Work email\"}\n13          </Label>\n14          <InputContainer>\n15            <Input id={\"email\"} name={\"work-email\"} type={\"email\"} placeholder={\"you@example.com\"} required={true} />\n16          </InputContainer>\n17        </Utility>\n18        <Utility vFlex={true} vFlexCol={true} vGap={8}>\n19          <Label htmlFor={\"password\"}>\n20            {\"Password\"}\n21          </Label>\n22          <InputContainer>\n23            <Input id={\"password\"} name={\"password\"} type={\"password\"} required={true} />\n24          </InputContainer>\n25        </Utility>\n26        <Utility vFlex={true} vAlignItems={\"center\"} vGap={8}>\n27          <Checkbox id={\"remember\"} name={\"remember\"} required={false} />\n28          <Label htmlFor={\"remember\"}>\n29            {\"Remember this device\"}\n30          </Label>\n31        </Utility>\n32        <Button id={\"continue\"} type={\"submit\"}>\n33          {\"Continue\"}\n34        </Button>\n35      </Utility>\n36    </form>\n37  );\n38}\n39"
+    },
+    "submitPrevented": true,
+    "clipboardPending": "Copying\u2026",
+    "clipboardResolved": "Copied to your clipboard.",
+    "clipboardRejected": "Copy failed. Select the code and copy it manually.",
+    "previewReset": true,
+    "keyboardMenu": {
+      "open": true,
+      "focus": "SUMMARY",
+      "outline": "rgb(189, 234, 255) solid 2px"
+    },
+    "connectionError": {
+      "text": "Connection or configuration errorCannot reach the generation backend. Check that it is running and the development proxy is configured.",
+      "noPreview": true,
+      "noCode": true
+    },
+    "keyboardGenerate": true,
+    "reducedMotion": "0s",
+    "unsupported": "Unsupported requestThis request includes a component, property, behavior, or grouping outside the supported scope. Simplify it and try again."
+  },
+  "layouts": [
+    {
+      "label": "desktop-light",
+      "width": 1440,
+      "requestedWidth": 1440,
+      "scrollWidth": 1440,
+      "columns": "670px 670px",
+      "theme": "light",
+      "background": "rgb(245, 245, 245)",
+      "foreground": "rgb(0, 0, 0)",
+      "codeScroll": {
+        "width": 652,
+        "content": 836
+      },
+      "contrastSamples": [
+        {
+          "selector": ".intro-description",
+          "color": "rgb(74, 74, 74)",
+          "surface": "rgb(245, 245, 245)",
+          "contrastRatio": 8.13
+        },
+        {
+          "selector": ".github-link",
+          "color": "rgb(0, 0, 0)",
+          "surface": "rgb(255, 255, 255)",
+          "contrastRatio": 21.0
+        },
+        {
+          "selector": ".code-scroll .token.keyword",
+          "color": "rgb(20, 52, 203)",
+          "surface": "rgb(255, 255, 255)",
+          "contrastRatio": 8.81
+        },
+        {
+          "selector": ".code-scroll .token.string",
+          "color": "rgb(44, 104, 73)",
+          "surface": "rgb(255, 255, 255)",
+          "contrastRatio": 6.6
+        },
+        {
+          "selector": ".code-scroll .token.boolean",
+          "color": "rgb(135, 89, 3)",
+          "surface": "rgb(255, 255, 255)",
+          "contrastRatio": 6.07
+        }
+      ],
+      "overflow": []
+    },
+    {
+      "label": "mobile-light",
+      "width": 360,
+      "requestedWidth": 360,
+      "scrollWidth": 360,
+      "columns": "324px",
+      "theme": "light",
+      "background": "rgb(245, 245, 245)",
+      "foreground": "rgb(0, 0, 0)",
+      "codeScroll": {
+        "width": 302,
+        "content": 843
+      },
+      "contrastSamples": [
+        {
+          "selector": ".intro-description",
+          "color": "rgb(74, 74, 74)",
+          "surface": "rgb(245, 245, 245)",
+          "contrastRatio": 8.13
+        },
+        {
+          "selector": ".github-link",
+          "color": "rgb(0, 0, 0)",
+          "surface": "rgb(255, 255, 255)",
+          "contrastRatio": 21.0
+        },
+        {
+          "selector": ".code-scroll .token.keyword",
+          "color": "rgb(20, 52, 203)",
+          "surface": "rgb(255, 255, 255)",
+          "contrastRatio": 8.81
+        },
+        {
+          "selector": ".code-scroll .token.string",
+          "color": "rgb(44, 104, 73)",
+          "surface": "rgb(255, 255, 255)",
+          "contrastRatio": 6.6
+        },
+        {
+          "selector": ".code-scroll .token.boolean",
+          "color": "rgb(135, 89, 3)",
+          "surface": "rgb(255, 255, 255)",
+          "contrastRatio": 6.07
+        }
+      ],
+      "overflow": []
+    },
+    {
+      "label": "mobile-dark",
+      "width": 360,
+      "requestedWidth": 360,
+      "scrollWidth": 360,
+      "columns": "324px",
+      "theme": "dark",
+      "background": "rgb(26, 26, 26)",
+      "foreground": "rgb(255, 255, 255)",
+      "codeScroll": {
+        "width": 302,
+        "content": 843
+      },
+      "contrastSamples": [
+        {
+          "selector": ".intro-description",
+          "color": "rgb(217, 217, 217)",
+          "surface": "rgb(26, 26, 26)",
+          "contrastRatio": 12.33
+        },
+        {
+          "selector": ".github-link",
+          "color": "rgb(255, 255, 255)",
+          "surface": "rgb(10, 10, 10)",
+          "contrastRatio": 19.8
+        },
+        {
+          "selector": ".code-scroll .token.keyword",
+          "color": "rgb(189, 234, 255)",
+          "surface": "rgb(10, 10, 10)",
+          "contrastRatio": 15.44
+        },
+        {
+          "selector": ".code-scroll .token.string",
+          "color": "rgb(223, 241, 232)",
+          "surface": "rgb(10, 10, 10)",
+          "contrastRatio": 16.86
+        },
+        {
+          "selector": ".code-scroll .token.boolean",
+          "color": "rgb(254, 232, 190)",
+          "surface": "rgb(10, 10, 10)",
+          "contrastRatio": 16.5
+        }
+      ],
+      "overflow": []
+    },
+    {
+      "label": "desktop-dark",
+      "width": 1440,
+      "requestedWidth": 1440,
+      "scrollWidth": 1440,
+      "columns": "670px 670px",
+      "theme": "dark",
+      "background": "rgb(26, 26, 26)",
+      "foreground": "rgb(255, 255, 255)",
+      "codeScroll": {
+        "width": 652,
+        "content": 836
+      },
+      "contrastSamples": [
+        {
+          "selector": ".intro-description",
+          "color": "rgb(217, 217, 217)",
+          "surface": "rgb(26, 26, 26)",
+          "contrastRatio": 12.33
+        },
+        {
+          "selector": ".github-link",
+          "color": "rgb(255, 255, 255)",
+          "surface": "rgb(10, 10, 10)",
+          "contrastRatio": 19.8
+        },
+        {
+          "selector": ".code-scroll .token.keyword",
+          "color": "rgb(189, 234, 255)",
+          "surface": "rgb(10, 10, 10)",
+          "contrastRatio": 15.44
+        },
+        {
+          "selector": ".code-scroll .token.string",
+          "color": "rgb(223, 241, 232)",
+          "surface": "rgb(10, 10, 10)",
+          "contrastRatio": 16.86
+        },
+        {
+          "selector": ".code-scroll .token.boolean",
+          "color": "rgb(254, 232, 190)",
+          "surface": "rgb(10, 10, 10)",
+          "contrastRatio": 16.5
+        }
+      ],
+      "overflow": []
+    }
+  ],
+  "limitations": [
+    "Fixture responses intercepted in Chrome; no inference or backend transport measured.",
+    "Clipboard resolve/reject paths use a controlled browser stub, not operating-system clipboard permissions.",
+    "Contrast samples cover key chrome/code text, not a complete accessibility audit.",
+    "Screenshots show a handcrafted UI specification, not a model-generated result."
+  ]
+}

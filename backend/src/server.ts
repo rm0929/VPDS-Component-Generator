@@ -6,8 +6,13 @@ try {
   const config = readConfig();
   const provider = createConfiguredProvider();
   const server = createApiServer({ config, provider });
-  server.on('error', () => {
-    console.error(JSON.stringify({ event: 'startup_failed' }));
+  server.on('error', (error: NodeJS.ErrnoException) => {
+    const details = error.code === 'EADDRINUSE' ? {
+      code: 'EADDRINUSE', host: config.host, port: config.port,
+      message: 'Address already in use. Stop the existing backend and its watcher, or choose a different API_PORT.',
+    } : {};
+    // Only validated configuration and developer-owned text; never raw errors or environment data.
+    console.error(JSON.stringify({ event: 'startup_failed', ...details }));
     process.exitCode = 1;
   });
   server.listen(config.port, config.host, () => {

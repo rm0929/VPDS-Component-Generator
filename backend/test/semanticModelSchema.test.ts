@@ -3,7 +3,7 @@ import { z } from 'zod';
 import { buildSemanticModelInstructions, buildSemanticModelSchema } from '../src/semanticModelSchema';
 import { semanticUiPlanStructureSchema, semanticUiPlanSchema } from '../src/semanticUiPlan';
 import { draftPropsSchemas } from '../src/modelUiDraft';
-import { COMPONENT_TYPES, SPEC_LIMITS } from '../../src/specification/componentRegistry';
+import { BASE_COMPONENT_TYPES as COMPONENT_TYPES, SPEC_LIMITS } from '../../src/specification/componentRegistry';
 import { allTypesPlan, profilePlan } from './fixtures/semantic-plans';
 
 // Only the JSON Schema features inspected below; this is not a second validator.

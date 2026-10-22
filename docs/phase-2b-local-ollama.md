@@ -15,6 +15,12 @@ unchanged draft baseline. The earlier
 reports describe historical findings, before draft compilation replaced full-UI
 model output and request-specific grammars.
 
+The [flat-selection backend integration](flat-selection-backend.md) adds a third
+opt-in workflow, `OLLAMA_WORKFLOW=flat-selection`, using the benchmarked
+SelectionPoC v2 contract unchanged. It shares this provider's transport and API
+envelope. Mock/draft defaults remain unchanged. The opt-in
+[Experimental AI frontend](experimental-ai-frontend.md) uses flat selection explicitly.
+
 ## Current generation pipeline
 
 ```text
@@ -92,6 +98,7 @@ Otherwise edit the existing file. Set:
 API_HOST=127.0.0.1
 API_PORT=3001
 API_PROVIDER=ollama
+OLLAMA_WORKFLOW=draft
 OLLAMA_BASE_URL=http://127.0.0.1:11434
 OLLAMA_MODEL=qwen3:4b-instruct
 OLLAMA_TIMEOUT_MS=60000
@@ -99,6 +106,14 @@ OLLAMA_CONTEXT_SIZE=8192
 OLLAMA_MAX_OUTPUT_TOKENS=2048
 OLLAMA_RESPONSE_LIMIT_BYTES=65536
 ```
+
+Use `OLLAMA_WORKFLOW=flat-selection` for flat component selection, or
+`semantic-plan` for the existing semantic workflow; restart after changing it.
+The sample `.env.example` defaults to `API_PROVIDER=mock`, with valid fallback
+timeouts (`API_GENERATION_TIMEOUT_MS=5000`, `API_REQUEST_TIMEOUT_MS=15000`).
+Existing local `.env` files are not rewritten: if yours retains the old 90000 ms
+fallback, change it to a permitted value (at most 30000). Ollama uses its separate
+`OLLAMA_TIMEOUT_MS` deadline, 60000 ms by default.
 
 Then run:
 
@@ -237,8 +252,8 @@ NODE_ENV=development API_LOCAL_DIAGNOSTICS=true npm run dev:backend
 ```
 
 It is disabled by default and ignored in production/test. Stages distinguish
-HTTP JSON, envelope, model JSON, draft validation, final UI validation, and
-explicit unsupported outcomes. Only redacted paths, issue codes, and
+HTTP JSON, envelope, model JSON, draft/semantic/flat-selection validation, flat
+composition, final UI validation, and explicit unsupported outcomes. Only redacted paths, issue codes, and
 developer-owned messages are emitted; no raw prompts/output/values or parser
 messages are logged. Diagnostics are never added to API responses.
 

@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { compileModelUi, ModelUiCompilationError } from '../src/compileModelUi';
 import { createGenerationDiagnostics } from '../src/diagnostics';
 import type { DiagnosticEntry } from '../src/diagnostics';
-import { COMPONENT_TYPES } from '../../src/specification/componentRegistry';
+import { BASE_COMPONENT_TYPES as COMPONENT_TYPES } from '../../src/specification/componentRegistry';
 import { evaluationCases } from '../evaluation/evaluateGeneration';
 import { challengeCases } from '../evaluation/challengeCases';
 import { analyzeComposition, scoreBenchmark } from '../evaluation/compositionMetrics';
@@ -48,11 +48,14 @@ describe('frozen baseline and versioned challenge expectations', () => {
       }
     }
   });
-  it('freezes the pre-experiment schema, compiler, and baseline prompt', () => {
+  it('preserves archived schema, compiler identity, and prompt without mislabeling the expanded compiler as the old revision', () => {
     expect(hash(JSON.stringify(buildModelSchema()))).toBe(manifest.schemaHash);
     expect(hash(JSON.stringify(baseline))).toBe(manifest.baselinePromptHash);
     expect(baseline[0].content).toBe(buildModelInstructions());
-    expect(sourceMetadata(resolve(__dirname, '../..')).compilerRevision).toBe(manifest.compilerRevision);
+    // Keep the historical manifest intact. New component compilation is a new
+    // revision; its measurements must never be presented as the old benchmark.
+    expect(manifest.compilerRevision).toBe('403d1d24115f027e26a28dd686b1458239d4776b3a3143a397c5a386573da49d');
+    expect(sourceMetadata(resolve(__dirname, '../..')).compilerRevision).not.toBe(manifest.compilerRevision);
   });
 });
 

@@ -1,0 +1,24 @@
+{
+  "id": "indeterminate",
+  "prompt": "Show an indeterminate Loading progress indicator.",
+  "calls": 1,
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "progress",
+      "props": {
+        "label": "Loading",
+        "mode": "indeterminate"
+      }
+    }
+  },
+  "captured": true,
+  "latencyMs": 1181,
+  "diagnostics": [],
+  "selectionValid": true,
+  "structurallyValid": true,
+  "tsx": "import { ProgressLabel, ProgressLinear, Utility } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Utility vFlex={true} vFlexCol={true} vGap={8}>\n      <ProgressLabel htmlFor={\"node-0\"}>\n        {\"Loading\"}\n      </ProgressLabel>\n      <ProgressLinear id={\"node-0\"} max={100} />\n    </Utility>\n  );\n}\n",
+  "previewHtml": "<div class=\"v-flex v-flex-col v-gap-8\"><label class=\"v-progress-label\" for=\"node-0\">Loading</label><progress class=\"v-progress v-progress-bar\" style=\"animation-play-state:running\" id=\"node-0\" max=\"100\"></progress></div>",
+  "novaServerRender": true
+}

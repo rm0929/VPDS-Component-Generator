@@ -7,7 +7,8 @@ import { compileModelUi } from '../../src/compileModelUi';
 export const SELECTION_VERSION = 'selection-poc-2' as const;
 export const DEFAULT_FORM_LABEL = 'Generated form';
 export const MAX_SELECTIONS = 20;
-export const LEAF_TYPES = ['textInput', 'emailInput', 'passwordInput', 'checkbox', 'button', 'text', 'heading'] as const;
+export const LEAF_TYPES = ['textInput', 'emailInput', 'passwordInput', 'checkbox', 'button', 'text', 'heading',
+  'textarea', 'switch', 'badge', 'divider', 'link', 'select', 'radioGroup', 'contentCard', 'paymentCard', 'progress', 'dialog', 'flag', 'footer'] as const;
 export const UNSUPPORTED = ['component', 'property', 'behavior', 'composition'] as const;
 const besidePrevious = z.boolean().optional();
 
@@ -22,6 +23,19 @@ export const selectionStructureSchema = z.strictObject({
     z.strictObject({ type: z.literal('button'), props: draftPropsSchemas.button, besidePrevious }),
     z.strictObject({ type: z.literal('text'), props: draftPropsSchemas.text, besidePrevious }),
     z.strictObject({ type: z.literal('heading'), props: draftPropsSchemas.heading, besidePrevious }),
+    z.strictObject({ type: z.literal('textarea'), props: draftPropsSchemas.textarea, besidePrevious }),
+    z.strictObject({ type: z.literal('switch'), props: draftPropsSchemas.switch, besidePrevious }),
+    z.strictObject({ type: z.literal('badge'), props: draftPropsSchemas.badge, besidePrevious }),
+    z.strictObject({ type: z.literal('divider'), props: draftPropsSchemas.divider, besidePrevious }),
+    z.strictObject({ type: z.literal('link'), props: draftPropsSchemas.link, besidePrevious }),
+    z.strictObject({ type: z.literal('select'), props: draftPropsSchemas.select, besidePrevious }),
+    z.strictObject({ type: z.literal('radioGroup'), props: draftPropsSchemas.radioGroup, besidePrevious }),
+    z.strictObject({ type: z.literal('contentCard'), props: draftPropsSchemas.contentCard, besidePrevious }),
+    z.strictObject({ type: z.literal('paymentCard'), props: draftPropsSchemas.paymentCard, besidePrevious }),
+    z.strictObject({ type: z.literal('progress'), props: draftPropsSchemas.progress, besidePrevious }),
+    z.strictObject({ type: z.literal('dialog'), props: draftPropsSchemas.dialog, besidePrevious }),
+    z.strictObject({ type: z.literal('flag'), props: draftPropsSchemas.flag, besidePrevious }),
+    z.strictObject({ type: z.literal('footer'), props: draftPropsSchemas.footer, besidePrevious }),
   ])).max(MAX_SELECTIONS),
   unsupported: z.array(z.enum(UNSUPPORTED)).max(UNSUPPORTED.length),
 });
@@ -58,6 +72,11 @@ function boundedJson(input: unknown): boolean {
 
 export const selectionSchema = z.unknown().refine(boundedJson, { message: 'Expected bounded JSON selection data.' })
   .pipe(selectionStructureSchema.superRefine((selection, ctx) => {
+    selection.components.forEach((component, index) => {
+      if ((component.type === 'select' || component.type === 'radioGroup') && component.props.defaultValue !== undefined
+        && !component.props.options.includes(component.props.defaultValue)) ctx.addIssue({ code: 'custom',
+        path: ['components', index, 'props', 'defaultValue'], message: 'The default selection must be one of the options.' });
+    });
     if (!selection.form.enabled && selection.form.label !== null) ctx.addIssue({ code: 'custom', path: ['form', 'label'], message: 'A disabled form must have a null label.' });
     if (!selection.unsupported.length && !selection.components.length) ctx.addIssue({ code: 'custom', path: ['components'], message: 'A supported selection must contain components.' });
     if (selection.components[0]?.besidePrevious) ctx.addIssue({ code: 'custom', path: ['components', 0, 'besidePrevious'], message: 'The first component has no previous component.' });

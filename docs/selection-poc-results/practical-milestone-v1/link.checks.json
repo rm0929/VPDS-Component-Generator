@@ -1,0 +1,25 @@
+{
+  "id": "link",
+  "prompt": "Create a link labeled Visa design guidance pointing to https://design.visa.com/.",
+  "calls": 1,
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "button",
+      "props": {
+        "label": "Visa design guidance",
+        "type": "button",
+        "disabled": false
+      }
+    }
+  },
+  "captured": true,
+  "latencyMs": 1376,
+  "diagnostics": [],
+  "selectionValid": true,
+  "structurallyValid": true,
+  "tsx": "import { Button } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Button id={\"node-0\"} type={\"button\"} disabled={false}>\n      {\"Visa design guidance\"}\n    </Button>\n  );\n}\n",
+  "previewHtml": "<button class=\"v-button\" id=\"node-0\" type=\"button\">Visa design guidance</button>",
+  "novaServerRender": true
+}

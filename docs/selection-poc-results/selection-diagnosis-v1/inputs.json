@@ -1,0 +1,29 @@
+{
+  "recordVersion": "selection-diagnosis-1",
+  "workflow": "flat-selection",
+  "attemptsPerPrompt": 2,
+  "retries": 0,
+  "changedProductionCode": false,
+  "cases": [
+    {
+      "id": "explicit-switch",
+      "prompt": "Create a switch labeled Email alerts."
+    },
+    {
+      "id": "semantic-switch",
+      "prompt": "Let me turn email notifications on or off."
+    },
+    {
+      "id": "textarea",
+      "prompt": "Create a multiline Notes field."
+    },
+    {
+      "id": "link",
+      "prompt": "Create a link labeled Visa design guidance pointing to https://design.visa.com/."
+    },
+    {
+      "id": "login",
+      "prompt": "I need a login form with remember me."
+    }
+  ]
+}

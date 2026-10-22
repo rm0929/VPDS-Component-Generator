@@ -1,4 +1,7 @@
 import { describe, expect, it } from 'vitest';
+import { readFileSync } from 'node:fs';
+import { resolve } from 'node:path';
+import { parseEnv } from 'node:util';
 import { readConfig } from '../src/config';
 import { readProviderConfig } from '../src/providerConfig';
 import { createConfiguredProvider } from '../src/providers';
@@ -28,7 +31,23 @@ describe('explicit local provider configuration', () => {
     expect(readProviderConfig({ API_PROVIDER: 'ollama', OLLAMA_WORKFLOW: 'draft' })).toMatchObject({ workflow: 'draft' });
   });
 
-  it.each(['', 'semantic', 'SEMANTIC-PLAN', 'unknown'])('rejects invalid workflow selection %j', workflow => {
+  it('selects flat components only through explicit opt-in, preserving mock and draft defaults', () => {
+    const config = readProviderConfig({ API_PROVIDER: 'ollama', OLLAMA_WORKFLOW: 'flat-selection' });
+    expect(config).toMatchObject({ workflow: 'flat-selection', model: 'qwen3:4b-instruct', timeoutMs: 60000 });
+    expect(createConfiguredProvider(config)).toMatchObject({ id: 'ollama-local-flat-selection', isMock: false, timeoutMs: 60000 });
+    expect(readProviderConfig({ API_PROVIDER: 'mock', OLLAMA_WORKFLOW: 'flat-selection' })).toEqual({ provider: 'mock' });
+  });
+
+  it('ships an example environment that validates and keeps local inference opt-in', () => {
+    const environment = parseEnv(readFileSync(resolve(__dirname, '../.env.example'), 'utf8'));
+    expect(readConfig(environment)).toMatchObject({ host: '127.0.0.1', generationTimeoutMs: 5000, requestTimeoutMs: 15000 });
+    expect(readProviderConfig(environment)).toEqual({ provider: 'mock' });
+    expect(readProviderConfig({ ...environment, API_PROVIDER: 'ollama' })).toMatchObject({ workflow: 'draft' });
+    expect(readProviderConfig({ ...environment, API_PROVIDER: 'ollama', OLLAMA_WORKFLOW: 'flat-selection' }))
+      .toMatchObject({ workflow: 'flat-selection', timeoutMs: 60000 });
+  });
+
+  it.each(['', 'semantic', 'SEMANTIC-PLAN', 'unknown', 'flat', 'FLAT-SELECTION'])('rejects invalid workflow selection %j', workflow => {
     expect(() => readProviderConfig({ API_PROVIDER: 'ollama', OLLAMA_WORKFLOW: workflow })).toThrow();
   });
 

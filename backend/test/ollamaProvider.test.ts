@@ -18,6 +18,8 @@ import type { GenerationDiagnostics } from '../src/diagnostics';
 import duplicateLogin from './fixtures/login-duplicate-id.json';
 import { compileSemanticUiPlan } from '../src/compileSemanticUiPlan';
 import { profilePlan } from './fixtures/semantic-plans';
+import { compileSelectionPoc } from '../evaluation/selection-poc/selection';
+import * as selectionCompiler from '../evaluation/selection-poc/selection';
 
 function config(overrides: Partial<OllamaConfig> = {}): OllamaConfig {
   const value = readProviderConfig({ API_PROVIDER: 'ollama' });
@@ -25,6 +27,12 @@ function config(overrides: Partial<OllamaConfig> = {}): OllamaConfig {
   return { ...value, ...overrides };
 }
 const registration = compileModelUi(registrationDraft);
+const flatSelection = { version: 'selection-poc-2', form: { enabled: true, label: 'Editor' }, unsupported: [], components: [
+  { type: 'textInput', props: { label: 'First', required: false } },
+  { type: 'textInput', props: { label: 'Second', disabled: false }, besidePrevious: true },
+  { type: 'emailInput', props: { label: 'Email' } },
+  { type: 'button', props: { label: 'Apply', type: 'submit' } },
+] };
 const draft = (root: unknown) => ({ irVersion: '1', status: 'supported', root });
 const signal = () => new AbortController().signal;
 const envelope = (content: unknown = registrationDraft) => ({ done: true, done_reason: 'stop',
@@ -125,7 +133,7 @@ describe('Ollama provider with mocked HTTP responses (no real inference)', () =>
   );
 
   it('maps connection failures safely without exposing error text', async () => {
-    const request = vi.fn<typeof fetch>().mockRejectedValue(new Error('private-prompt/internal-address'));
+    const request = vi.fn<typeof fetch>().mockRejectedValue(new TypeError('private-prompt/internal-address', { cause: { code: 'ECONNREFUSED' } }));
     await expect(createOllamaProvider(config(), request).generate('private', { signal: signal() }))
       .rejects.toMatchObject({ code: 'OLLAMA_UNAVAILABLE', message: 'The local Ollama server is unavailable.' });
   });
@@ -185,23 +193,23 @@ describe('Ollama provider with mocked HTTP responses (no real inference)', () =>
     await expect(createOllamaProvider(config(), request).generate('form', { signal: signal() })).rejects.toMatchObject({ code: 'INVALID_MODEL_JSON' });
   });
 
-  it('rejects an already-aborted signal without making an HTTP call', async () => {
+  it.each(['draft', 'semantic-plan', 'flat-selection'] as const)('rejects an already-aborted %s signal without making an HTTP call', async workflow => {
     const controller = new AbortController();
     controller.abort();
     const request = vi.fn<typeof fetch>();
-    await expect(createOllamaProvider(config(), request).generate('form', { signal: controller.signal })).rejects.toMatchObject({ name: 'AbortError' });
+    await expect(createOllamaProvider(config({ workflow }), request).generate('form', { signal: controller.signal })).rejects.toMatchObject({ name: 'AbortError' });
     expect(request).not.toHaveBeenCalled();
   });
 
-  it('aborts a pending HTTP call on its own deadline, then permits another request', async () => {
+  it.each(['draft', 'flat-selection'] as const)('aborts a pending %s HTTP call on its own deadline, then permits another request', async workflow => {
     let aborted = false;
     const request = vi.fn<typeof fetch>().mockImplementationOnce((_url, init) => new Promise((_resolve, reject) => {
       init?.signal?.addEventListener('abort', () => { aborted = true; reject(init.signal?.reason); }, { once: true });
-    })).mockImplementationOnce(async () => jsonResponse(envelope()));
-    const provider = createOllamaProvider(config({ timeoutMs: 15 }), request);
+    })).mockImplementationOnce(async () => jsonResponse(envelope(workflow === 'flat-selection' ? flatSelection : registrationDraft)));
+    const provider = createOllamaProvider(config({ timeoutMs: 15, workflow }), request);
     await expect(provider.generate('form', { signal: signal() })).rejects.toMatchObject({ code: 'GENERATION_TIMEOUT' });
     expect(aborted).toBe(true);
-    expect(await provider.generate('form', { signal: signal() })).toEqual(registration);
+    expect(await provider.generate('form', { signal: signal() })).toEqual(workflow === 'flat-selection' ? compileSelectionPoc(flatSelection) : registration);
   });
 
   it('rejects concurrent generation instead of queueing prompts or increasing memory pressure', async () => {
@@ -217,13 +225,14 @@ describe('Ollama provider with mocked HTTP responses (no real inference)', () =>
 });
 
 describe('API validation and actual HTTP cancellation against a fake Ollama server', () => {
-  async function withFakeOllama(run: (url: string, logs: ApiLogEntry[], disconnected: Promise<void>, started: Promise<void>) => Promise<void>, content?: unknown, stall = false, diagnostics?: GenerationDiagnostics, workflow: OllamaConfig['workflow'] = 'draft') {
+  async function withFakeOllama(run: (url: string, logs: ApiLogEntry[], disconnected: Promise<void>, started: Promise<void>) => Promise<void>, content?: unknown, stall = false, diagnostics?: GenerationDiagnostics, workflow: OllamaConfig['workflow'] = 'draft', dropConnection = false) {
     let onDisconnect = () => {};
     let onStarted = () => {};
     const disconnected = new Promise<void>(resolve => { onDisconnect = resolve; });
     const started = new Promise<void>(resolve => { onStarted = resolve; });
-    const fakeOllama = createServer((_req, res) => {
+    const fakeOllama = createServer((req, res) => {
       onStarted();
+      if (dropConnection) { req.socket.destroy(); return; }
       if (stall) {
         res.once('close', onDisconnect);
         res.writeHead(200, { 'Content-Type': 'application/json' });
@@ -280,6 +289,83 @@ describe('API validation and actual HTTP cancellation against a fake Ollama serv
     expect(JSON.stringify(logs)).not.toContain('Save Profile');
   }, profilePlan(), false, undefined, 'semantic-plan'));
 
+  it('returns a compiled flat selection through the unchanged API envelope and health endpoint', () => withFakeOllama(async (url, logs) => {
+    expect(await (await fetch(`${url}/api/health`)).json())
+      .toMatchObject({ status: 'ok', provider: 'ollama-local-flat-selection', isMock: false });
+    const response = await post(url);
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual({ data: { specification: compileSelectionPoc(flatSelection) },
+      meta: { provider: 'ollama-local-flat-selection', isMock: false }, requestId: expect.any(String) });
+    expect(JSON.stringify(logs)).not.toContain('private');
+    expect(JSON.stringify(logs)).not.toContain('Editor');
+  }, flatSelection, false, undefined, 'flat-selection'));
+
+  it.each([Error, TypeError])('returns a safe provider failure for compiler %s after successful HTTP, then recovers', async ErrorType => {
+    const original = selectionCompiler.compileSelectionPoc;
+    const compiler = vi.spyOn(selectionCompiler, 'compileSelectionPoc')
+      .mockImplementationOnce(() => { throw new ErrorType('private-compiler-secret'); });
+    const diagnose = vi.fn();
+    try {
+      await withFakeOllama(async (url, logs) => {
+        const response = await post(url);
+        expect(response.status).toBe(502);
+        const body = await response.json();
+        expect(body).toEqual({ error: { code: 'PROVIDER_FAILURE', message: 'The generation provider failed.' }, requestId: expect.any(String) });
+        expect(body).toMatchObject({ requestId: response.headers.get('x-request-id') });
+        expect(JSON.stringify({ body, logs })).not.toContain('private');
+        expect(diagnose).not.toHaveBeenCalled();
+        const recovered = await post(url);
+        expect(recovered.status).toBe(200);
+        expect(await recovered.json()).toMatchObject({ data: { specification: original(flatSelection) } });
+        expect(logs.map(log => log.status)).toEqual([502, 200]);
+      }, flatSelection, false, diagnose, 'flat-selection');
+    } finally { compiler.mockRestore(); }
+  });
+
+  it('returns the existing safe availability response for a real downstream socket failure', () => withFakeOllama(async (url, logs) => {
+    const response = await post(url);
+    expect(response.status).toBe(503);
+    const body = await response.json();
+    expect(body).toEqual({ error: { code: 'OLLAMA_UNAVAILABLE', message: 'The local Ollama server is unavailable.' }, requestId: expect.any(String) });
+    expect(body).toMatchObject({ requestId: response.headers.get('x-request-id') });
+    expect(JSON.stringify({ body, logs })).not.toContain('private');
+  }, undefined, false, undefined, 'flat-selection', true));
+
+  it.each(['component', 'property', 'behavior', 'composition'])('returns the existing 422 response for flat unsupported %s', category =>
+    withFakeOllama(async url => {
+      const response = await post(url);
+      expect(response.status).toBe(422);
+      expect(await response.json()).toEqual({ error: { code: 'UNSUPPORTED_UI_REQUEST',
+        message: 'The request requires UI components or behavior outside the supported UI draft contract.' }, requestId: expect.any(String) });
+    }, { ...flatSelection, components: [], unsupported: [category] }, false, undefined, 'flat-selection'));
+
+  it.each([
+    { ...flatSelection, components: [{ type: 'select', props: { label: 'private-value' } }] },
+    { ...flatSelection, unsupported: ['behavior', 'behavior'] },
+    { ...flatSelection, components: [] },
+  ])('returns 502 for invalid flat selections without echoing model data %#', selection => withFakeOllama(async (url, logs) => {
+    const response = await post(url);
+    expect(response.status).toBe(502);
+    expect(await response.json()).toEqual({ error: { code: 'INVALID_PROVIDER_OUTPUT',
+      message: 'The provider returned an invalid UI specification.' }, requestId: expect.any(String) });
+    expect(JSON.stringify(logs)).not.toContain('private');
+  }, selection, false, undefined, 'flat-selection'));
+
+  it.each(['submit', 'reset'])('returns 502 and a safe composition path for flat %s outside a form', type => {
+    const sink = vi.fn();
+    const diagnostics = createGenerationDiagnostics({ NODE_ENV: 'development', API_LOCAL_DIAGNOSTICS: 'true' }, sink);
+    return withFakeOllama(async url => {
+      const response = await post(url);
+      expect(response.status).toBe(502);
+      expect(await response.json()).toMatchObject({ error: { code: 'INVALID_PROVIDER_OUTPUT' } });
+      expect(sink.mock.calls[0][0]).toMatchObject({ stage: 'composition', issues: [
+        { path: ['components', 0, 'props', 'type'], code: 'custom', message: 'Submit/reset buttons require a declared form.' },
+      ] });
+      expect(JSON.stringify(sink.mock.calls)).not.toContain('private');
+    }, { ...flatSelection, form: { enabled: false, label: null },
+      components: [{ type: 'button', props: { label: 'private-value', type } }] }, false, diagnostics, 'flat-selection');
+  });
+
   it('maps semantic reference failures to the existing safe API error contract', () => {
     const invalid = profilePlan();
     invalid.groups[1].members[0] = { element: 99 };
@@ -309,21 +395,21 @@ describe('API validation and actual HTTP cancellation against a fake Ollama serv
     }, { planVersion: '1', status: 'unsupported', reason }, false, undefined, 'semantic-plan'),
   );
 
-  it('cancels semantic HTTP response streaming on timeout', () => withFakeOllama(async (url, _logs, disconnected) => {
+  it.each(['semantic-plan', 'flat-selection'] as const)('cancels %s HTTP response streaming on timeout', workflow => withFakeOllama(async (url, _logs, disconnected) => {
     const response = await post(url);
     expect(response.status).toBe(504);
     expect(await response.json()).toMatchObject({ error: { code: 'GENERATION_TIMEOUT' } });
     await expectDisconnect(disconnected);
-  }, undefined, true, undefined, 'semantic-plan'));
+  }, undefined, true, undefined, workflow));
 
-  it('cancels semantic HTTP streaming when the caller disconnects', () => withFakeOllama(async (url, _logs, disconnected, started) => {
+  it.each(['semantic-plan', 'flat-selection'] as const)('cancels %s HTTP streaming when the caller disconnects', workflow => withFakeOllama(async (url, _logs, disconnected, started) => {
     const controller = new AbortController();
     const pending = post(url, controller.signal).catch(() => undefined);
     await started;
     controller.abort();
     await pending;
     await expectDisconnect(disconnected);
-  }, undefined, true, undefined, 'semantic-plan'));
+  }, undefined, true, undefined, workflow));
 
   it('returns the complete registration tree unchanged for the full request', () => withFakeOllama(async url => {
     const response = await post(url, undefined, coverageCases[0].prompt);

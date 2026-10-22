@@ -1,6 +1,5 @@
 import { z } from 'zod';
-import { COMPONENT_TYPES, SPEC_LIMITS } from '../../src/specification/componentRegistry';
-import type { ComponentType } from '../../src/specification/componentRegistry';
+import { BASE_COMPONENT_TYPES as COMPONENT_TYPES, SPEC_LIMITS } from '../../src/specification/componentRegistry';
 import { draftPropsSchemas } from './modelUiDraft';
 import { semanticUiPlanStructureSchema } from './semanticUiPlan';
 
@@ -15,7 +14,7 @@ const meanings = {
   horizontalLayout: 'A row group: meaningful side-by-side siblings, not a leaf element.',
   verticalLayout: 'A column group: meaningful top-to-bottom siblings, not a leaf element.',
   form: 'An explicitly labeled form group owning its fields and actions, not a leaf element. Forms cannot nest.',
-} as const satisfies Record<ComponentType, string>;
+} as const satisfies Record<typeof COMPONENT_TYPES[number], string>;
 
 /** One grammar for every request. Runtime graph and authoritative checks remain mandatory. */
 export function buildSemanticModelSchema() {

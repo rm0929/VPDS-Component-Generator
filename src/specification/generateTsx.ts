@@ -1,3 +1,4 @@
+import { dialogExampleSource, flagExampleSource } from './interactions/interactionSource';
 import { buildPresentation } from './presentation';
 import type { PresentationElement, PresentationTag } from './presentation';
 import type { UiSpecification } from './uiSpecification';
@@ -11,7 +12,7 @@ function stringLiteral(value: string): string {
 
 function serializeElement(element: PresentationElement, depth: number, imports: Set<PresentationTag>): string {
   const indent = '  '.repeat(depth);
-  if (element.tag !== 'form') imports.add(element.tag);
+  if (!['form', 'option', 'fieldset', 'legend', 'nav', 'ul', 'li', 'details', 'summary'].includes(element.tag)) imports.add(element.tag);
   const props = Object.entries(element.props)
     .filter(([, value]) => value !== undefined)
     .map(([name, value]) => ` ${name}={${typeof value === 'string' ? stringLiteral(value) : String(value)}}`)
@@ -30,8 +31,24 @@ function serializeElement(element: PresentationElement, depth: number, imports: 
 export function generateTsx(specification: UiSpecification): string {
   const imports = new Set<PresentationTag>();
   const jsx = serializeElement(buildPresentation(specification), 2, imports);
-  const novaImport = imports.size
-    ? `import { ${Array.from(imports).sort().join(', ')} } from '@visa/nova-react';\n\n`
-    : '';
-  return `${novaImport}export default function GeneratedUI() {\n  return (\n${jsx}\n  );\n}\n`;
+  const nova = new Set<string>(imports);
+  const react: string[] = [];
+  const helpers: string[] = [];
+  if (nova.delete('DialogExample')) {
+    react.push('useEffect', 'useRef');
+    for (const name of ['Button', 'Dialog', 'DialogContent', 'DialogHeader', 'Typography', 'useFocusTrap']) nova.add(name);
+    helpers.push(dialogExampleSource);
+  }
+  if (nova.delete('FlagExample')) {
+    react.push('useState');
+    for (const name of ['Flag', 'FlagCloseButton', 'FlagContent', 'MessageIcon', 'Typography']) nova.add(name);
+    helpers.push(flagExampleSource);
+  }
+  const cardIcon = nova.delete('VisaCardGenericLow');
+  const importsCode = [
+    ...(react.length ? [`import { ${react.sort().join(', ')} } from 'react';`] : []),
+    ...(nova.size ? [`import { ${Array.from(nova).sort().join(', ')} } from '@visa/nova-react';`] : []),
+    ...(cardIcon ? ["import { VisaCardGenericLow } from '@visa/nova-icons-react';"] : []),
+  ].join('\n');
+  return `${importsCode}${importsCode ? '\n\n' : ''}export default function GeneratedUI() {\n  return (\n${jsx}\n  );\n}\n${helpers.length ? '\n' + helpers.join('\n') : ''}`;
 }

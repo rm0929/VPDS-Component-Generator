@@ -67,4 +67,23 @@ describe('opt-in local failure diagnostics', () => {
     expect(sink.mock.calls[0][0].issues[0].message).toBe('Component IDs must be unique.');
     expect(() => createGenerationDiagnostics(enabled, () => { throw new Error('SECRET'); })('model_json')).not.toThrow();
   });
+
+  it('preserves flat-selection paths and owned messages while redacting arbitrary keys and text', () => {
+    const sink = vi.fn();
+    const result = z.unknown().superRefine((_value, ctx) => {
+      ctx.addIssue({ code: 'custom', path: ['form', 'label'], message: 'A disabled form must have a null label.' });
+      ctx.addIssue({ code: 'custom', path: ['components', 0, 'besidePrevious'], message: 'The first component has no previous component.' });
+      ctx.addIssue({ code: 'custom', path: ['unsupported'], message: 'Unsupported categories must be unique.' });
+      ctx.addIssue({ code: 'custom', path: ['components', 1, 'SECRET-KEY'], message: 'SECRET-VALUE' });
+    }).safeParse(null);
+    if (result.success) throw new Error('Expected invalid data');
+    createGenerationDiagnostics(enabled, sink)('selection_schema', result.error.issues);
+    expect(sink.mock.calls[0][0]).toEqual({ stage: 'selection_schema', message: 'The flat component selection failed contract validation.', issues: [
+      { path: ['form', 'label'], code: 'custom', message: 'A disabled form must have a null label.' },
+      { path: ['components', 0, 'besidePrevious'], code: 'custom', message: 'The first component has no previous component.' },
+      { path: ['unsupported'], code: 'custom', message: 'Unsupported categories must be unique.' },
+      { path: ['components', 1, '[redacted]'], code: 'custom', message: 'A UI contract rule was violated.' },
+    ] });
+    expect(JSON.stringify(sink.mock.calls)).not.toContain('SECRET');
+  });
 });

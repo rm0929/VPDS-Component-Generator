@@ -1,0 +1,245 @@
+{
+  "validator": "Already installed Ajv; Draft-07 validation of the exact serialized request schema, alongside Zod",
+  "positiveCases": [
+    {
+      "component": {
+        "type": "switch",
+        "props": {
+          "label": "Email alerts",
+          "defaultChecked": false
+        }
+      },
+      "jsonSchemaValid": true,
+      "zodValid": true
+    },
+    {
+      "component": {
+        "type": "emailInput",
+        "props": {
+          "label": "Email"
+        }
+      },
+      "jsonSchemaValid": true,
+      "zodValid": true
+    },
+    {
+      "component": {
+        "type": "passwordInput",
+        "props": {
+          "label": "Password"
+        }
+      },
+      "jsonSchemaValid": true,
+      "zodValid": true
+    },
+    {
+      "component": {
+        "type": "textarea",
+        "props": {
+          "label": "Notes",
+          "rows": 4
+        }
+      },
+      "jsonSchemaValid": true,
+      "zodValid": true
+    },
+    {
+      "component": {
+        "type": "link",
+        "props": {
+          "label": "Help",
+          "href": "/help"
+        }
+      },
+      "jsonSchemaValid": true,
+      "zodValid": true
+    }
+  ],
+  "negativeCases": [
+    {
+      "component": {
+        "type": "switch",
+        "props": {
+          "label": "Alerts",
+          "rows": 1
+        }
+      },
+      "jsonSchemaValid": false,
+      "zodValid": false
+    },
+    {
+      "component": {
+        "type": "textarea",
+        "props": {
+          "label": "Notes",
+          "defaultChecked": false
+        }
+      },
+      "jsonSchemaValid": false,
+      "zodValid": false
+    },
+    {
+      "component": {
+        "type": "emailInput",
+        "props": {
+          "label": "Email",
+          "rows": 1
+        }
+      },
+      "jsonSchemaValid": false,
+      "zodValid": false
+    },
+    {
+      "component": {
+        "type": "passwordInput",
+        "props": {
+          "label": "Password",
+          "rows": 1
+        }
+      },
+      "jsonSchemaValid": false,
+      "zodValid": false
+    },
+    {
+      "component": {
+        "type": "button",
+        "props": {
+          "label": "Help",
+          "type": "button",
+          "href": "/help"
+        }
+      },
+      "jsonSchemaValid": false,
+      "zodValid": false
+    },
+    {
+      "component": {
+        "type": "link",
+        "props": {
+          "label": "Help"
+        }
+      },
+      "jsonSchemaValid": false,
+      "zodValid": false
+    }
+  ],
+  "examples": [
+    {
+      "valid": true
+    },
+    {
+      "valid": true
+    }
+  ],
+  "branchPropertyOrder": [
+    {
+      "type": "textInput",
+      "order": [
+        "type",
+        "props",
+        "besidePrevious"
+      ],
+      "strict": true
+    },
+    {
+      "type": "emailInput",
+      "order": [
+        "type",
+        "props",
+        "besidePrevious"
+      ],
+      "strict": true
+    },
+    {
+      "type": "passwordInput",
+      "order": [
+        "type",
+        "props",
+        "besidePrevious"
+      ],
+      "strict": true
+    },
+    {
+      "type": "checkbox",
+      "order": [
+        "type",
+        "props",
+        "besidePrevious"
+      ],
+      "strict": true
+    },
+    {
+      "type": "button",
+      "order": [
+        "type",
+        "props",
+        "besidePrevious"
+      ],
+      "strict": true
+    },
+    {
+      "type": "text",
+      "order": [
+        "type",
+        "props",
+        "besidePrevious"
+      ],
+      "strict": true
+    },
+    {
+      "type": "heading",
+      "order": [
+        "type",
+        "props",
+        "besidePrevious"
+      ],
+      "strict": true
+    },
+    {
+      "type": "textarea",
+      "order": [
+        "type",
+        "props",
+        "besidePrevious"
+      ],
+      "strict": true
+    },
+    {
+      "type": "switch",
+      "order": [
+        "type",
+        "props",
+        "besidePrevious"
+      ],
+      "strict": true
+    },
+    {
+      "type": "badge",
+      "order": [
+        "type",
+        "props",
+        "besidePrevious"
+      ],
+      "strict": true
+    },
+    {
+      "type": "divider",
+      "order": [
+        "type",
+        "props",
+        "besidePrevious"
+      ],
+      "strict": true
+    },
+    {
+      "type": "link",
+      "order": [
+        "type",
+        "props",
+        "besidePrevious"
+      ],
+      "strict": true
+    }
+  ],
+  "customRefinementNote": "Literal-text rules and link destination safety also run in Zod; custom string refinements are not represented in generated JSON Schema. This is unrelated to the observed valid but wrong component types."
+}

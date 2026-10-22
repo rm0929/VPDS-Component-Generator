@@ -1,0 +1,30 @@
+{
+  "id": "select",
+  "prompt": "Create a Country select with Canada, France, and Japan.",
+  "calls": 1,
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "select",
+      "props": {
+        "name": "country",
+        "label": "Country",
+        "options": [
+          "Canada",
+          "France",
+          "Japan"
+        ],
+        "defaultValue": "Canada"
+      }
+    }
+  },
+  "captured": true,
+  "latencyMs": 3962,
+  "diagnostics": [],
+  "selectionValid": true,
+  "structurallyValid": true,
+  "tsx": "import { InputContainer, Label, Select, Utility } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Utility vFlex={true} vFlexCol={true} vGap={8}>\n      <Label htmlFor={\"node-0\"}>\n        {\"Country\"}\n      </Label>\n      <InputContainer>\n        <Select id={\"node-0\"} name={\"country\"} defaultValue={\"Canada\"}>\n          <option value={\"Canada\"}>\n            {\"Canada\"}\n          </option>\n          <option value={\"France\"}>\n            {\"France\"}\n          </option>\n          <option value={\"Japan\"}>\n            {\"Japan\"}\n          </option>\n        </Select>\n      </InputContainer>\n    </Utility>\n  );\n}\n",
+  "previewHtml": "<div class=\"v-flex v-flex-col v-gap-8\"><label class=\"v-label\" for=\"node-0\">Country</label><div class=\"v-surface v-input-container\"><select class=\"v-input\" id=\"node-0\" name=\"country\"><option value=\"Canada\" selected=\"\">Canada</option><option value=\"France\">France</option><option value=\"Japan\">Japan</option></select></div></div>",
+  "novaServerRender": true
+}

@@ -10,6 +10,7 @@
         "build:frontend": "tsc -b && vite build",
         "build:backend": "npm run build --workspace @vpds/backend",
         "dev:backend": "npm run dev --workspace @vpds/backend",
+        "dev:backend:ai": "API_PROVIDER=ollama OLLAMA_WORKFLOW=flat-selection npm run dev:backend",
         "start:backend": "npm run start --workspace @vpds/backend",
         "lint": "eslint .",
         "test": "npm run test:frontend && npm run test:api",

@@ -6,6 +6,7 @@ import { ApiError } from '../../src/errors';
 
 const keys = new Set(['version', 'form', 'enabled', 'formLabel', 'components', 'type', 'props', 'besidePrevious', 'unsupported',
   'label', 'placeholder', 'required', 'disabled', 'maxLength', 'content', 'level', 'root', 'children', 'id', 'name',
+  'headingLevel', 'triggerLabel', 'closeLabel', 'variant', 'dismissible', 'text', 'links', 'options', 'defaultValue', 'title', 'description', 'action', 'includeCardholder', 'mode', 'value', 'paused', 'rows', 'defaultChecked', 'badgeType', 'dividerType', 'href',
   'done', 'done_reason', 'message', 'role']);
 const codes = new Set(['invalid_type', 'invalid_value', 'invalid_union', 'invalid_format', 'too_big', 'too_small', 'unrecognized_keys', 'custom']);
 const ownedMessages = new Set(['Expected bounded JSON selection data.', 'A supported selection must contain components.',

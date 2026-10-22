@@ -1,93 +1,47 @@
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import materialDark from 'react-syntax-highlighter/dist/esm/styles/prism/material-dark';
-import { Surface, Utility, Typography, Button } from '@visa/nova-react';
-import { VisaCopyTiny } from '@visa/nova-icons-react';
+import { Surface, Typography, Button } from '@visa/nova-react';
+import { VisaCopyTiny, VisaCodeSnippetLow } from '@visa/nova-icons-react';
+import { createClipboardFeedback } from '../utils/clipboardFeedback';
+import type { CopyState } from '../utils/clipboardFeedback';
 
-interface Props {
-  code: string;
+interface Props { code: string }
+
+function CodePanel({ code }: Props) {
+  const [copyState, setCopyState] = useState<CopyState>('idle');
+  const [clipboard] = useState(() => createClipboardFeedback(setCopyState));
+  useEffect(() => () => clipboard.dispose(), [clipboard]);
+  return <Surface className="studio-panel code-panel" tag="section" aria-label="Generated code">
+    <div className="panel-heading">
+      <div><span className="panel-index" aria-hidden="true">02</span>
+        <Typography tag="h3" variant="body-2-bold">GeneratedUI.tsx</Typography>
+      </div>
+      <span className="panel-meta">REACT · TSX</span>
+    </div>
+    <div className="code-toolbar">
+      <span>{code ? 'Generated Code' : 'Your next starting point'}</span>
+      <Button type="button" colorScheme="tertiary" buttonSize="small" className="copy-button"
+        disabled={!code || copyState === 'copying'} onClick={() => { void clipboard.copy(code); }} aria-label="Copy code to clipboard">
+        <VisaCopyTiny aria-hidden="true" />{copyState === 'copying' ? 'Copying…' : copyState === 'copied' ? 'Copied!' : 'Copy code'}
+      </Button>
+    </div>
+    {code ? <div className="code-scroll">
+      <SyntaxHighlighter language="tsx" tabIndex={0} aria-label="Generated React TSX" useInlineStyles={false} showLineNumbers
+        customStyle={{ margin: 0, padding: '1.25rem 1rem', background: 'transparent', maxWidth: '100%', boxSizing: 'border-box', overflowX: 'auto' }}>
+        {code}
+      </SyntaxHighlighter>
+    </div> : <div className="workspace-empty code-empty">
+      <VisaCodeSnippetLow aria-hidden="true" />
+      <Typography tag="h4" variant="headline-4">Readable. Reusable. Yours.</Typography>
+      <p>Your React TSX will appear here.<br />Inspect it, copy it, and make it your own.</p>
+    </div>}
+    <div className="panel-footnote copy-feedback" role="status" aria-live="polite" aria-atomic="true">
+      {copyState === 'error' ? 'Copy failed. Select the code and copy it manually.'
+        : copyState === 'copied' ? 'Copied to your clipboard.' : copyState === 'copying' ? 'Waiting for clipboard access…' : code ? 'Example UI code · Add your application behavior.' : 'No code generated yet.'}
+    </div>
+  </Surface>;
 }
 
-const OutputPanel: React.FC<Props> = ({ code }) => {
-  const [hovered, setHovered] = useState(false);
-  const [copied, setCopied] = useState(false);
-
-  const handleCopy = () => {
-    navigator.clipboard.writeText(code);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
-  return (
-    <Surface
-      style={{
-        width: '100%',
-        maxWidth: '600px',
-        padding: '1rem',
-        backgroundColor: 'var(--palette-default-surface-2)',
-        border: '1px solid var(--palette-default-border)',
-        borderRadius: '6px',
-      }}
-    >
-      <Utility vFlex vFlexCol vGap={8}>
-        <Typography variant="headline-4" tag="h2" colorScheme="default">
-          Generated Code
-        </Typography>
-
-        <div
-         style={{
-           position: 'relative',
-           backgroundColor: 'var(--palette-default-surface-1)',
-           border: '1px solid var(--palette-default-border)',
-           borderRadius: '4px',
-         }}
-       >
-          <div style={{ position: 'absolute', top: 8, right: 8, textAlign: 'right', zIndex: 10 }}>
-            {copied && (
-              <Typography
-                variant="body-2"
-                style={{
-                  backgroundColor: 'var(--palette-default-surface-2)',
-                  padding: '2px 6px',
-                  borderRadius: '4px',
-                  marginBottom: '4px',
-                  color: 'var(--palette-default-text)',
-                }}
-              >
-                Copied!
-              </Typography>
-            )}
-            <Button
-              iconButton
-              onClick={handleCopy}
-              aria-label="Copy code to clipboard"
-              onMouseEnter={() => setHovered(true)}
-              onMouseLeave={() => setHovered(false)}
-              style={{
-                backgroundColor: 'transparent',
-                boxShadow: 'none',
-              }}
-            >
-              <VisaCopyTiny style={{ color: hovered ? '#fcc015' : '#BDEAFF' }} />
-            </Button>
-          </div>
-
-          <SyntaxHighlighter
-            language="tsx"
-            style={materialDark}
-            showLineNumbers
-            customStyle={{
-              margin: 0,
-              padding: '1rem',
-              fontFamily: 'monospace',
-            }}
-          >
-            {code}
-          </SyntaxHighlighter>
-        </div>
-      </Utility>
-    </Surface>
-  );
-};
-
-export default OutputPanel;
+export default function OutputPanel({ code }: Props) {
+  return <CodePanel key={code} code={code} />;
+}

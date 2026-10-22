@@ -1,0 +1,33 @@
+{
+  "id": "heading",
+  "prompt": "Create a level 2 heading with the exact text \"Account overview\".",
+  "expected": {
+    "components": [
+      {
+        "type": "heading",
+        "props": {
+          "content": "Account overview",
+          "level": 2
+        }
+      }
+    ],
+    "form": false,
+    "horizontalGroups": 0
+  },
+  "naturalDescription": false,
+  "calls": 1,
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "heading",
+      "props": {
+        "content": "Account overview",
+        "level": 2
+      }
+    }
+  },
+  "captured": true,
+  "latencyMs": 1225,
+  "diagnostics": []
+}

@@ -3,7 +3,7 @@ import { compileSemanticUiPlan, SemanticUiPlanCompilationError } from '../src/co
 import { semanticUiPlanSchema } from '../src/semanticUiPlan';
 import type { SemanticUiElement, SemanticUiGroup, SemanticUiReference, SupportedSemanticUiPlan } from '../src/semanticUiPlan';
 import { compileModelUi, ModelUiCompilationError } from '../src/compileModelUi';
-import { COMPONENT_TYPES, identifierSchema, SPEC_LIMITS } from '../../src/specification/componentRegistry';
+import { BASE_COMPONENT_TYPES as COMPONENT_TYPES, identifierSchema, SPEC_LIMITS } from '../../src/specification/componentRegistry';
 import type { UiNode } from '../../src/specification/componentRegistry';
 import { uiSpecificationSchema } from '../../src/specification/uiSpecification';
 

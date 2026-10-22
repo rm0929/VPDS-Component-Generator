@@ -17,7 +17,7 @@ const localBaseUrl = z.string().transform((value, ctx) => {
 });
 
 const ollamaEnvironmentSchema = z.object({
-  OLLAMA_WORKFLOW: z.enum(['draft', 'semantic-plan']).default('draft'),
+  OLLAMA_WORKFLOW: z.enum(['draft', 'semantic-plan', 'flat-selection']).default('draft'),
   OLLAMA_BASE_URL: localBaseUrl.default('http://127.0.0.1:11434'),
   OLLAMA_MODEL: z.string().min(1).max(120)
     .regex(/^[a-zA-Z0-9][a-zA-Z0-9._/-]*(?::[a-zA-Z0-9][a-zA-Z0-9._-]*)?$/)

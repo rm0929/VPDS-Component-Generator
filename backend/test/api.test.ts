@@ -194,6 +194,36 @@ describe('API integration over real HTTP', () => {
     }, { provider: { id: 'test', isMock: true, async generate() { throw new Error('provider-secret'); } } });
   });
 
+  it.each([Error, TypeError])('returns a safe internal error for unexpected validator %s and permits another request', async ErrorType => {
+    const validate = vi.spyOn(uiSpecificationSchema, 'safeParse').mockImplementationOnce(() => { throw new ErrorType('private-validator-secret'); });
+    const diagnostics = vi.fn();
+    try {
+      await withApi(async (url, logs) => {
+        const body = await expectError(await post(url, { prompt: 'private-prompt' }), 'INTERNAL_ERROR');
+        expect(JSON.stringify({ body, logs, diagnostics: diagnostics.mock.calls })).not.toContain('private');
+        expect(diagnostics).not.toHaveBeenCalled();
+        const recovered = await post(url, { prompt: 'Next request' });
+        expect(recovered.status).toBe(200);
+        expect(successSchema.parse(await recovered.json()).data.specification.root.type).toBe('text');
+        expect(logs.map(log => log.status)).toEqual([500, 200]);
+      }, { diagnostics, provider: providerReturning({ version: '1.0', root: { id: 'root', type: 'text', props: { content: 'Example' } } }) });
+    } finally { validate.mockRestore(); }
+  });
+
+  it('keeps unsuccessful specification validation distinct from exceptions and recovers', async () => {
+    const valid = { version: '1.0', root: { id: 'root', type: 'text', props: { content: 'Example' } } };
+    const generate = vi.fn().mockResolvedValueOnce({ version: '1.0', root: {} }).mockResolvedValue(valid);
+    const diagnostics = vi.fn();
+    await withApi(async (url, logs) => {
+      await expectError(await post(url, { prompt: 'First request' }), 'INVALID_PROVIDER_OUTPUT');
+      expect(diagnostics).toHaveBeenCalledWith('ui_schema', expect.any(Array));
+      const recovered = await post(url, { prompt: 'Next request' });
+      expect(recovered.status).toBe(200);
+      expect(successSchema.parse(await recovered.json()).data.specification).toEqual(valid);
+      expect(logs.map(log => log.status)).toEqual([502, 200]);
+    }, { diagnostics, provider: { id: 'test', isMock: true, generate } });
+  });
+
   it.each([
     undefined, null, {}, { version: '2.0', root: {} },
     { version: '1.0', root: { id: 'unsafe', type: 'script', props: {} } },

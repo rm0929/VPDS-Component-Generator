@@ -1,0 +1,25 @@
+{
+  "id": "payment-card",
+  "prompt": "Create payment-card fields with card number, expiry, and security code.",
+  "calls": 1,
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "paymentCard",
+      "props": {
+        "name": "card-details",
+        "label": "Card details",
+        "includeCardholder": true
+      }
+    }
+  },
+  "captured": true,
+  "latencyMs": 1245,
+  "diagnostics": [],
+  "selectionValid": true,
+  "structurallyValid": true,
+  "tsx": "import { Input, InputContainer, Label, Typography, Utility } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <fieldset id={\"node-0\"}>\n      <legend>\n        {\"Card details\"}\n      </legend>\n      <Utility vFlex={true} vFlexCol={true} vGap={8}>\n        <Label htmlFor={\"node-0--cardholder\"}>\n          {\"Cardholder name\"}\n        </Label>\n        <InputContainer>\n          <Input id={\"node-0--cardholder\"} name={\"card-details[cardholder]\"} type={\"text\"} />\n        </InputContainer>\n      </Utility>\n      <Utility vFlex={true} vFlexCol={true} vGap={8}>\n        <Label htmlFor={\"node-0--number\"}>\n          {\"Card number\"}\n        </Label>\n        <InputContainer>\n          <Input id={\"node-0--number\"} name={\"card-details[number]\"} type={\"text\"} />\n        </InputContainer>\n      </Utility>\n      <Utility vFlex={true} vFlexCol={true} vGap={8}>\n        <Label htmlFor={\"node-0--expiry\"}>\n          {\"Expiry (MM/YY)\"}\n        </Label>\n        <InputContainer>\n          <Input id={\"node-0--expiry\"} name={\"card-details[expiry]\"} type={\"text\"} />\n        </InputContainer>\n      </Utility>\n      <Utility vFlex={true} vFlexCol={true} vGap={8}>\n        <Label htmlFor={\"node-0--security-code\"}>\n          {\"Security code\"}\n        </Label>\n        <InputContainer>\n          <Input id={\"node-0--security-code\"} name={\"card-details[security-code]\"} type={\"password\"} />\n        </InputContainer>\n      </Utility>\n      <Typography id={\"node-0--notice\"} tag={\"p\"} variant={\"body-1\"}>\n        {\"UI example only. No card validation or payment processing.\"}\n      </Typography>\n    </fieldset>\n  );\n}\n",
+  "previewHtml": "<fieldset id=\"node-0\"><legend>Card details</legend><div class=\"v-flex v-flex-col v-gap-8\"><label class=\"v-label\" for=\"node-0--cardholder\">Cardholder name</label><div class=\"v-surface v-input-container\"><input class=\"v-input\" id=\"node-0--cardholder\" type=\"text\" name=\"card-details[cardholder]\"/></div></div><div class=\"v-flex v-flex-col v-gap-8\"><label class=\"v-label\" for=\"node-0--number\">Card number</label><div class=\"v-surface v-input-container\"><input class=\"v-input\" id=\"node-0--number\" type=\"text\" name=\"card-details[number]\"/></div></div><div class=\"v-flex v-flex-col v-gap-8\"><label class=\"v-label\" for=\"node-0--expiry\">Expiry (MM/YY)</label><div class=\"v-surface v-input-container\"><input class=\"v-input\" id=\"node-0--expiry\" type=\"text\" name=\"card-details[expiry]\"/></div></div><div class=\"v-flex v-flex-col v-gap-8\"><label class=\"v-label\" for=\"node-0--security-code\">Security code</label><div class=\"v-surface v-input-container\"><input class=\"v-input\" id=\"node-0--security-code\" type=\"password\" name=\"card-details[security-code]\"/></div></div><p class=\"v-typography-body-1\" id=\"node-0--notice\">UI example only. No card validation or payment processing.</p></fieldset>",
+  "novaServerRender": true
+}

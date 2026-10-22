@@ -1,0 +1,54 @@
+{
+  "id": "natural-toggle",
+  "prompt": "Let me turn notification emails on or off.",
+  "expected": {
+    "components": [
+      {
+        "type": "switch",
+        "props": {}
+      }
+    ],
+    "form": false,
+    "horizontalGroups": 0
+  },
+  "naturalDescription": true,
+  "calls": 1,
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "switch",
+      "props": {
+        "name": "notification-emails",
+        "label": "Notification emails",
+        "defaultChecked": false
+      }
+    }
+  },
+  "captured": true,
+  "latencyMs": 1285,
+  "diagnostics": [],
+  "selectionValid": true,
+  "structurallyValid": true,
+  "tsx": "import { Switch, SwitchLabel, Utility } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Utility vFlex={true} vAlignItems={\"center\"} vGap={8}>\n      <Switch id={\"node-0\"} name={\"notification-emails\"} defaultChecked={false} />\n      <SwitchLabel htmlFor={\"node-0\"}>\n        {\"Notification emails\"}\n      </SwitchLabel>\n    </Utility>\n  );\n}\n",
+  "previewHtml": "<div class=\"v-align-items-center v-flex v-gap-8\"><input class=\"v-switch\" role=\"switch\" type=\"checkbox\" id=\"node-0\" name=\"notification-emails\"/><label class=\"v-label v-switch-label\" for=\"node-0\">Notification emails</label></div>",
+  "novaServerRender": true,
+  "previewCodeConsistent": true,
+  "actual": [
+    {
+      "type": "switch",
+      "props": {
+        "name": "notification-emails",
+        "label": "Notification emails",
+        "defaultChecked": false
+      },
+      "inForm": false
+    }
+  ],
+  "checks": {
+    "componentTypes": true,
+    "requiredProperties": true,
+    "composition": true
+  },
+  "semanticPass": true
+}

@@ -1,0 +1,56 @@
+{
+  "id": "switch",
+  "prompt": "Create a switch labeled Email alerts.",
+  "expected": {
+    "components": [
+      {
+        "type": "switch",
+        "props": {
+          "label": "Email alerts"
+        }
+      }
+    ],
+    "form": false,
+    "horizontalGroups": 0
+  },
+  "naturalDescription": false,
+  "calls": 1,
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "switch",
+      "props": {
+        "name": "email-alerts",
+        "label": "Email alerts",
+        "defaultChecked": false
+      }
+    }
+  },
+  "captured": true,
+  "latencyMs": 1201,
+  "diagnostics": [],
+  "selectionValid": true,
+  "structurallyValid": true,
+  "tsx": "import { Switch, SwitchLabel, Utility } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Utility vFlex={true} vAlignItems={\"center\"} vGap={8}>\n      <Switch id={\"node-0\"} name={\"email-alerts\"} defaultChecked={false} />\n      <SwitchLabel htmlFor={\"node-0\"}>\n        {\"Email alerts\"}\n      </SwitchLabel>\n    </Utility>\n  );\n}\n",
+  "previewHtml": "<div class=\"v-align-items-center v-flex v-gap-8\"><input class=\"v-switch\" role=\"switch\" type=\"checkbox\" id=\"node-0\" name=\"email-alerts\"/><label class=\"v-label v-switch-label\" for=\"node-0\">Email alerts</label></div>",
+  "novaServerRender": true,
+  "previewCodeConsistent": true,
+  "actual": [
+    {
+      "type": "switch",
+      "props": {
+        "name": "email-alerts",
+        "label": "Email alerts",
+        "defaultChecked": false
+      },
+      "inForm": false
+    }
+  ],
+  "checks": {
+    "componentTypes": true,
+    "requiredProperties": true,
+    "composition": true
+  },
+  "semanticPass": true
+}

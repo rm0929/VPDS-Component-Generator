@@ -1,0 +1,68 @@
+{
+  "phase": "family-theme-detail-20261021",
+  "url": "http://127.0.0.1:5173/",
+  "startedAt": "2026-10-21T12:46:25.378Z",
+  "requests": [],
+  "attempts": [],
+  "themes": [
+    {
+      "dark": false,
+      "width": 360,
+      "left": 17.5,
+      "right": 342.5,
+      "background": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "titleColor": "rgb(0, 0, 0)",
+      "contentColor": "rgb(0, 0, 0)",
+      "footerTextColor": "rgb(0, 0, 0)",
+      "footerBackground": "rgb(245, 245, 245)",
+      "footerLinkColor": "rgb(20, 52, 203)",
+      "closeLabel": "Cancel"
+    },
+    {
+      "dark": false,
+      "width": 1280,
+      "left": 430,
+      "right": 850,
+      "background": "rgb(255, 255, 255)",
+      "color": "rgb(0, 0, 0)",
+      "titleColor": "rgb(0, 0, 0)",
+      "contentColor": "rgb(0, 0, 0)",
+      "footerTextColor": "rgb(0, 0, 0)",
+      "footerBackground": "rgb(245, 245, 245)",
+      "footerLinkColor": "rgb(20, 52, 203)",
+      "closeLabel": "Cancel"
+    },
+    {
+      "dark": true,
+      "width": 360,
+      "left": 17.5,
+      "right": 342.5,
+      "background": "rgb(10, 10, 10)",
+      "color": "rgb(0, 0, 0)",
+      "titleColor": "rgb(255, 255, 255)",
+      "contentColor": "rgb(255, 255, 255)",
+      "footerTextColor": "rgb(255, 255, 255)",
+      "footerBackground": "rgb(26, 26, 26)",
+      "footerLinkColor": "rgb(189, 234, 255)",
+      "closeLabel": "Cancel"
+    },
+    {
+      "dark": true,
+      "width": 1280,
+      "left": 430,
+      "right": 850,
+      "background": "rgb(10, 10, 10)",
+      "color": "rgb(0, 0, 0)",
+      "titleColor": "rgb(255, 255, 255)",
+      "contentColor": "rgb(255, 255, 255)",
+      "footerTextColor": "rgb(255, 255, 255)",
+      "footerBackground": "rgb(26, 26, 26)",
+      "footerLinkColor": "rgb(189, 234, 255)",
+      "closeLabel": "Cancel"
+    }
+  ],
+  "completed": true,
+  "fixtureOnly": true,
+  "ollamaCalls": 0
+}

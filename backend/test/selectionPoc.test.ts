@@ -4,7 +4,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { z } from 'zod';
 import { compileSelectionPoc, selectionSchema, selectionStructureSchema, SelectionPocError, LEAF_TYPES, MAX_SELECTIONS, DEFAULT_FORM_LABEL } from '../evaluation/selection-poc/selection';
 import type { SelectionPoc } from '../evaluation/selection-poc/selection';
-import { buildSelectionModelSchema, selectionMessages } from '../evaluation/selection-poc/model';
+import { buildSelectionModelSchema, selectionMessages, selectionCatalog } from '../evaluation/selection-poc/model';
 import { describePocFailure } from '../evaluation/selection-poc/diagnostics';
 import { draftPropsSchemas } from '../src/modelUiDraft';
 import { uiSpecificationSchema } from '../../src/specification/uiSpecification';
@@ -30,9 +30,46 @@ const leaves: SelectionPoc['components'] = [field(),
   { type: 'checkbox', props: { label: 'Updates', required: false, disabled: false } },
   { type: 'button', props: { label: 'Continue', type: 'button', disabled: false } },
   text(), { type: 'heading', props: { content: 'Title', level: 2 } },
+  { type: 'textarea', props: { label: 'Notes', rows: 3, required: false, disabled: false } },
+  { type: 'switch', props: { label: 'Alerts', defaultChecked: false, disabled: false } },
+  { type: 'badge', props: { content: 'Ready', badgeType: 'stable' } },
+  { type: 'divider', props: { dividerType: 'decorative' } },
+  { type: 'link', props: { label: 'Help', href: '/help?topic=ui&mode=demo' } },
+  { type: 'select', props: { label: 'Region', options: ['East', 'West'], disabled: false } },
+  { type: 'radioGroup', props: { label: 'Mode', options: ['Basic', 'Advanced'], required: false } },
+  { type: 'contentCard', props: { title: 'News', description: 'Ready' } },
+  { type: 'paymentCard', props: { label: 'Card details', includeCardholder: false } },
+  { type: 'progress', props: { label: 'Export', mode: 'indeterminate', paused: false } },
+  { type: 'dialog', props: { title: 'Review', closeLabel: 'Cancel' } },
+  { type: 'flag', props: { content: 'Updated', variant: 'information', dismissible: false } },
+  { type: 'footer', props: { text: 'Example service', links: [{ label: 'Terms', href: '/terms' }] } },
 ];
 
 describe('flat SelectionPoC contract and deterministic composition', () => {
+  it.each(LEAF_TYPES)('keeps the %s catalog example aligned with actual validators and compilation', type => {
+    const entry = selectionCatalog[type];
+    expect(draftPropsSchemas[type].safeParse(entry.props).success).toBe(true);
+    const output = compileSelectionPoc(selection([{ type, props: entry.props }]));
+    expect(output.root.type).toBe(type);
+    expect(output.root.props).toMatchObject(entry.props);
+    const schema = JSON.stringify(buildSelectionModelSchema());
+    expect(schema).toContain(JSON.stringify(entry.meaning));
+    expect(selectionMessages()[0].content).toContain(JSON.stringify(entry.props));
+  });
+  it('keeps representative form and single-component examples valid and free of generated identities', () => {
+    const examples = selectionMessages().filter(message => message.role === 'assistant').map(message => JSON.parse(message.content));
+    expect(examples.filter(example => !example.form.enabled).map(example => example.components[0].type))
+      .toEqual(['switch', 'link', 'contentCard']);
+    const form = examples.find(example => example.form.enabled);
+    expect(form.components.map((component: { type: string }) => component.type)).toEqual(['emailInput', 'passwordInput', 'checkbox', 'button']);
+    for (const example of examples) {
+      expect(selectionSchema.safeParse(example).success).toBe(true);
+      expect(uiSpecificationSchema.safeParse(compileSelectionPoc(example)).success).toBe(true);
+      for (const component of example.components) {
+        expect(component).not.toHaveProperty('id'); expect(component.props).not.toHaveProperty('name');
+      }
+    }
+  });
   it.each(leaves)('preserves $type properties and explicit false with no unnecessary wrapper', component => {
     const output = compileSelectionPoc(selection([component]));
     expect(semantic(output.root)).toEqual(component);
@@ -100,11 +137,17 @@ describe('flat SelectionPoC contract and deterministic composition', () => {
     const input = selection(Array.from({ length: MAX_SELECTIONS }, (_, i) => ({ ...field('Code'), besidePrevious: i % 2 === 1 })), { form: { enabled: true, label: 'Codes' } });
     expect(flatten(compileSelectionPoc(input).root)).toHaveLength(32);
   });
-  it('derives the grammar and seven property schemas from the reused validators', () => {
-    expect(buildSelectionModelSchema()).toEqual(z.toJSONSchema(selectionStructureSchema, { target: 'draft-07' }));
+  it('derives the expanded grammar and property schemas from the reused validators', () => {
+    // Strip only descriptive annotations, not the contentCard description property schema.
+    const grammar = JSON.parse(JSON.stringify(buildSelectionModelSchema(), (key, value) =>
+      (key === 'description' && typeof value === 'string') || (key === 'examples' && Array.isArray(value)) ? undefined : value));
+    expect(grammar).toEqual(z.toJSONSchema(selectionStructureSchema, { target: 'draft-07' }));
     expect(buildSelectionModelSchema().required).toContain('form');
-    expect(hash(JSON.stringify(buildSelectionModelSchema()))).toBe('385bab39b1c0e9fe1f9b3f1da0f1011cb76a34f43edfc1f33e04ad30854d23ad');
-    expect(hash(JSON.stringify(selectionMessages()))).toBe('c50372ff66d3568ad1da08a7040fbe933fda546f3a6e44d92d9993a89f65700f');
+    // The active catalog now has twenty leaves; historical seven-leaf hashes
+    // and benchmark responses remain recorded in docs rather than overwritten.
+    expect(LEAF_TYPES).toHaveLength(20);
+    expect(hash(JSON.stringify(buildSelectionModelSchema()))).toBe('6983bf4b63bd6c1932d00ac18f4dab102533f2a0fb0147602837d51796788203');
+    expect(hash(JSON.stringify(selectionMessages()))).toBe('91a2ee2942c3a6e686f9bb4dbc264f19cb86eb112677a1be7ead9c3792ebdcb2');
     expect(leaves.map(item => item.type)).toEqual([...LEAF_TYPES]);
     for (const leaf of leaves) expect(draftPropsSchemas[leaf.type].safeParse(leaf.props).success).toBe(true);
     const examples = selectionMessages().filter(message => message.role === 'assistant');
@@ -186,7 +229,7 @@ describe('existing presentation/TSX contracts and frozen PoC inputs', () => {
     const code = generateTsx(output);
     expect(presentation).toMatchObject({ tag: 'form', props: { 'aria-label': 'Example' } });
     for (const node of flatten(output.root).filter(node => 'name' in node.props)) {
-      expect(code).toContain(`htmlFor={${JSON.stringify(node.id)}}`);
+      if (node.type !== 'radioGroup' && node.type !== 'paymentCard') expect(code).toContain(`htmlFor={${JSON.stringify(node.id)}}`);
       expect(code).toContain(`id={${JSON.stringify(node.id)}}`);
     }
     expect(code).toContain('onSubmit={(event) => event.preventDefault()}');

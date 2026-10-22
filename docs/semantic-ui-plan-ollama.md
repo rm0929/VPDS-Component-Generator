@@ -19,14 +19,17 @@ runtime baseline remains unchanged.
 
 ## Selection and conversion
 
-There are still two providers: `mock` and `ollama`. The Ollama provider now has
-two workflow choices, configured at backend startup:
+There are still two providers: `mock` and `ollama`. Step 2 introduced two Ollama
+workflows; the subsequent [flat-selection integration](flat-selection-backend.md)
+adds a third choice without changing either original workflow. Selection is
+configured at backend startup:
 
 | Environment | Behavior | Health/success provider identifier |
 | --- | --- | --- |
 | `API_PROVIDER=mock` | Existing non-AI deterministic examples; ignores Ollama settings | `deterministic-mock` |
 | `API_PROVIDER=ollama OLLAMA_WORKFLOW=draft` | Original recursive UI draft, original system prompt and demonstration | `ollama-local` |
 | `API_PROVIDER=ollama OLLAMA_WORKFLOW=semantic-plan` | Flat semantic plan with explicit ordered references | `ollama-local-semantic-plan` |
+| `API_PROVIDER=ollama OLLAMA_WORKFLOW=flat-selection` | Benchmarked flat component selection and deterministic composition | `ollama-local-flat-selection` |
 
 The code defaults to `mock`; when Ollama is selected, its workflow defaults to
 `draft`. Unknown/empty workflow values fail startup validation. Selection is
@@ -189,13 +192,12 @@ API_HOST=127.0.0.1 API_PORT=3001 API_PROVIDER=mock \
   API_GENERATION_TIMEOUT_MS=5000 API_REQUEST_TIMEOUT_MS=120000 npm run dev:backend
 ```
 
-The explicit fallback timeout is intentional: the pre-existing `.env.example`
-contains `API_GENERATION_TIMEOUT_MS=90000`, while `readConfig` permits at most
-30000. That existing value is preserved in this step rather than overwriting
-prior configuration edits. Override it as above or set a valid value in your
-local `.env`. Ollama generation uses its own `OLLAMA_TIMEOUT_MS=60000` deadline;
-the 5000 ms API value is the fallback for providers without a deadline (such as
-the mock). `OLLAMA_WORKFLOW=draft` is the only addition to `.env.example`.
+At Step 2, `.env.example` retained a pre-existing 90000 ms fallback, exceeding
+`readConfig`'s 30000 ms maximum. The later flat-selection integration corrects the
+sample to 5000 ms and `API_PROVIDER=mock`; existing local `.env` files are not
+rewritten. Keep a valid fallback there or override it as above. Ollama generation
+uses its own `OLLAMA_TIMEOUT_MS=60000` deadline; the 5000 ms API value is the
+fallback for providers without a deadline (such as the mock).
 
 Confirm the workflow and test either Ollama path from a separate terminal:
 

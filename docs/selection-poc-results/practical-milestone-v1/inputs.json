@@ -1,0 +1,14 @@
+{
+  "description": "One acceptance pass after one catalog/instruction revision. One attempt per prompt; no retries or tuning. Both progress modes are checked separately. Historical benchmarks are unchanged.",
+  "cases": [
+    { "id": "select", "prompt": "Create a Country select with Canada, France, and Japan." },
+    { "id": "radio", "prompt": "Create a Delivery radio group with Standard and Express options." },
+    { "id": "content-card", "prompt": "Create a content card titled Project status, with description Ready for review and a Details button." },
+    { "id": "payment-card", "prompt": "Create payment-card fields with card number, expiry, and security code." },
+    { "id": "determinate", "prompt": "Show Upload progress at 40 percent." },
+    { "id": "indeterminate", "prompt": "Show an indeterminate Loading progress indicator." },
+    { "id": "switch", "prompt": "Create a switch labeled Email alerts." },
+    { "id": "link", "prompt": "Create a link labeled Visa design guidance pointing to https://design.visa.com/." },
+    { "id": "login", "prompt": "I need a login form with remember me." }
+  ]
+}

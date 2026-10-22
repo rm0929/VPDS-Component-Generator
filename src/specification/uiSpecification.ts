@@ -19,6 +19,17 @@ function nodeSchema(depth: number): z.ZodType<UiNode> {
     node('button', componentRegistry.button.propsSchema),
     node('text', componentRegistry.text.propsSchema),
     node('heading', componentRegistry.heading.propsSchema),
+    node('textarea', componentRegistry.textarea.propsSchema),
+    node('switch', componentRegistry.switch.propsSchema),
+    node('badge', componentRegistry.badge.propsSchema),
+    node('divider', componentRegistry.divider.propsSchema),
+    node('link', componentRegistry.link.propsSchema),
+    node('select', componentRegistry.select.propsSchema),
+    node('radioGroup', componentRegistry.radioGroup.propsSchema),
+    node('contentCard', componentRegistry.contentCard.propsSchema),
+    node('paymentCard', componentRegistry.paymentCard.propsSchema),
+    node('progress', componentRegistry.progress.propsSchema),
+    node('dialog', componentRegistry.dialog.propsSchema), node('flag', componentRegistry.flag.propsSchema), node('footer', componentRegistry.footer.propsSchema),
     node('verticalLayout', componentRegistry.verticalLayout.propsSchema).extend({ children }),
     node('horizontalLayout', componentRegistry.horizontalLayout.propsSchema).extend({ children }),
     node('form', componentRegistry.form.propsSchema).extend({ children }),
@@ -74,6 +85,10 @@ const documentSchema = z.strictObject({
     }
     if (ids.has(node.id)) ctx.addIssue({ code: 'custom', path: [...path, 'id'], message: 'Component IDs must be unique' });
     ids.add(node.id);
+    if ((node.type === 'select' || node.type === 'radioGroup') && node.props.defaultValue !== undefined
+      && !node.props.options.includes(node.props.defaultValue)) {
+      ctx.addIssue({ code: 'custom', path: [...path, 'props', 'defaultValue'], message: 'The default selection must be one of the options.' });
+    }
     if ('name' in node.props) {
       if (names.has(node.props.name)) ctx.addIssue({ code: 'custom', path: [...path, 'props', 'name'], message: 'Field names must be unique' });
       names.add(node.props.name);

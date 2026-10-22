@@ -1,5 +1,5 @@
 import { z } from 'zod';
-import { COMPONENT_TYPES, componentRegistry, SPEC_LIMITS } from '../../src/specification/componentRegistry';
+import { BASE_COMPONENT_TYPES as COMPONENT_TYPES, componentRegistry, SPEC_LIMITS } from '../../src/specification/componentRegistry';
 import { draftPropsSchemas, modelUiDraftSchema, UI_DRAFT_VERSION, UNSUPPORTED_REASONS } from './modelUiDraft';
 import registration from './fixtures/registration-draft.json';
 
@@ -16,7 +16,7 @@ export function buildModelSchema(): JsonSchema {
     const types = COMPONENT_TYPES.filter(type => depth < SPEC_LIMITS.maxDepth || !componentRegistry[type].allowedChildren.length);
     definitions[`node-${depth}`] = { oneOf: types.map(type => reference(`node-${depth}-${type}`)) };
     for (const type of types) {
-      const children = componentRegistry[type].allowedChildren;
+      const children = componentRegistry[type].allowedChildren.filter(child => COMPONENT_TYPES.some(type => type === child));
       const properties: JsonSchema = { type: { const: type }, props: reference(`props-${type}`) };
       const required = ['type', 'props'];
       if (children.length) {
@@ -43,7 +43,7 @@ export function buildModelInstructions(): string {
     const schema = z.toJSONSchema(draftPropsSchemas[type], { target: 'draft-07' });
     const required = schema.required ?? [];
     return { type, required, optional: Object.keys(schema.properties ?? {}).filter(key => !required.includes(key)),
-      children: componentRegistry[type].allowedChildren };
+      children: componentRegistry[type].allowedChildren.filter(child => COMPONENT_TYPES.some(type => type === child)) };
   });
   return `You produce UI draft JSON data, never executable code.
 Return exactly one object: {"irVersion":"${UI_DRAFT_VERSION}","status":"supported","root":...}. No markdown, explanations, thinking, or code fences.

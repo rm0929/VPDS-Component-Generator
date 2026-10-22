@@ -1,0 +1,34 @@
+{
+  "id": "link",
+  "prompt": "Create a link to https://design.visa.com/ labeled Visa design.",
+  "expected": {
+    "components": [
+      {
+        "type": "link",
+        "props": {
+          "label": "Visa design",
+          "href": "https://design.visa.com/"
+        }
+      }
+    ],
+    "form": false,
+    "horizontalGroups": 0
+  },
+  "naturalDescription": false,
+  "calls": 1,
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "button",
+      "props": {
+        "label": "Visa design",
+        "type": "button",
+        "disabled": false
+      }
+    }
+  },
+  "captured": true,
+  "latencyMs": 1354,
+  "diagnostics": []
+}

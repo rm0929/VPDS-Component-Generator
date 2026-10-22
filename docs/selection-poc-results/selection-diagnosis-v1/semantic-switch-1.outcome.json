@@ -1,0 +1,21 @@
+{
+  "id": "semantic-switch",
+  "repetition": 1,
+  "prompt": "Let me turn email notifications on or off.",
+  "calls": 1,
+  "captureComplete": true,
+  "latencyMs": 1354,
+  "diagnostics": [],
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "switch",
+      "props": {
+        "name": "turn-email-notifications-on-or-off",
+        "label": "Turn email notifications on or off",
+        "disabled": false
+      }
+    }
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "id": "email-input",
+  "prompt": "Create an email input labeled Work email.",
+  "expected": {
+    "components": [
+      {
+        "type": "emailInput",
+        "props": {
+          "label": "Work email"
+        }
+      }
+    ],
+    "form": false,
+    "horizontalGroups": 0
+  },
+  "naturalDescription": false,
+  "calls": 1,
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "emailInput",
+      "props": {
+        "name": "work-email",
+        "label": "Work email"
+      }
+    }
+  },
+  "captured": true,
+  "latencyMs": 1250,
+  "diagnostics": [],
+  "selectionValid": true,
+  "structurallyValid": true,
+  "tsx": "import { Input, InputContainer, Label, Utility } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Utility vFlex={true} vFlexCol={true} vGap={8}>\n      <Label htmlFor={\"node-0\"}>\n        {\"Work email\"}\n      </Label>\n      <InputContainer>\n        <Input id={\"node-0\"} name={\"work-email\"} type={\"email\"} />\n      </InputContainer>\n    </Utility>\n  );\n}\n",
+  "previewHtml": "<div class=\"v-flex v-flex-col v-gap-8\"><label class=\"v-label\" for=\"node-0\">Work email</label><div class=\"v-surface v-input-container\"><input class=\"v-input\" id=\"node-0\" type=\"email\" name=\"work-email\"/></div></div>",
+  "novaServerRender": true,
+  "previewCodeConsistent": true,
+  "actual": [
+    {
+      "type": "emailInput",
+      "props": {
+        "name": "work-email",
+        "label": "Work email"
+      },
+      "inForm": false
+    }
+  ],
+  "checks": {
+    "componentTypes": true,
+    "requiredProperties": true,
+    "composition": true
+  },
+  "semanticPass": true
+}

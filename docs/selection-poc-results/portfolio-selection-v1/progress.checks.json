@@ -1,0 +1,58 @@
+{
+  "id": "progress",
+  "prompt": "Show Upload progress at 40 percent.",
+  "expected": {
+    "components": [
+      {
+        "type": "progress",
+        "props": {
+          "label": "Upload",
+          "mode": "determinate",
+          "value": 40
+        }
+      }
+    ],
+    "form": false,
+    "horizontalGroups": 0
+  },
+  "naturalDescription": false,
+  "calls": 1,
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "progress",
+      "props": {
+        "label": "Upload",
+        "mode": "determinate",
+        "value": 40
+      }
+    }
+  },
+  "captured": true,
+  "latencyMs": 1250,
+  "diagnostics": [],
+  "selectionValid": true,
+  "structurallyValid": true,
+  "tsx": "import { ProgressLabel, ProgressLinear, Utility } from '@visa/nova-react';\n\nexport default function GeneratedUI() {\n  return (\n    <Utility vFlex={true} vFlexCol={true} vGap={8}>\n      <ProgressLabel htmlFor={\"node-0\"}>\n        {\"Upload\"}\n      </ProgressLabel>\n      <ProgressLinear id={\"node-0\"} max={100} value={40} />\n    </Utility>\n  );\n}\n",
+  "previewHtml": "<div class=\"v-flex v-flex-col v-gap-8\"><label class=\"v-progress-label\" for=\"node-0\">Upload</label><progress class=\"v-progress v-progress-bar\" style=\"animation-play-state:running\" id=\"node-0\" max=\"100\" value=\"40\"></progress></div>",
+  "novaServerRender": true,
+  "previewCodeConsistent": true,
+  "actual": [
+    {
+      "type": "progress",
+      "props": {
+        "label": "Upload",
+        "mode": "determinate",
+        "value": 40
+      },
+      "inForm": false
+    }
+  ],
+  "checks": {
+    "componentTypes": true,
+    "requiredProperties": true,
+    "composition": true
+  },
+  "semanticPass": true
+}

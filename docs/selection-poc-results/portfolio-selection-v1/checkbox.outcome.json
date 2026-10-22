@@ -1,0 +1,43 @@
+{
+  "id": "checkbox",
+  "prompt": "Create a required checkbox labeled Accept terms.",
+  "expected": {
+    "components": [
+      {
+        "type": "checkbox",
+        "props": {
+          "label": "Accept terms",
+          "required": true
+        }
+      }
+    ],
+    "form": false,
+    "horizontalGroups": 0
+  },
+  "naturalDescription": false,
+  "calls": 1,
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "form",
+      "props": {
+        "label": "Accept terms"
+      },
+      "children": [
+        {
+          "id": "node-0-0",
+          "type": "checkbox",
+          "props": {
+            "name": "accept-terms",
+            "label": "Accept terms",
+            "required": true
+          }
+        }
+      ]
+    }
+  },
+  "captured": true,
+  "latencyMs": 1355,
+  "diagnostics": []
+}

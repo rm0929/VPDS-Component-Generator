@@ -1,0 +1,37 @@
+{
+  "id": "content-card",
+  "prompt": "Create a content card titled Analytics with description View your reports.",
+  "expected": {
+    "components": [
+      {
+        "type": "contentCard",
+        "props": {
+          "title": "Analytics"
+        }
+      }
+    ],
+    "propertyAlternatives": {
+      "description": [
+        "View your reports",
+        "View your reports."
+      ]
+    },
+    "form": false,
+    "horizontalGroups": 0
+  },
+  "calls": 1,
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "dialog",
+      "props": {
+        "title": "Analytics",
+        "content": "View your reports"
+      }
+    }
+  },
+  "captured": true,
+  "latencyMs": 1253,
+  "diagnostics": []
+}

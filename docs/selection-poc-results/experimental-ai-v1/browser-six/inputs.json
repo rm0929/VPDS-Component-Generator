@@ -1,0 +1,42 @@
+{
+  "prompts": [
+    "Create one text input labeled \"Full name\". Do not include a form or any other components.",
+    "Create one disabled password input labeled \"Password\". Do not include a form or any other components.",
+    "Create a login form with an email input labeled \"Email\", a password input labeled \"Password\", a checkbox labeled \"Remember me\", and a submit button labeled \"Login\".",
+    "Create exactly two buttons labeled \"Preview\" and \"Cancel\" side by side, outside any form.",
+    "Create a heading with the exact text \"Build once. Share everywhere.\". Do not include any other components.",
+    "Create a data table with columns Name and Email and two rows of sample data."
+  ],
+  "model": "qwen3:4b-instruct",
+  "workflow": "flat-selection",
+  "provider": "ollama-local-flat-selection",
+  "path": "React Experimental AI view → Vite proxy → Express → local Ollama",
+  "settings": {
+    "model": "qwen3:4b-instruct",
+    "stream": false,
+    "think": false,
+    "keep_alive": "2m",
+    "options": {
+      "temperature": 0,
+      "seed": 0,
+      "num_ctx": 8192,
+      "num_predict": 2048
+    },
+    "timeoutMs": 60000,
+    "responseLimitBytes": 65536
+  },
+  "settingsProvenance": "Explicit backend startup configuration recorded in the implementation session. The original browser result JSON did not embed settings; these are configuration records, not independent response-side measurements.",
+  "runtimeVersion": null,
+  "modelDigest": null,
+  "runtimeMetadataNote": "Version and digest were not retained for this initial browser run. The later comparison records its own measured runtime metadata.",
+  "responseAvailability": {
+    "1": "Validated specification, rendered control metadata, and displayed TSX retained; raw HTTP envelope not retained.",
+    "2": "Validated specification, rendered control metadata, and displayed TSX retained; raw HTTP envelope not retained.",
+    "3": "HTTP 200 and backend duration recorded; response body/specification and detailed checks lost before saving. Unverified and never retried.",
+    "4": "Validated specification, rendered control metadata, and displayed TSX retained; raw HTTP envelope not retained.",
+    "5": "Validated specification, rendered control metadata, and displayed TSX retained; raw HTTP envelope not retained.",
+    "6": "Unsupported error code and UI outcomes retained; raw HTTP envelope not retained."
+  },
+  "modelRequests": 6,
+  "retries": 0
+}

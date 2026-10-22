@@ -1,0 +1,63 @@
+{
+  "id": "payment-card",
+  "prompt": "Create payment-card input fields.",
+  "expected": {
+    "components": [
+      {
+        "type": "paymentCard",
+        "props": {}
+      }
+    ],
+    "form": false,
+    "horizontalGroups": 0
+  },
+  "calls": 1,
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "form",
+      "props": {
+        "label": "Card details"
+      },
+      "children": [
+        {
+          "id": "node-0-0",
+          "type": "paymentCard",
+          "props": {
+            "name": "card-details",
+            "label": "Card details",
+            "includeCardholder": false
+          }
+        }
+      ]
+    }
+  },
+  "captured": true,
+  "latencyMs": 4417,
+  "diagnostics": [],
+  "selectionValid": true,
+  "structurallyValid": true,
+  "tsx": "import { Input, InputContainer, InputControl, Label, Typography, Utility } from '@visa/nova-react';\nimport { VisaCardGenericLow } from '@visa/nova-icons-react';\n\nexport default function GeneratedUI() {\n  return (\n    <form id={\"node-0\"} aria-label={\"Card details\"} onSubmit={(event) => event.preventDefault()}>\n      <fieldset id={\"node-0-0\"}>\n        <legend>\n          {\"Card details\"}\n        </legend>\n        <Utility vFlex={true} vFlexCol={true} vGap={8}>\n          <Label htmlFor={\"node-0-0--number\"}>\n            {\"Card number\"}\n          </Label>\n          <InputContainer>\n            <Input id={\"node-0-0--number\"} name={\"card-details[number]\"} type={\"text\"} autoComplete={\"off\"} inputMode={\"numeric\"} />\n            <InputControl>\n              <VisaCardGenericLow aria-hidden={true} focusable={false} />\n            </InputControl>\n          </InputContainer>\n        </Utility>\n        <Utility vFlex={true} vFlexCol={true} vGap={8}>\n          <Label htmlFor={\"node-0-0--expiry\"}>\n            {\"Expiry (MM/YY)\"}\n          </Label>\n          <InputContainer>\n            <Input id={\"node-0-0--expiry\"} name={\"card-details[expiry]\"} type={\"text\"} autoComplete={\"off\"} placeholder={\"MM/YY\"} />\n          </InputContainer>\n        </Utility>\n        <Utility vFlex={true} vFlexCol={true} vGap={8}>\n          <Label htmlFor={\"node-0-0--security-code\"}>\n            {\"Security code\"}\n          </Label>\n          <InputContainer>\n            <Input id={\"node-0-0--security-code\"} name={\"card-details[security-code]\"} type={\"password\"} autoComplete={\"off\"} inputMode={\"numeric\"} aria-describedby={\"node-0-0--security-help\"} />\n          </InputContainer>\n        </Utility>\n        <details>\n          <summary>\n            {\"About the security code\"}\n          </summary>\n          <Typography id={\"node-0-0--security-help\"} tag={\"p\"} variant={\"body-1\"}>\n            {\"Security codes have three or four digits. Use synthetic values in this example.\"}\n          </Typography>\n        </details>\n        <Typography id={\"node-0-0--notice\"} tag={\"p\"} variant={\"body-1\"}>\n          {\"UI example only. No card validation or payment processing.\"}\n        </Typography>\n      </fieldset>\n    </form>\n  );\n}\n",
+  "previewHtml": "<form id=\"node-0\" aria-label=\"Card details\"><fieldset id=\"node-0-0\"><legend>Card details</legend><div class=\"v-flex v-flex-col v-gap-8\"><label class=\"v-label\" for=\"node-0-0--number\">Card number</label><div class=\"v-surface v-input-container\"><input class=\"v-input\" id=\"node-0-0--number\" type=\"text\" autoComplete=\"off\" inputMode=\"numeric\" name=\"card-details[number]\"/><div class=\"v-input-control\"><svg class=\"v-icon v-icon-visa v-icon-low v-icon-card-generic\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\" focusable=\"false\" aria-hidden=\"true\"><path class=\"v-icon-secondary\" d=\"M4 7H20V9H4V7Z\"></path><path class=\"v-icon-primary\" fill-rule=\"evenodd\" clip-rule=\"evenodd\" d=\"M3 5C2.44772 5 2 5.44772 2 6V18C2 18.5523 2.44772 19 3 19H21C21.5523 19 22 18.5523 22 18V6C22 5.44771 21.5523 5 21 5H3ZM0 6C0 4.34315 1.34315 3 3 3H21C22.6569 3 24 4.34315 24 6V18C24 19.6569 22.6569 21 21 21H3C1.34314 21 0 19.6569 0 18V6Z\"></path></svg></div></div></div><div class=\"v-flex v-flex-col v-gap-8\"><label class=\"v-label\" for=\"node-0-0--expiry\">Expiry (MM/YY)</label><div class=\"v-surface v-input-container\"><input class=\"v-input\" id=\"node-0-0--expiry\" type=\"text\" autoComplete=\"off\" placeholder=\"MM/YY\" name=\"card-details[expiry]\"/></div></div><div class=\"v-flex v-flex-col v-gap-8\"><label class=\"v-label\" for=\"node-0-0--security-code\">Security code</label><div class=\"v-surface v-input-container\"><input class=\"v-input\" id=\"node-0-0--security-code\" type=\"password\" autoComplete=\"off\" inputMode=\"numeric\" aria-describedby=\"node-0-0--security-help\" name=\"card-details[security-code]\"/></div></div><details><summary>About the security code</summary><p class=\"v-typography-body-1\" id=\"node-0-0--security-help\">Security codes have three or four digits. Use synthetic values in this example.</p></details><p class=\"v-typography-body-1\" id=\"node-0-0--notice\">UI example only. No card validation or payment processing.</p></fieldset></form>",
+  "novaServerRender": true,
+  "previewCodeConsistent": true,
+  "actual": [
+    {
+      "type": "paymentCard",
+      "props": {
+        "name": "card-details",
+        "label": "Card details",
+        "includeCardholder": false
+      },
+      "inForm": true
+    }
+  ],
+  "checks": {
+    "componentTypes": true,
+    "requiredProperties": true,
+    "composition": false
+  },
+  "paymentFields": true,
+  "semanticPass": false
+}

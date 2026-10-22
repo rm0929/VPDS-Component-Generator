@@ -1,0 +1,39 @@
+{
+  "id": "payment-card",
+  "prompt": "Create payment-card input fields.",
+  "expected": {
+    "components": [
+      {
+        "type": "paymentCard",
+        "props": {}
+      }
+    ],
+    "form": false,
+    "horizontalGroups": 0
+  },
+  "calls": 1,
+  "specification": {
+    "version": "1.0",
+    "root": {
+      "id": "node-0",
+      "type": "form",
+      "props": {
+        "label": "Card details"
+      },
+      "children": [
+        {
+          "id": "node-0-0",
+          "type": "paymentCard",
+          "props": {
+            "name": "card-details",
+            "label": "Card details",
+            "includeCardholder": false
+          }
+        }
+      ]
+    }
+  },
+  "captured": true,
+  "latencyMs": 4417,
+  "diagnostics": []
+}
