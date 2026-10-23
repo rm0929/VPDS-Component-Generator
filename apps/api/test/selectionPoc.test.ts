@@ -14,7 +14,7 @@ import { generateTsx } from '@vpds/ui-specification/generateTsx';
 import { checkGeneratedTsx } from '../../../packages/ui-specification/test/support/checkGeneratedTsx';
 import dataset from '../../../tools/evaluation/selection/cases-v1.json';
 import { feasibilityCases } from '../../../tools/evaluation/selection/feasibilityCases';
-import { hash } from '../../../tools/evaluation/coverage/metadata';
+import { hash } from '../../../tools/evaluation/assessment/metadata';
 
 const selection = (components: unknown[], extra = {}) => ({ version: 'selection-poc-2', components, form: { enabled: false, label: null }, unsupported: [], ...extra });
 const field = (label = 'Name') => ({ type: 'textInput' as const, props: { label, required: false, disabled: false } });

@@ -11,9 +11,9 @@ No inference was run for repository cleanup. The retained records below are hist
 ## Retained cases and tools
 
 - [Frozen 12-case flat-selection dataset](../../tools/evaluation/selection/cases-v1.json): exact prompts, component/property expectations, order, rows, form membership, negation and unsupported requests. Its original SHA-256 is enforced by tests.
-- [Earlier 11 cases](../../tools/evaluation/coverage/fixtures/legacy-v1.json) and [18 challenges](../../tools/evaluation/coverage/fixtures/challenge-v1.json): retained as compatibility/scorer regressions. These represent an older ten-type scope; do not reinterpret expectations to match the expanded catalog.
+- [Earlier 11 cases](../../tools/evaluation/assessment/fixtures/legacy-v1.json) and [18 challenges](../../tools/evaluation/assessment/fixtures/challenge-v1.json): retained as compatibility/scorer regressions. These represent an older ten-type scope; do not reinterpret expectations to match the expanded catalog.
 - `tools/evaluation/selection`: existing manual runner, independent assessor, safe diagnostics and local HTTP helper. Production uses `apps/api/src/ai/ollamaProvider.ts`, never this manual helper.
-- `tools/evaluation/coverage`: requirement/layout scorers, aggregate metrics, bounded runtime metadata and a CLI for scoring saved specifications. API/compiler tests also use the scorer fixtures.
+- `tools/evaluation/assessment`: requirement/layout scorers, aggregate metrics, bounded runtime metadata and a CLI for scoring saved specifications. API/compiler tests also use the scorer fixtures.
 
 CI runs mocked tests, without model downloads or inference. Rejected prompt-variant machinery has been removed; selectable draft/semantic-plan API workflows remain intact.
 

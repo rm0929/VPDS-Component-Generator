@@ -1,4 +1,4 @@
-import type { BenchmarkCase } from '../coverage/challengeCases';
+import type { BenchmarkCase } from '../assessment/challengeCases';
 
 // Evaluation expectations only; none of this module is imported by generation/composition.
 export const feasibilityCases: readonly BenchmarkCase[] = [

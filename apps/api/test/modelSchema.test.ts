@@ -8,8 +8,8 @@ import { modelUiDraftSchema, draftPropsSchemas } from '../src/ai/modelUiDraft';
 import type { DraftNode } from '../src/ai/modelUiDraft';
 import { compileModelUi } from '../src/ai/compileModelUi';
 import { buildModelInstructions, buildModelSchema, MODEL_EXAMPLE_REQUEST } from '../src/ai/compatibility/modelSchema';
-import { deriveFormExpectation, evaluateCoverage } from '../../../tools/evaluation/coverage/requirementCoverage';
-import { coverageCases } from '../../../tools/evaluation/coverage/coverageCases';
+import { deriveFormExpectation, evaluateCoverage } from '../../../tools/evaluation/assessment/requirementCoverage';
+import { coverageCases } from '../../../tools/evaluation/assessment/coverageCases';
 
 const supported = () => (buildModelSchema().oneOf as { properties: unknown; required: string[]; additionalProperties: boolean }[])[0];
 describe('one model-facing UI draft grammar', () => {

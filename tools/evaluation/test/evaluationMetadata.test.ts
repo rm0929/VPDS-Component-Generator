@@ -1,5 +1,5 @@
 import { describe, expect, it, vi } from 'vitest';
-import { runtimeMetadata } from '../coverage/metadata';
+import { runtimeMetadata } from '../assessment/metadata';
 import { readProviderConfig } from '../../../apps/api/src/providerConfig';
 
 function config() {

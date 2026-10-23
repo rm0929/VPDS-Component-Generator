@@ -11,8 +11,8 @@ import registrationDraft from '../src/ai/compatibility/fixtures/registration-dra
 import loginDraft from './fixtures/login-draft.json';
 import { compileModelUi } from '../src/ai/compileModelUi';
 import { uiSpecificationSchema } from '@vpds/ui-specification/uiSpecification';
-import { coverageCases } from '../../../tools/evaluation/coverage/coverageCases';
-import { evaluateCoverage } from '../../../tools/evaluation/coverage/requirementCoverage';
+import { coverageCases } from '../../../tools/evaluation/assessment/coverageCases';
+import { evaluateCoverage } from '../../../tools/evaluation/assessment/requirementCoverage';
 import { createGenerationDiagnostics } from '../src/diagnostics';
 import type { GenerationDiagnostics } from '../src/diagnostics';
 import duplicateLogin from './fixtures/login-duplicate-id.json';

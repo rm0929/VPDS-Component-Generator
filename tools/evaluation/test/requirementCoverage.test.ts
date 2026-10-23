@@ -2,9 +2,9 @@ import { describe, expect, it } from 'vitest';
 import registration from '@vpds/ui-specification/fixtures/registration-form.json';
 import { uiSpecificationSchema } from '@vpds/ui-specification/uiSpecification';
 import type { UiNode, ComponentType } from '@vpds/ui-specification/componentRegistry';
-import { coverageCases } from '../coverage/coverageCases';
-import { deriveFormExpectation, evaluateCoverage } from '../coverage/requirementCoverage';
-import type { CoverageRequirement, CoverageExpectation } from '../coverage/requirementCoverage';
+import { coverageCases } from '../assessment/coverageCases';
+import { deriveFormExpectation, evaluateCoverage } from '../assessment/requirementCoverage';
+import type { CoverageRequirement, CoverageExpectation } from '../assessment/requirementCoverage';
 
 const collapsed = { version: '1.0', root: { id: 'root', type: 'text', props: { content: 'Registration Form' } } };
 const registrationCase = coverageCases[0];

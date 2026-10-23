@@ -1,0 +1,18 @@
+{
+  "datasetVersion": "phase2b-eval-v2",
+  "challengeVersion": "challenge-v1",
+  "legacyCases": 11,
+  "challengeCases": 18,
+  "datasetHash": "97e04137a3089d780d994d29c2700253b5bbcfc4434ae5cae5f0883e807b3d9b",
+  "baselinePromptHash": "01218ad4d34227692d55df2cf0f91f9f7dc3c6b9d86652667527798e4f2a01ca",
+  "schemaHash": "3eeb44342aac7810ea80c4c6b057fa40d1c613dd6f019c28674212f4402fecde",
+  "gitCommit": "18322bed534c05c187c34fcd6459365311bd557a",
+  "nodeVersion": "v22.14.0",
+  "compilerRevision": "403d1d24115f027e26a28dd686b1458239d4776b3a3143a397c5a386573da49d",
+  "compilerHashes": {
+    "backend/src/compileModelUi.ts": "49659b2297b9932ec07f1973d010ed1a5b0cb28cbfab4d0945ef199d923643c5",
+    "backend/src/modelUiDraft.ts": "7d51639a7bdccc709394c3d8df9db6810cac98ab80e65d6fbf21563fa5b289f1",
+    "src/specification/componentRegistry.ts": "dc7064468f4b00b529eadf36cb06ab107e18a73a70befd9311df18cb60ee6e8e",
+    "src/specification/uiSpecification.ts": "f0a31834f6ff131df75290f38d5b62ecb25b2ae71276bcd8638f6d90dbf11172"
+  }
+}

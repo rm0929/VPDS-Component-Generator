@@ -4,7 +4,7 @@ import { dirname, resolve } from 'node:path';
 import { readProviderConfig } from '../../../apps/api/src/providerConfig';
 import type { OllamaConfig } from '../../../apps/api/src/providerConfig';
 import { generateTsx } from '@vpds/ui-specification/generateTsx';
-import { hash, runtimeMetadata } from '../coverage/metadata';
+import { hash, runtimeMetadata } from '../assessment/metadata';
 import { requestSelectionPoc } from './ollama';
 import { buildSelectionModelSchema, selectionMessages } from '../../../apps/api/src/ai/model';
 import { feasibilityCases } from './feasibilityCases';

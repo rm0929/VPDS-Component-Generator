@@ -1,7 +1,7 @@
 import { describe, expect, it } from 'vitest';
-import { evaluationCases, scoreGeneration, summarizeEvaluation } from '../coverage/evaluateGeneration';
+import { evaluationCases, scoreGeneration, summarizeEvaluation } from '../assessment/evaluateGeneration';
 import { compileModelUi } from '../../../apps/api/src/ai/compileModelUi';
-import { evaluateCoverage } from '../coverage/requirementCoverage';
+import { evaluateCoverage } from '../assessment/requirementCoverage';
 import registration from '../../../apps/api/src/ai/compatibility/fixtures/registration-draft.json';
 import login from '../../../apps/api/test/fixtures/login-draft.json';
 

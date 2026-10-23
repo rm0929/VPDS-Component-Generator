@@ -1,0 +1,314 @@
+[
+  {
+    "id": "registration",
+    "prompt": "Create a registration form with name, email, password, confirm password, a terms checkbox, and a submit button.",
+    "expectation": {
+      "scope": "form",
+      "forbidExtraFields": true,
+      "requirements": [
+        {
+          "key": "form",
+          "type": "form"
+        },
+        {
+          "key": "name",
+          "type": "textInput",
+          "fieldRole": "name"
+        },
+        {
+          "key": "email",
+          "type": "emailInput",
+          "fieldRole": "email"
+        },
+        {
+          "key": "password",
+          "type": "passwordInput",
+          "fieldRole": "password"
+        },
+        {
+          "key": "confirm-password",
+          "type": "passwordInput",
+          "fieldRole": "confirm-password"
+        },
+        {
+          "key": "terms",
+          "type": "checkbox",
+          "fieldRole": "terms"
+        },
+        {
+          "key": "submit",
+          "type": "button",
+          "buttonType": "submit"
+        }
+      ]
+    },
+    "expected": "supported"
+  },
+  {
+    "id": "login",
+    "prompt": "Create a login form with email, password, and a submit button.",
+    "expectation": {
+      "scope": "form",
+      "forbidExtraFields": true,
+      "requirements": [
+        {
+          "key": "form",
+          "type": "form"
+        },
+        {
+          "key": "email",
+          "type": "emailInput",
+          "fieldRole": "email"
+        },
+        {
+          "key": "password",
+          "type": "passwordInput",
+          "fieldRole": "password"
+        },
+        {
+          "key": "submit",
+          "type": "button",
+          "buttonType": "submit"
+        }
+      ]
+    },
+    "expected": "supported"
+  },
+  {
+    "id": "contact",
+    "prompt": "Create a contact form with name, email, a short message, and a submit button.",
+    "expectation": {
+      "scope": "form",
+      "forbidExtraFields": true,
+      "requirements": [
+        {
+          "key": "form",
+          "type": "form"
+        },
+        {
+          "key": "name",
+          "type": "textInput",
+          "fieldRole": "name"
+        },
+        {
+          "key": "email",
+          "type": "emailInput",
+          "fieldRole": "email"
+        },
+        {
+          "key": "message",
+          "type": "textInput",
+          "fieldRole": "message"
+        },
+        {
+          "key": "submit",
+          "type": "button",
+          "buttonType": "submit"
+        }
+      ]
+    },
+    "expected": "supported"
+  },
+  {
+    "id": "split-name",
+    "prompt": "Create a signup form with first name, last name, email, and a submit button.",
+    "expectation": {
+      "scope": "form",
+      "forbidExtraFields": true,
+      "requirements": [
+        {
+          "key": "form",
+          "type": "form"
+        },
+        {
+          "key": "first-name",
+          "type": "textInput",
+          "fieldRole": "first-name"
+        },
+        {
+          "key": "last-name",
+          "type": "textInput",
+          "fieldRole": "last-name"
+        },
+        {
+          "key": "email",
+          "type": "emailInput",
+          "fieldRole": "email"
+        },
+        {
+          "key": "submit",
+          "type": "button",
+          "buttonType": "submit"
+        }
+      ]
+    },
+    "expected": "supported"
+  },
+  {
+    "id": "password-reset",
+    "prompt": "Create a password reset form with email and a submit button.",
+    "expectation": {
+      "scope": "form",
+      "forbidExtraFields": true,
+      "requirements": [
+        {
+          "key": "form",
+          "type": "form"
+        },
+        {
+          "key": "email",
+          "type": "emailInput",
+          "fieldRole": "email"
+        },
+        {
+          "key": "submit",
+          "type": "button",
+          "buttonType": "submit"
+        }
+      ]
+    },
+    "expected": "supported"
+  },
+  {
+    "id": "simple-login",
+    "prompt": "Create a simple login form with email, password, and a Login button.",
+    "expectation": {
+      "scope": "form",
+      "forbidExtraFields": true,
+      "requirements": [
+        {
+          "key": "form",
+          "type": "form"
+        },
+        {
+          "key": "email",
+          "type": "emailInput",
+          "fieldRole": "email"
+        },
+        {
+          "key": "password",
+          "type": "passwordInput",
+          "fieldRole": "password"
+        },
+        {
+          "key": "login",
+          "type": "button",
+          "buttonType": "submit",
+          "buttonLabel": "Login"
+        }
+      ]
+    },
+    "expected": "supported"
+  },
+  {
+    "id": "horizontal-content",
+    "prompt": "Show a heading and description in a horizontal layout.",
+    "expectation": {
+      "scope": "general",
+      "forbidExtraFields": true,
+      "requirements": [
+        {
+          "key": "row",
+          "type": "horizontalLayout"
+        },
+        {
+          "key": "heading",
+          "type": "heading"
+        },
+        {
+          "key": "description",
+          "type": "text"
+        }
+      ]
+    },
+    "expected": "supported"
+  },
+  {
+    "id": "layout-properties",
+    "expected": "supported",
+    "prompt": "Create a horizontal layout with large gap, a level 2 heading labeled Welcome, and a disabled ordinary Continue button.",
+    "expectation": {
+      "scope": "general",
+      "requirements": [
+        {
+          "key": "row",
+          "type": "horizontalLayout",
+          "properties": {
+            "gap": "large"
+          }
+        },
+        {
+          "key": "heading",
+          "type": "heading",
+          "within": "horizontalLayout",
+          "properties": {
+            "content": "Welcome",
+            "level": 2
+          }
+        },
+        {
+          "key": "action",
+          "type": "button",
+          "within": "horizontalLayout",
+          "properties": {
+            "label": "Continue",
+            "type": "button",
+            "disabled": true
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "field-properties",
+    "expected": "supported",
+    "prompt": "Create a form with a required Email input with placeholder you@example.com, an optional Name input limited to 80 characters, and an enabled Send submit button.",
+    "expectation": {
+      "scope": "form",
+      "forbidExtraFields": true,
+      "requirements": [
+        {
+          "key": "form",
+          "type": "form"
+        },
+        {
+          "key": "email",
+          "type": "emailInput",
+          "fieldRole": "email",
+          "properties": {
+            "required": true,
+            "placeholder": "you@example.com"
+          }
+        },
+        {
+          "key": "name",
+          "type": "textInput",
+          "fieldRole": "name",
+          "required": false,
+          "properties": {
+            "maxLength": 80
+          }
+        },
+        {
+          "key": "submit",
+          "type": "button",
+          "buttonType": "submit",
+          "buttonLabel": "Send",
+          "properties": {
+            "disabled": false
+          }
+        }
+      ]
+    }
+  },
+  {
+    "id": "unsupported-widget",
+    "expected": "unsupported",
+    "prompt": "Create a form with email, a country select dropdown, and a submit button."
+  },
+  {
+    "id": "unsupported-behavior",
+    "expected": "unsupported",
+    "prompt": "Create a login form that authenticates users against a server and saves their passwords."
+  }
+]
