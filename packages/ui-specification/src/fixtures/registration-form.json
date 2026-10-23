@@ -1,0 +1,24 @@
+{
+  "version": "1.0",
+  "root": {
+    "id": "registration-form",
+    "type": "form",
+    "props": { "label": "Create an account" },
+    "children": [
+      {
+        "id": "registration-fields",
+        "type": "verticalLayout",
+        "props": { "gap": "medium" },
+        "children": [
+          { "id": "registration-title", "type": "heading", "props": { "content": "Create an account", "level": 2 } },
+          { "id": "name", "type": "textInput", "props": { "name": "name", "label": "Name", "required": true, "maxLength": 100 } },
+          { "id": "email", "type": "emailInput", "props": { "name": "email", "label": "Email", "placeholder": "you@example.com", "required": true } },
+          { "id": "password", "type": "passwordInput", "props": { "name": "password", "label": "Password", "required": true } },
+          { "id": "confirm-password", "type": "passwordInput", "props": { "name": "confirm-password", "label": "Confirm password", "required": true } },
+          { "id": "terms", "type": "checkbox", "props": { "name": "terms", "label": "I agree to the terms and conditions", "required": true } },
+          { "id": "submit", "type": "button", "props": { "label": "Create account", "type": "submit" } }
+        ]
+      }
+    ]
+  }
+}

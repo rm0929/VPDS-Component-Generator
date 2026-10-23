@@ -1,0 +1,417 @@
+{
+  "protocol": "One bounded acceptance pass; one first attempt per case; no retries or prompt/settings changes. All 17 existing selectable types, both progress modes, two login variants, and two natural descriptions. No new families introduced.",
+  "scoring": "Ordered component types must match exactly, with no missing/extra selection nodes. Props listed here must match exactly, including case. Unspecified optional props are recorded, not scored as explicit requirements. Form count must be 0/1 as declared; all controls must be inside the requested form; no unrequested horizontal group. Payment composition must contain labeled number, expiry, and masked security-code fields. Preview/code consistency and TSX compilation are separate technical checks. No expectations change after inference.",
+  "cases": [
+    {
+      "id": "text-input",
+      "prompt": "Create a text input labeled Full name.",
+      "expected": {
+        "components": [
+          {
+            "type": "textInput",
+            "props": {
+              "label": "Full name"
+            }
+          }
+        ],
+        "form": false,
+        "horizontalGroups": 0
+      },
+      "naturalDescription": false
+    },
+    {
+      "id": "email-input",
+      "prompt": "Create an email input labeled Work email.",
+      "expected": {
+        "components": [
+          {
+            "type": "emailInput",
+            "props": {
+              "label": "Work email"
+            }
+          }
+        ],
+        "form": false,
+        "horizontalGroups": 0
+      },
+      "naturalDescription": false
+    },
+    {
+      "id": "password-input",
+      "prompt": "Create a disabled password input labeled Secret.",
+      "expected": {
+        "components": [
+          {
+            "type": "passwordInput",
+            "props": {
+              "label": "Secret",
+              "disabled": true
+            }
+          }
+        ],
+        "form": false,
+        "horizontalGroups": 0
+      },
+      "naturalDescription": false
+    },
+    {
+      "id": "textarea",
+      "prompt": "Create a multiline Notes field.",
+      "expected": {
+        "components": [
+          {
+            "type": "textarea",
+            "props": {
+              "label": "Notes"
+            }
+          }
+        ],
+        "form": false,
+        "horizontalGroups": 0
+      },
+      "naturalDescription": false
+    },
+    {
+      "id": "checkbox",
+      "prompt": "Create a required checkbox labeled Accept terms.",
+      "expected": {
+        "components": [
+          {
+            "type": "checkbox",
+            "props": {
+              "label": "Accept terms",
+              "required": true
+            }
+          }
+        ],
+        "form": false,
+        "horizontalGroups": 0
+      },
+      "naturalDescription": false
+    },
+    {
+      "id": "switch",
+      "prompt": "Create a switch labeled Email alerts.",
+      "expected": {
+        "components": [
+          {
+            "type": "switch",
+            "props": {
+              "label": "Email alerts"
+            }
+          }
+        ],
+        "form": false,
+        "horizontalGroups": 0
+      },
+      "naturalDescription": false
+    },
+    {
+      "id": "radio",
+      "prompt": "Create a Delivery radio group with Standard and Express options.",
+      "expected": {
+        "components": [
+          {
+            "type": "radioGroup",
+            "props": {
+              "label": "Delivery",
+              "options": [
+                "Standard",
+                "Express"
+              ]
+            }
+          }
+        ],
+        "form": false,
+        "horizontalGroups": 0
+      },
+      "naturalDescription": false
+    },
+    {
+      "id": "select",
+      "prompt": "Create a Country select with Canada, France, and Japan.",
+      "expected": {
+        "components": [
+          {
+            "type": "select",
+            "props": {
+              "label": "Country",
+              "options": [
+                "Canada",
+                "France",
+                "Japan"
+              ]
+            }
+          }
+        ],
+        "form": false,
+        "horizontalGroups": 0
+      },
+      "naturalDescription": false
+    },
+    {
+      "id": "button",
+      "prompt": "Create a disabled ordinary button labeled Preview.",
+      "expected": {
+        "components": [
+          {
+            "type": "button",
+            "props": {
+              "label": "Preview",
+              "type": "button",
+              "disabled": true
+            }
+          }
+        ],
+        "form": false,
+        "horizontalGroups": 0
+      },
+      "naturalDescription": false
+    },
+    {
+      "id": "heading",
+      "prompt": "Create a level 2 heading with the exact text \"Account overview\".",
+      "expected": {
+        "components": [
+          {
+            "type": "heading",
+            "props": {
+              "content": "Account overview",
+              "level": 2
+            }
+          }
+        ],
+        "form": false,
+        "horizontalGroups": 0
+      },
+      "naturalDescription": false
+    },
+    {
+      "id": "text",
+      "prompt": "Create a paragraph with the exact text \"Changes saved.\".",
+      "expected": {
+        "components": [
+          {
+            "type": "text",
+            "props": {
+              "content": "Changes saved."
+            }
+          }
+        ],
+        "form": false,
+        "horizontalGroups": 0
+      },
+      "naturalDescription": false
+    },
+    {
+      "id": "link",
+      "prompt": "Create a link to https://design.visa.com/ labeled Visa design.",
+      "expected": {
+        "components": [
+          {
+            "type": "link",
+            "props": {
+              "label": "Visa design",
+              "href": "https://design.visa.com/"
+            }
+          }
+        ],
+        "form": false,
+        "horizontalGroups": 0
+      },
+      "naturalDescription": false
+    },
+    {
+      "id": "badge",
+      "prompt": "Create a text badge saying Ready.",
+      "expected": {
+        "components": [
+          {
+            "type": "badge",
+            "props": {
+              "content": "Ready"
+            }
+          }
+        ],
+        "form": false,
+        "horizontalGroups": 0
+      },
+      "naturalDescription": false
+    },
+    {
+      "id": "divider",
+      "prompt": "Create a section divider.",
+      "expected": {
+        "components": [
+          {
+            "type": "divider",
+            "props": {
+              "dividerType": "section"
+            }
+          }
+        ],
+        "form": false,
+        "horizontalGroups": 0
+      },
+      "naturalDescription": false
+    },
+    {
+      "id": "content-card",
+      "prompt": "Create a content card with title Project status and description Ready for review.",
+      "expected": {
+        "components": [
+          {
+            "type": "contentCard",
+            "props": {
+              "title": "Project status",
+              "description": "Ready for review"
+            }
+          }
+        ],
+        "form": false,
+        "horizontalGroups": 0
+      },
+      "naturalDescription": false
+    },
+    {
+      "id": "payment-card",
+      "prompt": "Create payment-card input fields.",
+      "expected": {
+        "components": [
+          {
+            "type": "paymentCard",
+            "props": {}
+          }
+        ],
+        "form": false,
+        "horizontalGroups": 0
+      },
+      "naturalDescription": false
+    },
+    {
+      "id": "progress",
+      "prompt": "Show Upload progress at 40 percent.",
+      "expected": {
+        "components": [
+          {
+            "type": "progress",
+            "props": {
+              "label": "Upload",
+              "mode": "determinate",
+              "value": 40
+            }
+          }
+        ],
+        "form": false,
+        "horizontalGroups": 0
+      },
+      "naturalDescription": false
+    },
+    {
+      "id": "progress-indeterminate",
+      "prompt": "Show an indeterminate Loading progress indicator.",
+      "expected": {
+        "components": [
+          {
+            "type": "progress",
+            "props": {
+              "label": "Loading",
+              "mode": "indeterminate"
+            }
+          }
+        ],
+        "form": false,
+        "horizontalGroups": 0
+      },
+      "naturalDescription": false
+    },
+    {
+      "id": "login",
+      "prompt": "Create a login form.",
+      "expected": {
+        "components": [
+          {
+            "type": "emailInput",
+            "props": {}
+          },
+          {
+            "type": "passwordInput",
+            "props": {}
+          },
+          {
+            "type": "button",
+            "props": {
+              "type": "submit"
+            }
+          }
+        ],
+        "form": true,
+        "horizontalGroups": 0
+      },
+      "naturalDescription": false
+    },
+    {
+      "id": "login-remember",
+      "prompt": "Create a login form with remember me.",
+      "expected": {
+        "components": [
+          {
+            "type": "emailInput",
+            "props": {}
+          },
+          {
+            "type": "passwordInput",
+            "props": {}
+          },
+          {
+            "type": "checkbox",
+            "props": {
+              "label": "Remember me"
+            }
+          },
+          {
+            "type": "button",
+            "props": {
+              "type": "submit"
+            }
+          }
+        ],
+        "form": true,
+        "horizontalGroups": 0
+      },
+      "naturalDescription": false
+    },
+    {
+      "id": "natural-notes",
+      "prompt": "Let visitors leave several lines of feedback labeled Feedback.",
+      "expected": {
+        "components": [
+          {
+            "type": "textarea",
+            "props": {
+              "label": "Feedback"
+            }
+          }
+        ],
+        "form": false,
+        "horizontalGroups": 0
+      },
+      "naturalDescription": true
+    },
+    {
+      "id": "natural-toggle",
+      "prompt": "Let me turn notification emails on or off.",
+      "expected": {
+        "components": [
+          {
+            "type": "switch",
+            "props": {}
+          }
+        ],
+        "form": false,
+        "horizontalGroups": 0
+      },
+      "naturalDescription": true
+    }
+  ]
+}

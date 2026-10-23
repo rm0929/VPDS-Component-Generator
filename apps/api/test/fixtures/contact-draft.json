@@ -1,0 +1,13 @@
+{
+  "irVersion": "1", "status": "supported",
+  "root": { "type": "form", "props": { "label": "Contact" }, "children": [
+    { "type": "verticalLayout", "props": { "gap": "large" }, "children": [
+      { "type": "horizontalLayout", "props": { "gap": "small" }, "children": [
+        { "type": "textInput", "props": { "label": "Name", "required": false, "placeholder": "Your name", "maxLength": 80 } },
+        { "type": "emailInput", "props": { "label": "Email", "required": true } }
+      ] },
+      { "type": "textInput", "props": { "label": "Message", "maxLength": 200 } },
+      { "type": "button", "props": { "label": "Send", "type": "submit" } }
+    ] }
+  ] }
+}

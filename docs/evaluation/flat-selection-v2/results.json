@@ -1,0 +1,1970 @@
+[
+  {
+    "event": "metadata",
+    "ollamaVersion": "0.40.5",
+    "modelDigest": "0edcdef34593eac1aa2be9c7d06c432dcf81945adca5eca2f27662c18f168ba0",
+    "model": "qwen3:4b-instruct",
+    "datasetHash": "cd20106e24e0d55fdb6c457551d14a5ce3e301f3256f7d834bc092afe8c8dd7b",
+    "schemaHash": "385bab39b1c0e9fe1f9b3f1da0f1011cb76a34f43edfc1f33e04ad30854d23ad",
+    "promptHash": "c50372ff66d3568ad1da08a7040fbe933fda546f3a6e44d92d9993a89f65700f",
+    "settings": {
+      "temperature": 0,
+      "seed": 0,
+      "contextSize": 8192,
+      "maxOutputTokens": 2048,
+      "responseLimitBytes": 65536,
+      "timeoutMs": 60000,
+      "think": false,
+      "stream": false
+    },
+    "mode": "approved-benchmark-only",
+    "gate": "Explicit benchmark-only opt-in; feasibility gate waived by user approval.",
+    "responsiveness": "Browser responsiveness and breakpoints are not represented or verified."
+  },
+  {
+    "event": "gate",
+    "passed": true,
+    "benchmarkRequested": true,
+    "feasibilityGateWaived": true
+  },
+  {
+    "event": "result",
+    "caseId": "text-entry",
+    "phase": "benchmark",
+    "run": 1,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": false,
+    "tsxValid": true,
+    "passed": false,
+    "durationMs": 4834,
+    "inferenceMs": 4477,
+    "assessment": {
+      "selectedTypes": [
+        "textInput"
+      ],
+      "actions": [],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "required": true,
+            "disabled": true,
+            "maxLength": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": true,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": true,
+      "formCorrect": false,
+      "layoutCorrect": false
+    },
+    "form": {
+      "enabled": true,
+      "labelProvided": true,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "email",
+    "phase": "benchmark",
+    "run": 1,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": true,
+    "tsxValid": true,
+    "passed": true,
+    "durationMs": 1587,
+    "inferenceMs": 1372,
+    "assessment": {
+      "selectedTypes": [
+        "emailInput"
+      ],
+      "actions": [],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "required": true,
+            "placeholder": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": true,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": true,
+      "formCorrect": true,
+      "layoutCorrect": true
+    },
+    "form": {
+      "enabled": false,
+      "labelProvided": false,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "password",
+    "phase": "benchmark",
+    "run": 1,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": true,
+    "tsxValid": true,
+    "passed": false,
+    "durationMs": 1774,
+    "inferenceMs": 1590,
+    "assessment": {
+      "selectedTypes": [
+        "passwordInput"
+      ],
+      "actions": [],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "disabled": false,
+            "maxLength": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": false,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": true,
+      "formCorrect": true,
+      "layoutCorrect": true
+    },
+    "form": {
+      "enabled": false,
+      "labelProvided": false,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "checkbox",
+    "phase": "benchmark",
+    "run": 1,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": false,
+    "tsxValid": true,
+    "passed": false,
+    "durationMs": 1371,
+    "inferenceMs": 1189,
+    "assessment": {
+      "selectedTypes": [
+        "checkbox"
+      ],
+      "actions": [],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "required": true,
+            "disabled": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": true,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": true,
+      "formCorrect": false,
+      "layoutCorrect": false
+    },
+    "form": {
+      "enabled": true,
+      "labelProvided": false,
+      "defaultNameUsed": true,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "content-action",
+    "phase": "benchmark",
+    "run": 1,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": true,
+    "tsxValid": true,
+    "passed": false,
+    "durationMs": 2327,
+    "inferenceMs": 2147,
+    "assessment": {
+      "selectedTypes": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "actions": [
+        {
+          "index": 2,
+          "type": "button"
+        }
+      ],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "content": false,
+            "level": true
+          }
+        },
+        {
+          "expectedIndex": 1,
+          "selectedIndex": 1,
+          "typeCorrect": true,
+          "properties": {
+            "content": true
+          }
+        },
+        {
+          "expectedIndex": 2,
+          "selectedIndex": 2,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "type": true,
+            "disabled": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": false,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": true,
+      "formCorrect": true,
+      "layoutCorrect": true
+    },
+    "form": {
+      "enabled": false,
+      "labelProvided": false,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "form-row",
+    "phase": "benchmark",
+    "run": 1,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": true,
+    "tsxValid": true,
+    "passed": false,
+    "durationMs": 2644,
+    "inferenceMs": 2400,
+    "assessment": {
+      "selectedTypes": [
+        "textInput",
+        "textInput",
+        "emailInput",
+        "button"
+      ],
+      "actions": [
+        {
+          "index": 3,
+          "type": "submit"
+        }
+      ],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "label": true
+          }
+        },
+        {
+          "expectedIndex": 1,
+          "selectedIndex": 1,
+          "typeCorrect": true,
+          "properties": {
+            "label": true
+          }
+        },
+        {
+          "expectedIndex": 2,
+          "selectedIndex": 2,
+          "typeCorrect": true,
+          "properties": {
+            "label": true
+          }
+        },
+        {
+          "expectedIndex": 3,
+          "selectedIndex": 3,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "type": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": true,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": false,
+      "formCorrect": true,
+      "layoutCorrect": false
+    },
+    "form": {
+      "enabled": true,
+      "labelProvided": true,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "mixed",
+    "phase": "benchmark",
+    "run": 1,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": true,
+    "tsxValid": true,
+    "passed": true,
+    "durationMs": 2203,
+    "inferenceMs": 2016,
+    "assessment": {
+      "selectedTypes": [
+        "text",
+        "button",
+        "textInput"
+      ],
+      "actions": [
+        {
+          "index": 1,
+          "type": "button"
+        }
+      ],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "content": true
+          }
+        },
+        {
+          "expectedIndex": 1,
+          "selectedIndex": 1,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "type": true,
+            "disabled": true
+          }
+        },
+        {
+          "expectedIndex": 2,
+          "selectedIndex": 2,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "required": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": true,
+      "orderCorrect": true,
+      "rows": [
+        [
+          0,
+          1
+        ]
+      ],
+      "rowsCorrect": true,
+      "formCorrect": true,
+      "layoutCorrect": true
+    },
+    "form": {
+      "enabled": false,
+      "labelProvided": false,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "negation",
+    "phase": "benchmark",
+    "run": 1,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": true,
+    "tsxValid": true,
+    "passed": true,
+    "durationMs": 2579,
+    "inferenceMs": 2396,
+    "assessment": {
+      "selectedTypes": [
+        "emailInput",
+        "passwordInput",
+        "button"
+      ],
+      "actions": [
+        {
+          "index": 2,
+          "type": "submit"
+        }
+      ],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "label": true
+          }
+        },
+        {
+          "expectedIndex": 1,
+          "selectedIndex": 1,
+          "typeCorrect": true,
+          "properties": {
+            "label": true
+          }
+        },
+        {
+          "expectedIndex": 2,
+          "selectedIndex": 2,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "type": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": true,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": true,
+      "formCorrect": true,
+      "layoutCorrect": true
+    },
+    "form": {
+      "enabled": true,
+      "labelProvided": true,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "repeated-actions",
+    "phase": "benchmark",
+    "run": 1,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": true,
+    "tsxValid": true,
+    "passed": true,
+    "durationMs": 2505,
+    "inferenceMs": 2344,
+    "assessment": {
+      "selectedTypes": [
+        "textInput",
+        "textInput",
+        "button",
+        "button"
+      ],
+      "actions": [
+        {
+          "index": 2,
+          "type": "reset"
+        },
+        {
+          "index": 3,
+          "type": "submit"
+        }
+      ],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "required": true
+          }
+        },
+        {
+          "expectedIndex": 1,
+          "selectedIndex": 1,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "required": true
+          }
+        },
+        {
+          "expectedIndex": 2,
+          "selectedIndex": 2,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "type": true
+          }
+        },
+        {
+          "expectedIndex": 3,
+          "selectedIndex": 3,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "type": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": true,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": true,
+      "formCorrect": true,
+      "layoutCorrect": true
+    },
+    "form": {
+      "enabled": true,
+      "labelProvided": true,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "unsupported-control",
+    "phase": "benchmark",
+    "run": 1,
+    "expected": "unsupported",
+    "selectionValid": true,
+    "specificationValid": false,
+    "formMembershipCorrect": false,
+    "tsxValid": null,
+    "passed": true,
+    "durationMs": 826,
+    "inferenceMs": 825,
+    "form": {
+      "enabled": false,
+      "labelProvided": false,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "failure": {
+      "stage": "unsupported",
+      "unsupported": [
+        "component"
+      ],
+      "issues": []
+    }
+  },
+  {
+    "event": "result",
+    "caseId": "unsupported-behavior",
+    "phase": "benchmark",
+    "run": 1,
+    "expected": "unsupported",
+    "selectionValid": false,
+    "specificationValid": false,
+    "formMembershipCorrect": false,
+    "tsxValid": null,
+    "passed": false,
+    "durationMs": 1189,
+    "failure": {
+      "stage": "selection_schema",
+      "issues": [
+        {
+          "path": [
+            "unsupported"
+          ],
+          "code": "custom",
+          "message": "Unsupported categories must be unique."
+        }
+      ]
+    }
+  },
+  {
+    "event": "result",
+    "caseId": "poc-composition-limit",
+    "phase": "benchmark",
+    "run": 1,
+    "expected": "poc-scope",
+    "selectionValid": false,
+    "specificationValid": false,
+    "formMembershipCorrect": false,
+    "tsxValid": null,
+    "passed": false,
+    "durationMs": 794,
+    "failure": {
+      "stage": "selection_schema",
+      "issues": [
+        {
+          "path": [
+            "components"
+          ],
+          "code": "custom",
+          "message": "A supported selection must contain components."
+        }
+      ]
+    }
+  },
+  {
+    "event": "result",
+    "caseId": "text-entry",
+    "phase": "benchmark",
+    "run": 2,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": false,
+    "tsxValid": true,
+    "passed": false,
+    "durationMs": 1631,
+    "inferenceMs": 1428,
+    "assessment": {
+      "selectedTypes": [
+        "textInput"
+      ],
+      "actions": [],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "required": true,
+            "disabled": true,
+            "maxLength": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": true,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": true,
+      "formCorrect": false,
+      "layoutCorrect": false
+    },
+    "form": {
+      "enabled": true,
+      "labelProvided": true,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "email",
+    "phase": "benchmark",
+    "run": 2,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": true,
+    "tsxValid": true,
+    "passed": true,
+    "durationMs": 1535,
+    "inferenceMs": 1362,
+    "assessment": {
+      "selectedTypes": [
+        "emailInput"
+      ],
+      "actions": [],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "required": true,
+            "placeholder": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": true,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": true,
+      "formCorrect": true,
+      "layoutCorrect": true
+    },
+    "form": {
+      "enabled": false,
+      "labelProvided": false,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "password",
+    "phase": "benchmark",
+    "run": 2,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": true,
+    "tsxValid": true,
+    "passed": false,
+    "durationMs": 1753,
+    "inferenceMs": 1591,
+    "assessment": {
+      "selectedTypes": [
+        "passwordInput"
+      ],
+      "actions": [],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "disabled": false,
+            "maxLength": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": false,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": true,
+      "formCorrect": true,
+      "layoutCorrect": true
+    },
+    "form": {
+      "enabled": false,
+      "labelProvided": false,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "checkbox",
+    "phase": "benchmark",
+    "run": 2,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": false,
+    "tsxValid": true,
+    "passed": false,
+    "durationMs": 1379,
+    "inferenceMs": 1212,
+    "assessment": {
+      "selectedTypes": [
+        "checkbox"
+      ],
+      "actions": [],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "required": true,
+            "disabled": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": true,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": true,
+      "formCorrect": false,
+      "layoutCorrect": false
+    },
+    "form": {
+      "enabled": true,
+      "labelProvided": false,
+      "defaultNameUsed": true,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "content-action",
+    "phase": "benchmark",
+    "run": 2,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": true,
+    "tsxValid": true,
+    "passed": false,
+    "durationMs": 2319,
+    "inferenceMs": 2138,
+    "assessment": {
+      "selectedTypes": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "actions": [
+        {
+          "index": 2,
+          "type": "button"
+        }
+      ],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "content": false,
+            "level": true
+          }
+        },
+        {
+          "expectedIndex": 1,
+          "selectedIndex": 1,
+          "typeCorrect": true,
+          "properties": {
+            "content": true
+          }
+        },
+        {
+          "expectedIndex": 2,
+          "selectedIndex": 2,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "type": true,
+            "disabled": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": false,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": true,
+      "formCorrect": true,
+      "layoutCorrect": true
+    },
+    "form": {
+      "enabled": false,
+      "labelProvided": false,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "form-row",
+    "phase": "benchmark",
+    "run": 2,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": true,
+    "tsxValid": true,
+    "passed": false,
+    "durationMs": 2600,
+    "inferenceMs": 2417,
+    "assessment": {
+      "selectedTypes": [
+        "textInput",
+        "textInput",
+        "emailInput",
+        "button"
+      ],
+      "actions": [
+        {
+          "index": 3,
+          "type": "submit"
+        }
+      ],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "label": true
+          }
+        },
+        {
+          "expectedIndex": 1,
+          "selectedIndex": 1,
+          "typeCorrect": true,
+          "properties": {
+            "label": true
+          }
+        },
+        {
+          "expectedIndex": 2,
+          "selectedIndex": 2,
+          "typeCorrect": true,
+          "properties": {
+            "label": true
+          }
+        },
+        {
+          "expectedIndex": 3,
+          "selectedIndex": 3,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "type": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": true,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": false,
+      "formCorrect": true,
+      "layoutCorrect": false
+    },
+    "form": {
+      "enabled": true,
+      "labelProvided": true,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "mixed",
+    "phase": "benchmark",
+    "run": 2,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": true,
+    "tsxValid": true,
+    "passed": true,
+    "durationMs": 2217,
+    "inferenceMs": 2032,
+    "assessment": {
+      "selectedTypes": [
+        "text",
+        "button",
+        "textInput"
+      ],
+      "actions": [
+        {
+          "index": 1,
+          "type": "button"
+        }
+      ],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "content": true
+          }
+        },
+        {
+          "expectedIndex": 1,
+          "selectedIndex": 1,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "type": true,
+            "disabled": true
+          }
+        },
+        {
+          "expectedIndex": 2,
+          "selectedIndex": 2,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "required": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": true,
+      "orderCorrect": true,
+      "rows": [
+        [
+          0,
+          1
+        ]
+      ],
+      "rowsCorrect": true,
+      "formCorrect": true,
+      "layoutCorrect": true
+    },
+    "form": {
+      "enabled": false,
+      "labelProvided": false,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "negation",
+    "phase": "benchmark",
+    "run": 2,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": true,
+    "tsxValid": true,
+    "passed": true,
+    "durationMs": 2608,
+    "inferenceMs": 2426,
+    "assessment": {
+      "selectedTypes": [
+        "emailInput",
+        "passwordInput",
+        "button"
+      ],
+      "actions": [
+        {
+          "index": 2,
+          "type": "submit"
+        }
+      ],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "label": true
+          }
+        },
+        {
+          "expectedIndex": 1,
+          "selectedIndex": 1,
+          "typeCorrect": true,
+          "properties": {
+            "label": true
+          }
+        },
+        {
+          "expectedIndex": 2,
+          "selectedIndex": 2,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "type": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": true,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": true,
+      "formCorrect": true,
+      "layoutCorrect": true
+    },
+    "form": {
+      "enabled": true,
+      "labelProvided": true,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "repeated-actions",
+    "phase": "benchmark",
+    "run": 2,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": true,
+    "tsxValid": true,
+    "passed": true,
+    "durationMs": 2618,
+    "inferenceMs": 2365,
+    "assessment": {
+      "selectedTypes": [
+        "textInput",
+        "textInput",
+        "button",
+        "button"
+      ],
+      "actions": [
+        {
+          "index": 2,
+          "type": "reset"
+        },
+        {
+          "index": 3,
+          "type": "submit"
+        }
+      ],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "required": true
+          }
+        },
+        {
+          "expectedIndex": 1,
+          "selectedIndex": 1,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "required": true
+          }
+        },
+        {
+          "expectedIndex": 2,
+          "selectedIndex": 2,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "type": true
+          }
+        },
+        {
+          "expectedIndex": 3,
+          "selectedIndex": 3,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "type": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": true,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": true,
+      "formCorrect": true,
+      "layoutCorrect": true
+    },
+    "form": {
+      "enabled": true,
+      "labelProvided": true,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "unsupported-control",
+    "phase": "benchmark",
+    "run": 2,
+    "expected": "unsupported",
+    "selectionValid": true,
+    "specificationValid": false,
+    "formMembershipCorrect": false,
+    "tsxValid": null,
+    "passed": true,
+    "durationMs": 813,
+    "inferenceMs": 813,
+    "form": {
+      "enabled": false,
+      "labelProvided": false,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "failure": {
+      "stage": "unsupported",
+      "unsupported": [
+        "component"
+      ],
+      "issues": []
+    }
+  },
+  {
+    "event": "result",
+    "caseId": "unsupported-behavior",
+    "phase": "benchmark",
+    "run": 2,
+    "expected": "unsupported",
+    "selectionValid": false,
+    "specificationValid": false,
+    "formMembershipCorrect": false,
+    "tsxValid": null,
+    "passed": false,
+    "durationMs": 1170,
+    "failure": {
+      "stage": "selection_schema",
+      "issues": [
+        {
+          "path": [
+            "unsupported"
+          ],
+          "code": "custom",
+          "message": "Unsupported categories must be unique."
+        }
+      ]
+    }
+  },
+  {
+    "event": "result",
+    "caseId": "poc-composition-limit",
+    "phase": "benchmark",
+    "run": 2,
+    "expected": "poc-scope",
+    "selectionValid": false,
+    "specificationValid": false,
+    "formMembershipCorrect": false,
+    "tsxValid": null,
+    "passed": false,
+    "durationMs": 799,
+    "failure": {
+      "stage": "selection_schema",
+      "issues": [
+        {
+          "path": [
+            "components"
+          ],
+          "code": "custom",
+          "message": "A supported selection must contain components."
+        }
+      ]
+    }
+  },
+  {
+    "event": "result",
+    "caseId": "text-entry",
+    "phase": "benchmark",
+    "run": 3,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": false,
+    "tsxValid": true,
+    "passed": false,
+    "durationMs": 1706,
+    "inferenceMs": 1441,
+    "assessment": {
+      "selectedTypes": [
+        "textInput"
+      ],
+      "actions": [],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "required": true,
+            "disabled": true,
+            "maxLength": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": true,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": true,
+      "formCorrect": false,
+      "layoutCorrect": false
+    },
+    "form": {
+      "enabled": true,
+      "labelProvided": true,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "email",
+    "phase": "benchmark",
+    "run": 3,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": true,
+    "tsxValid": true,
+    "passed": true,
+    "durationMs": 1574,
+    "inferenceMs": 1370,
+    "assessment": {
+      "selectedTypes": [
+        "emailInput"
+      ],
+      "actions": [],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "required": true,
+            "placeholder": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": true,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": true,
+      "formCorrect": true,
+      "layoutCorrect": true
+    },
+    "form": {
+      "enabled": false,
+      "labelProvided": false,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "password",
+    "phase": "benchmark",
+    "run": 3,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": true,
+    "tsxValid": true,
+    "passed": false,
+    "durationMs": 1752,
+    "inferenceMs": 1582,
+    "assessment": {
+      "selectedTypes": [
+        "passwordInput"
+      ],
+      "actions": [],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "disabled": false,
+            "maxLength": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": false,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": true,
+      "formCorrect": true,
+      "layoutCorrect": true
+    },
+    "form": {
+      "enabled": false,
+      "labelProvided": false,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "checkbox",
+    "phase": "benchmark",
+    "run": 3,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": false,
+    "tsxValid": true,
+    "passed": false,
+    "durationMs": 1362,
+    "inferenceMs": 1197,
+    "assessment": {
+      "selectedTypes": [
+        "checkbox"
+      ],
+      "actions": [],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "required": true,
+            "disabled": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": true,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": true,
+      "formCorrect": false,
+      "layoutCorrect": false
+    },
+    "form": {
+      "enabled": true,
+      "labelProvided": false,
+      "defaultNameUsed": true,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "content-action",
+    "phase": "benchmark",
+    "run": 3,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": true,
+    "tsxValid": true,
+    "passed": false,
+    "durationMs": 2330,
+    "inferenceMs": 2151,
+    "assessment": {
+      "selectedTypes": [
+        "heading",
+        "text",
+        "button"
+      ],
+      "actions": [
+        {
+          "index": 2,
+          "type": "button"
+        }
+      ],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "content": false,
+            "level": true
+          }
+        },
+        {
+          "expectedIndex": 1,
+          "selectedIndex": 1,
+          "typeCorrect": true,
+          "properties": {
+            "content": true
+          }
+        },
+        {
+          "expectedIndex": 2,
+          "selectedIndex": 2,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "type": true,
+            "disabled": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": false,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": true,
+      "formCorrect": true,
+      "layoutCorrect": true
+    },
+    "form": {
+      "enabled": false,
+      "labelProvided": false,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "form-row",
+    "phase": "benchmark",
+    "run": 3,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": true,
+    "tsxValid": true,
+    "passed": false,
+    "durationMs": 2609,
+    "inferenceMs": 2424,
+    "assessment": {
+      "selectedTypes": [
+        "textInput",
+        "textInput",
+        "emailInput",
+        "button"
+      ],
+      "actions": [
+        {
+          "index": 3,
+          "type": "submit"
+        }
+      ],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "label": true
+          }
+        },
+        {
+          "expectedIndex": 1,
+          "selectedIndex": 1,
+          "typeCorrect": true,
+          "properties": {
+            "label": true
+          }
+        },
+        {
+          "expectedIndex": 2,
+          "selectedIndex": 2,
+          "typeCorrect": true,
+          "properties": {
+            "label": true
+          }
+        },
+        {
+          "expectedIndex": 3,
+          "selectedIndex": 3,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "type": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": true,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": false,
+      "formCorrect": true,
+      "layoutCorrect": false
+    },
+    "form": {
+      "enabled": true,
+      "labelProvided": true,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "mixed",
+    "phase": "benchmark",
+    "run": 3,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": true,
+    "tsxValid": true,
+    "passed": true,
+    "durationMs": 2210,
+    "inferenceMs": 2023,
+    "assessment": {
+      "selectedTypes": [
+        "text",
+        "button",
+        "textInput"
+      ],
+      "actions": [
+        {
+          "index": 1,
+          "type": "button"
+        }
+      ],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "content": true
+          }
+        },
+        {
+          "expectedIndex": 1,
+          "selectedIndex": 1,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "type": true,
+            "disabled": true
+          }
+        },
+        {
+          "expectedIndex": 2,
+          "selectedIndex": 2,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "required": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": true,
+      "orderCorrect": true,
+      "rows": [
+        [
+          0,
+          1
+        ]
+      ],
+      "rowsCorrect": true,
+      "formCorrect": true,
+      "layoutCorrect": true
+    },
+    "form": {
+      "enabled": false,
+      "labelProvided": false,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "negation",
+    "phase": "benchmark",
+    "run": 3,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": true,
+    "tsxValid": true,
+    "passed": true,
+    "durationMs": 2690,
+    "inferenceMs": 2502,
+    "assessment": {
+      "selectedTypes": [
+        "emailInput",
+        "passwordInput",
+        "button"
+      ],
+      "actions": [
+        {
+          "index": 2,
+          "type": "submit"
+        }
+      ],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "label": true
+          }
+        },
+        {
+          "expectedIndex": 1,
+          "selectedIndex": 1,
+          "typeCorrect": true,
+          "properties": {
+            "label": true
+          }
+        },
+        {
+          "expectedIndex": 2,
+          "selectedIndex": 2,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "type": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": true,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": true,
+      "formCorrect": true,
+      "layoutCorrect": true
+    },
+    "form": {
+      "enabled": true,
+      "labelProvided": true,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "repeated-actions",
+    "phase": "benchmark",
+    "run": 3,
+    "expected": "supported",
+    "selectionValid": true,
+    "specificationValid": true,
+    "formMembershipCorrect": true,
+    "tsxValid": true,
+    "passed": true,
+    "durationMs": 2575,
+    "inferenceMs": 2354,
+    "assessment": {
+      "selectedTypes": [
+        "textInput",
+        "textInput",
+        "button",
+        "button"
+      ],
+      "actions": [
+        {
+          "index": 2,
+          "type": "reset"
+        },
+        {
+          "index": 3,
+          "type": "submit"
+        }
+      ],
+      "matches": [
+        {
+          "expectedIndex": 0,
+          "selectedIndex": 0,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "required": true
+          }
+        },
+        {
+          "expectedIndex": 1,
+          "selectedIndex": 1,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "required": true
+          }
+        },
+        {
+          "expectedIndex": 2,
+          "selectedIndex": 2,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "type": true
+          }
+        },
+        {
+          "expectedIndex": 3,
+          "selectedIndex": 3,
+          "typeCorrect": true,
+          "properties": {
+            "label": true,
+            "type": true
+          }
+        }
+      ],
+      "extraIndexes": [],
+      "forbiddenCount": 0,
+      "componentsCorrect": true,
+      "orderCorrect": true,
+      "rows": [],
+      "rowsCorrect": true,
+      "formCorrect": true,
+      "layoutCorrect": true
+    },
+    "form": {
+      "enabled": true,
+      "labelProvided": true,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "tsxDiagnosticCodes": []
+  },
+  {
+    "event": "result",
+    "caseId": "unsupported-control",
+    "phase": "benchmark",
+    "run": 3,
+    "expected": "unsupported",
+    "selectionValid": true,
+    "specificationValid": false,
+    "formMembershipCorrect": false,
+    "tsxValid": null,
+    "passed": true,
+    "durationMs": 893,
+    "inferenceMs": 892,
+    "form": {
+      "enabled": false,
+      "labelProvided": false,
+      "defaultNameUsed": false,
+      "nameCorrect": true
+    },
+    "failure": {
+      "stage": "unsupported",
+      "unsupported": [
+        "component"
+      ],
+      "issues": []
+    }
+  },
+  {
+    "event": "result",
+    "caseId": "unsupported-behavior",
+    "phase": "benchmark",
+    "run": 3,
+    "expected": "unsupported",
+    "selectionValid": false,
+    "specificationValid": false,
+    "formMembershipCorrect": false,
+    "tsxValid": null,
+    "passed": false,
+    "durationMs": 1184,
+    "failure": {
+      "stage": "selection_schema",
+      "issues": [
+        {
+          "path": [
+            "unsupported"
+          ],
+          "code": "custom",
+          "message": "Unsupported categories must be unique."
+        }
+      ]
+    }
+  },
+  {
+    "event": "result",
+    "caseId": "poc-composition-limit",
+    "phase": "benchmark",
+    "run": 3,
+    "expected": "poc-scope",
+    "selectionValid": false,
+    "specificationValid": false,
+    "formMembershipCorrect": false,
+    "tsxValid": null,
+    "passed": false,
+    "durationMs": 816,
+    "failure": {
+      "stage": "selection_schema",
+      "issues": [
+        {
+          "path": [
+            "components"
+          ],
+          "code": "custom",
+          "message": "A supported selection must contain components."
+        }
+      ]
+    }
+  },
+  {
+    "event": "complete",
+    "feasibilityCalls": 0,
+    "benchmarkCalls": 36
+  }
+]

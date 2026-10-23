@@ -1,0 +1,25 @@
+{
+  "name": "@vpds/web",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "test": "vitest run",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@visa/nova-icons-react": "^2.0.4",
+    "@visa/nova-react": "^2.5.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-syntax-highlighter": "^15.6.1",
+    "@vpds/ui-specification": "0.0.0",
+    "@visa/nova-styles": "1.6.2",
+    "zod": "4.6.7"
+  },
+  "devDependencies": {
+    "@types/react-syntax-highlighter": "^15.5.13"
+  }
+}

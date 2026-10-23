@@ -1,0 +1,15 @@
+{
+  "name": "@vpds/evaluation",
+  "private": true,
+  "version": "0.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "test": "tsc -p tsconfig.json && vitest run --config vitest.config.mts",
+    "eval:coverage": "tsx assessment/runCoverage.ts",
+    "poc:feasibility": "node --env-file-if-exists=../../apps/api/.env --import tsx selection/runFeasibility.ts"
+  },
+  "dependencies": {
+    "@vpds/ui-specification": "0.0.0",
+    "zod": "4.6.7"
+  }
+}

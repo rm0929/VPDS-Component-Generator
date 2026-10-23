@@ -1,146 +1,78 @@
-# VPDS UI Generator
+# VPDS Component Generator
 
-A single‑page React application inspired by Visa’s Product Design System (VPDS) that lets developers describe UI patterns in plain English and instantly:
+Describe an interface in natural language. Local Ollama selects Visa Nova React components; TypeScript validates and composes one specification into component suggestions, an interactive preview, and copyable React TSX.
 
-- **Preview** a live Nova‑React component  
-- **Copy** ready‑to‑use React/TypeScript code  
-- **Switch** between light & dark themes  
+![Component Studio workspace, illustrated with a handcrafted UI fixture](docs/screenshots/desktop-light.png)
 
-[Live Website Link](https://vpds-component-generator-s1a9.vercel.app/)  
+The screenshot uses a fixture, not a claim about model accuracy. This is a **local AI application**. The [older Vercel demo](https://vpds-component-generator-s1a9.vercel.app/) is not provisioned with this Express/Ollama backend.
 
----
+## Run locally
 
-## 🚀 Features
-
-- **Natural‑language input**  
-  Describe what you want (“login form with remember me”), and the tool picks the right Visa Nova components.
-
-- **Component suggestions**  
-  Maps keywords ↔︎ patterns:
-  
-
-- **Live preview**  
-  Instantly render the Nova‑React component so you can verify the output.
-
-- **Get Code**  
-  Click **Get Code** to reveal the exact `.tsx` needed—copy to clipboard with one click.
-
-- **Theme toggle**  
-  Use the switch in the navbar to toggle between **light** and **dark** themes.
-
-- **Responsive & accessible**  
-  Built with Nova `Utility`, `Typography`, and a focus on WCAG‑compliant patterns.
-
----
-
-## 📝 Instructions
-
-1. **Describe your UI need** in the input box:
-
-   > “login form with remember me”
-
-   > "credit card details form”
-   
-   > “would like to set date and time”
-   
-   > “responsive user profile form”
-   
-   > "show table with rows and columns”
-   
-   > "show linear progress”
-   
-   > "address form with city, state and zip”
-   
-   > "open notifications panel”
-
-2. **Click Generate**  
-   - A **live preview** appears below.
-   - The **Get Code** button shows the React/TypeScript snippet.
-
-3. **Toggle theme**  
-   - Flip the switch in the top‑right navbar to switch between light and dark.
-
----
-
-## 🔍 Sample Inputs and Outputs
-
-| Input Phrase                | Expected Output      |
-| --------------------------- | -------------------- |
-| `login form`                | LoginFormPreview     |
-| `login form with remember me` | LoginForm + Checkbox |
-| `card number entry`         | CardFormPreview      |
-| `sign up`                   | SignupFormPreview    |
-| `address`                   | AddressFormPreview   |
-| `user profile`              | UserProfilePreview   |
-| `set date and time`         | DateTimePreview      |
-| `table with rows`           | TablePreview         |
-| `show notifications`        | NotificationTray     |
-| `open modal`                | ModalPreview         |
-| `progress linear`           | DeterminateProgress  |
-
----
-
-## 🎨 Design & UX Highlights
-
-- **Simple, clear, intuitive UI**  
-  A single‑scroll page: About → Hero → How It Works → Try It Now.
-
-- **Visa color theme**  
-  Uses VPDS light/dark palettes, `Typography`, `Utility`, `Surface`, etc.
-
-- **Theme Customization**  
-  Dynamically load Nova‑styles themes via the navbar toggle.
-
-- **Advanced Developer Experience**  
-  - **Agentic mock**: IDE‑style previews you can embed.  
-  - **Live preview**: Always‑on rendering of composed UI.  
-  - **Onboarding tour**: (future) guided walkthrough for first‑time users.  
-  - **Keyboard navigation**: Tab‑friendly inputs & focus‑trap in modals.  
-  - **Accessibility**: WCAG‑compliant labels, ARIA roles, focus management.
-
-- **Sticky Features**  
-  - **Copy to Clipboard**: One‑click copy of generated code.  
-  - **Insert into Project**: (future) download `.tsx` snippets.  
-  - **Favorites**: (future) star patterns & persist in `localStorage`.
-
----
-
-## 🛠️ Development
+Prerequisites: Node **22.14+ on Node 22**, npm, Ollama bound to `127.0.0.1:11434`, and the installed `qwen3:4b-instruct` model. No paid API or key is required.
 
 ```bash
-# Install dependencies
-npm install
-
-# Start dev server
-npm run dev
-
-# Build for production
-npm run build
-
-# Preview production build
-npm run preview
+npm ci
+ollama list
 ```
 
-## 📦 Deployment
+If Ollama is not already running, start it in a dedicated terminal:
 
-This project is hosted on Vercel:
-[Website Link](https://vpds-component-generator-s1a9.vercel.app/)
+```bash
+OLLAMA_HOST=127.0.0.1:11434 ollama serve
+```
 
----
+Start the API and frontend in separate terminals from the repository root:
 
-## ℹ️ Credits
+```bash
+npm run dev:backend:ai
+```
 
-- Built with [@visa/nova-react](https://github.com/visa-design-system/nova)  
-- Icons from [@visa/nova-icons-react](https://github.com/visa-design-system/nova-icons)  
-- Animations via [LottieFiles React Player](https://github.com/LottieFiles/dotlottie-react)  
+```bash
+npm run dev -- --port 5173 --strictPort
+```
 
+Open **http://127.0.0.1:5173/**. Check `curl http://127.0.0.1:5173/api/health` for `provider: ollama-local-flat-selection` and `isMock: false`. Health confirms configuration/liveness, not model readiness.
 
-## 🤖 AI Assistance
+Stop each owned watcher with **Ctrl+C** in its terminal. Stop a terminal-owned Ollama server with Ctrl+C only when you intend to stop that service; leave unrelated services running. See [development](docs/development.md) for environment configuration and occupied-port recovery.
 
-Throughout development I leaned on AI tools sparingly—mostly as a coding sidekick. I used it to:
+## Supported interfaces
 
-- **Spot syntax errors** and suggest small bug‑fixes  
-- **Brainstorm UI/UX ideas**, layouts and workflows  
-- **Generate concise examples** and boilerplate snippets  
+Twenty selectable families: text/email/password inputs, textarea, checkbox, switch, radio group, native select, button, heading, text, link, text badge, divider, content card, payment-card fields, linear progress, dialog, flag, and footer.
 
-Everything core to the component logic, theming, and accessibility was hand‑crafted—AI only stepped in when it could save a few keystrokes or spark a fresh idea.  
+Examples to try:
+
+- “Create a text input labeled Full name.”
+- “Create a multiline Notes field.”
+- “Create a switch labeled Email alerts.”
+- “Create a login form with remember me.”
+- “Create a footer with Copyright 2026 and a Privacy link pointing to https://example.com/privacy.”
+
+The selection contract supports one optional form, vertical stacking and adjacent horizontal groups. These are experimental capabilities: the model can select the wrong family, omit states or labels, or miss grouping requirements. Validation and compilable TSX do not prove that the request was understood. Review each result; try a simpler description or name the component directly.
+
+Preview submissions/navigation are contained. Copied links retain their destinations. Generated code provides example UI, not authentication, persistence or payment processing. Payment fields do not perform full card validation; use synthetic values. Preview values are not submitted, stored or logged by the generator.
+
+The **Demos** menu retains the separate keyword and specification demos. The main AI path has no keyword or mock fallback.
+
+## Repository
+
+```text
+apps/web                    React/Vite workspace and secondary demos
+apps/api/src/ai              Ollama transport, selection, compiler, compatibility
+packages/ui-specification   Shared validation, Nova presentation and TSX generation
+tools/evaluation            Manual evaluation tooling and retained tests
+docs                        Current guides and selected evaluation evidence
+```
+
+```bash
+npm run build       # shared package, web, API
+npm run lint
+npm test            # web, shared specification, API and evaluation tests
+```
+
+- [Public demo setup, privacy and release gates](docs/public-demo.md)
+- [Development and shutdown](docs/development.md)
+- [Architecture and safety boundaries](docs/architecture.md)
+- [Limitations and selected evidence](docs/limitations.md)
+- [Evaluation protocol and selected evidence](docs/evaluation/README.md)
+
+CI uses mocks/fake local HTTP servers and does not download models or run inference. Static frontend hosting alone does not deploy the local AI system. Optional Render/Groq public-demo support is implemented but remains release-gated; three local live schema/token checks passed, and account limits are confirmed, while hosted end-to-end behavior remains unverified. See the [public-demo setup](docs/public-demo.md).

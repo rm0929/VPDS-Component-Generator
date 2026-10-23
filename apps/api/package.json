@@ -1,0 +1,26 @@
+{
+  "name": "@vpds/backend",
+  "version": "0.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "dev": "node --env-file-if-exists=.env --import tsx --watch src/server.ts",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "node --env-file-if-exists=.env dist/server.js",
+    "test": "tsc -p tsconfig.json && vitest run --config vitest.config.mts",
+    "eval:coverage": "npm run eval:coverage --workspace @vpds/evaluation --",
+    "poc:feasibility": "npm run poc:feasibility --workspace @vpds/evaluation --"
+  },
+  "dependencies": {
+    "cors": "2.8.6",
+    "express": "5.3.0",
+    "zod": "4.6.7",
+    "@vpds/ui-specification": "0.0.0"
+  },
+  "devDependencies": {
+    "@types/cors": "2.8.19",
+    "@types/express": "5.0.6",
+    "@types/node": "22.20.5",
+    "tsx": "4.23.15"
+  }
+}

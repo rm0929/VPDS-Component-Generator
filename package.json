@@ -1,37 +1,41 @@
 {
-    "name": "vpds-ui-gen",
-    "private": true,
-    "version": "0.0.0",
-    "type": "module",
-    "scripts": {
-        "dev": "vite",
-        "build": "tsc -b && vite build",
-        "lint": "eslint .",
-        "preview": "vite preview"
-    },
-    "dependencies": {
-        "@lottiefiles/dotlottie-react": "^0.14.4",
-        "@visa/nova-icons-react": "^2.0.4",
-        "@visa/nova-react": "^2.5.4",
-        "prettier": "^3.6.2",
-        "prismjs": "^1.30.0",
-        "react": "^19.1.0",
-        "react-dom": "^19.1.0",
-        "react-syntax-highlighter": "^15.6.1"
-    },
-    "devDependencies": {
-        "@eslint/js": "^9.30.1",
-        "@types/prismjs": "^1.26.5",
-        "@types/react": "^19.1.8",
-        "@types/react-dom": "^19.1.6",
-        "@types/react-syntax-highlighter": "^15.5.13",
-        "@vitejs/plugin-react": "^4.6.0",
-        "eslint": "^9.31.0",
-        "eslint-plugin-react-hooks": "^5.2.0",
-        "eslint-plugin-react-refresh": "^0.4.20",
-        "globals": "^16.3.0",
-        "typescript": "~5.8.3",
-        "typescript-eslint": "^8.35.1",
-        "vite": "^7.0.4"
-    }
+  "name": "vpds-ui-gen",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "workspaces": [
+    "apps/*",
+    "packages/*",
+    "tools/evaluation"
+  ],
+  "scripts": {
+    "dev": "npm run build:shared && npm run dev --workspace @vpds/web --",
+    "build": "npm run build:frontend && npm run build:backend",
+    "build:frontend": "npm run build:shared && npm run build --workspace @vpds/web",
+    "build:backend": "npm run build:shared && npm run build --workspace @vpds/backend",
+    "dev:backend": "npm run build:shared && npm run dev --workspace @vpds/backend",
+    "dev:backend:ai": "API_PROVIDER=ollama OLLAMA_WORKFLOW=flat-selection npm run dev:backend",
+    "start:backend": "npm run start --workspace @vpds/backend",
+    "lint": "eslint .",
+    "test": "npm run test:frontend && npm run test:api",
+    "test:frontend": "npm run build:shared && npm run test --workspace @vpds/web && npm run test --workspace @vpds/ui-specification",
+    "test:api": "npm run build:shared && npm run test --workspace @vpds/backend && npm run test --workspace @vpds/evaluation",
+    "preview": "npm run preview --workspace @vpds/web --",
+    "build:shared": "npm run build --workspace @vpds/ui-specification"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.30.1",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "eslint": "^9.31.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.4.20",
+    "globals": "^16.3.0",
+    "typescript": "~5.8.3",
+    "typescript-eslint": "^8.35.1",
+    "vite": "^7.0.4",
+    "vitest": "4.1.11",
+    "@types/node": "22.20.5"
+  }
 }

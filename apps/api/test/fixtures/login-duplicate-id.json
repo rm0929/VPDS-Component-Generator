@@ -1,0 +1,13 @@
+{
+  "version": "1.0",
+  "root": {
+    "id": "login-form",
+    "type": "form",
+    "props": { "label": "Login" },
+    "children": [
+      { "id": "login-form", "type": "emailInput", "props": { "name": "email", "label": "Email" } },
+      { "id": "password", "type": "passwordInput", "props": { "name": "password", "label": "Password" } },
+      { "id": "login", "type": "button", "props": { "label": "Login", "type": "submit" } }
+    ]
+  }
+}
